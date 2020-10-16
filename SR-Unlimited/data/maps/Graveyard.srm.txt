@@ -3497,7 +3497,7 @@ props {
   gridPoint {
     x: 0.4
     y: 0
-    z: 3.9000003
+    z: 3.9
   }
   orientation: ORIENTATION_S
   idRef {
@@ -4262,7 +4262,7 @@ props {
   gridPoint {
     x: -3.1
     y: 0
-    z: 5.1000004
+    z: 5.1
   }
   orientation: ORIENTATION_E
   idRef {
@@ -4275,7 +4275,7 @@ props {
   gridPoint {
     x: -3.1
     y: 0
-    z: 3.1000004
+    z: 3.1
   }
   orientation: ORIENTATION_E
   idRef {
@@ -5150,6 +5150,17 @@ props {
     z: 17
   }
   orientation: ORIENTATION_S
+  displayName: "storage2"
+  idRef {
+    id: "5d0f9148393563642c004789"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
+  }
   lod: 0
 }
 props {
@@ -7043,7 +7054,7 @@ props {
   gridPoint {
     x: -2.1999998
     y: 2
-    z: 1.0000001
+    z: 1
   }
   orientation: ORIENTATION_S
   idRef {
@@ -7056,7 +7067,7 @@ props {
   gridPoint {
     x: -2.2
     y: 2
-    z: 1.1999998
+    z: 1.2
   }
   orientation: ORIENTATION_E
   idRef {
@@ -10344,7 +10355,7 @@ props {
   gridPoint {
     x: -14.6
     y: 0
-    z: 5.8999996
+    z: 5.9
   }
   orientation: ORIENTATION_S
   idRef {
@@ -10357,7 +10368,7 @@ props {
   gridPoint {
     x: -14.6
     y: 0
-    z: 3.8999996
+    z: 3.9
   }
   orientation: ORIENTATION_S
   idRef {
@@ -14643,6 +14654,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Redmond Barrens"
   }
   lod: 0
 }
@@ -14745,6 +14757,7 @@ props {
       doorSound: ""
       doorSoundBundle: ""
     }
+    interaction_info_text: ""
   }
   lod: 0
 }
@@ -15185,7 +15198,7 @@ props {
   gridPoint {
     x: -3.1
     y: 0
-    z: 3.1000004
+    z: 3.1
   }
   orientation: ORIENTATION_E
   idRef {
@@ -17242,6 +17255,7 @@ props {
     z: -13
   }
   orientation: ORIENTATION_S
+  GeneralTags: "insert_2"
   idRef {
     id: "523c2dcd336331e43700306d"
   }
@@ -17309,7 +17323,7 @@ props {
       scene_name: "xalthu\'s remix"
       confirmation_text: "Are you sure you wish to descend into this catacomb?"
     }
-    interaction_info_text: ""
+    interaction_info_text: "cracked catacomb"
   }
   lod: 0
 }
@@ -18167,6 +18181,190 @@ props {
   orientation: ORIENTATION_S
   idRef {
     id: "52c983a43363311417000999"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: 12
+    y: 0
+    z: 1
+  }
+  orientation: ORIENTATION_S
+  displayName: "toxic headstone"
+  idRef {
+    id: "5b3d0eff343032f02d001ad5"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Actor Unspent Karma"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Summon
+    interaction_info_text: "Mucky Looking Headstone"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: -7
+    y: 0
+    z: -20
+  }
+  orientation: ORIENTATION_S
+  displayName: "fresh grave"
+  idRef {
+    id: "5b3d1003343032f02d001b45"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Actor Unspent Karma"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Summon
+    interaction_info_text: "fresh grave"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: 21
+    y: 0
+    z: 0
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "insert_-997"
+  displayName: "transition - sewers"
+  idRef {
+    id: "5b46a001343032dc2a001220"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Smells Bad"
+  }
+  lod: 0
+}
+props {
+  name: "whitebox_outdoor_ground"
+  gridPoint {
+    x: -40
+    y: 0
+    z: 23
+  }
+  orientation: ORIENTATION_S
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: -39
+    y: 0
+    z: 24
+  }
+  orientation: ORIENTATION_S
+  displayName: "storage"
+  idRef {
+    id: "5d0f9057393563642c004787"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
   }
   lod: 0
 }

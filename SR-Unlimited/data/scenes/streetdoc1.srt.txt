@@ -575,7 +575,7 @@ triggers {
         }
       }
       args {
-        string_value: "You\'re lucky the DocWagon got to you in time...."
+        string_value: "You\'re lucky the DocWagon got to you in time..."
       }
       args {
         float_value: 0
@@ -1747,15 +1747,92 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "unified Training innate"
+  name: "Body Training"
   events {
     ops {
       functionName: "On Map Start"
     }
   }
   conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "FitnessTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
   }
   actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "General_Use3"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Actor Attribute"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "BaseOrCurrent"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "ActorAttributes"
+              }
+              args {
+                int_value: 14
+              }
+            }
+          }
+        }
+      }
+    }
     ops {
       functionName: "Set Variable (int)"
       args {
@@ -1873,7 +1950,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -1921,6 +1998,93 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Set Actor Base Attribute"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "General_Use3"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "ActorAttributes"
+          }
+          args {
+            int_value: 14
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "529961613363310822005749"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Combat Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "CombatTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -1970,7 +2134,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -1978,6 +2142,53 @@ triggers {
         int_value: -1
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "5299617a336331082200574a"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Decker Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "DeckerTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -2027,7 +2238,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -2035,23 +2246,25 @@ triggers {
         int_value: -1
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "52996195336331082200574b"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Drone Training"
+  events {
     ops {
-      functionName: "Apply Skill Status Effect to Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -2059,7 +2272,7 @@ triggers {
             string_value: "51f15c62336331d02c00440e"
           }
           args {
-            string_value: "FireArmsTraining"
+            string_value: "DroneTraining"
           }
         }
       }
@@ -2067,31 +2280,19 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "ActorSkills"
+            string_value: "Comparison Ops"
           }
           args {
-            int_value: 0
+            int_value: 2
           }
         }
       }
       args {
-        string_value: "Firearms Training"
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "BuffDebuffType"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        int_value: -1
+        int_value: 0
       }
     }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -2141,7 +2342,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -2149,6 +2350,157 @@ triggers {
         int_value: -1
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "529961b0336331082200574c"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "FireArms Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "FireArmsTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Apply Skill Status Effect to Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "FireArmsTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "ActorSkills"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Firearms Training"
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "BuffDebuffType"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        int_value: -1
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "529961c8336331082200574d"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Spell Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "SpellTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -2198,7 +2550,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -2206,6 +2558,53 @@ triggers {
         int_value: -1
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "529961e6336331082200574e"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Summon Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "SummonTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -2255,7 +2654,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -2266,11 +2665,415 @@ triggers {
   }
   isActive: true
   idRef {
-    id: "55a8082c336637c81c003446"
+    id: "52996202336331082200574f"
   }
   elseActions {
   }
   is_oneshot: true
+}
+triggers {
+  name: "daylight show"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (float)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (float)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Daylight"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        float_value: 12
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Ambient Light Color"
+      args {
+        float_value: 0.45
+      }
+      args {
+        float_value: 0.55
+      }
+      args {
+        float_value: 0.6
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (CameraRegion)"
+          args {
+            string_value: "51f53536336331181d003dd8"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Directional Light Color"
+      args {
+        float_value: 0.75
+      }
+      args {
+        float_value: 0.9
+      }
+      args {
+        float_value: 0.9
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: -0.6
+      }
+      args {
+        float_value: -1.1
+      }
+      args {
+        float_value: -0.8
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (CameraRegion)"
+          args {
+            string_value: "51f53536336331181d003dd8"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "59f9030f6537373c3e000a6a"
+  }
+  elseActions {
+    ops {
+      functionName: "Set Ambient Light Color"
+      args {
+        float_value: 0.1
+      }
+      args {
+        float_value: 0.15
+      }
+      args {
+        float_value: 0.2
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (CameraRegion)"
+          args {
+            string_value: "51f53536336331181d003dd8"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Directional Light Color"
+      args {
+        float_value: 0.75
+      }
+      args {
+        float_value: 0.9
+      }
+      args {
+        float_value: 0.9
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: -0.6
+      }
+      args {
+        float_value: -0.8
+      }
+      args {
+        float_value: -0.4
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (CameraRegion)"
+          args {
+            string_value: "51f53536336331181d003dd8"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "daylight clip"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SunRising"
+      }
+    }
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "OR"
+      args {
+        call_value {
+          functionName: "Comparison (float)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (float)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Daylight"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 4
+              }
+            }
+          }
+          args {
+            float_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (float)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (float)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Daylight"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 2
+              }
+            }
+          }
+          args {
+            float_value: 23
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (float)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (float)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Daylight"
+          }
+        }
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "59f9030f6537373c3e000a6a"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "SunRising"
+          }
+        }
+      }
+      args {
+        float_value: 150
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "59f901ca6537373c3e000a69"
+  }
+  elseActions {
+    ops {
+      functionName: "Add To Variable (float)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (float)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Daylight"
+          }
+        }
+      }
+      args {
+        float_value: 1
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "59f9030f6537373c3e000a6a"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "SunRising"
+          }
+        }
+      }
+      args {
+        float_value: 150
+      }
+    }
+  }
+  is_oneshot: false
 }
 regions {
   name: "Exit"
@@ -2362,6 +3165,52 @@ regions {
   default_music: "Seattle-Set8-Stealth"
   loop_combat_music: true
   loop_default_music: true
+  no_fow_in_region: false
+}
+regions {
+  name: "New Region"
+  position {
+    x: -34
+    y: -3
+    width: 3
+    height: 3
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "59ec85f16537376c48002eb8"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: true
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
   no_fow_in_region: false
 }
 characters {
@@ -2815,7 +3664,7 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: 5
+    x: 6
     y: 0
     z: -1
   }
@@ -2837,9 +3686,9 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: 5
+    x: 6
     y: 0
-    z: -1
+    z: -2
   }
   orientation: ORIENTATION_N
   idRef {
@@ -2859,9 +3708,9 @@ characters {
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
-    x: 5
+    x: 6
     y: 0
-    z: -1
+    z: 0
   }
   orientation: ORIENTATION_N
   idRef {
@@ -2876,6 +3725,162 @@ characters {
     char_name: "New Actor"
     enabled_at_start: true
     pc_spawn_number: 3
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -33
+    y: 0
+    z: -3
+  }
+  orientation: ORIENTATION_S
+  displayName: "cybermat"
+  idRef {
+    id: "59ebdb7865373780460001ec"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    dummyInteraciton {
+    }
+    interaction_info_text: ""
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Berlin:Story/TrollFemaleEiger"
+    character_sheet_id: "ESP Kamikaze"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+        vision_peripheral_distance: 0
+        vision_cone_distance: 0
+        vision_cone_angle: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Non-Combatant"
+      attitude: AttitudeAggressive
+      vulnerabilities {
+      }
+    }
+    equipment {
+      prefab_name: "Obvious Cyberleg"
+    }
+    equipment {
+      prefab_name: "Enhanced Articulation"
+    }
+    equipment {
+      prefab_name: "Obvious Cyberleg 2"
+    }
+    equipment {
+      prefab_name: "Berlin_Trauma Damper (Bioware)"
+    }
+    equipment {
+      prefab_name: "Berlin_Synthetic Cyberskull"
+    }
+    equipment {
+      prefab_name: "Berlin_Obvious Cyberskull"
+    }
+    equipment {
+      prefab_name: "Pain Editor"
+    }
+    equipment {
+      prefab_name: "Toxin Exhaler (Head)"
+    }
+    equipment {
+      prefab_name: "Berlin_Laser Designator"
+    }
+    equipment {
+      prefab_name: "Berlin_BrightLight System"
+    }
+    equipment {
+      prefab_name: "Berlin_Vision Magnification Eyes"
+    }
+    equipment {
+      prefab_name: "Berlin_Vision Magnification Eyes 2"
+    }
+    equipment {
+      prefab_name: "Adrenal Pump (Bio)"
+    }
+    equipment {
+      prefab_name: "Platelet Factory (Heal Wound)"
+    }
+    equipment {
+      prefab_name: "Orthoskin"
+    }
+    equipment {
+      prefab_name: "Berlin_Auto-Injector (Bliss)"
+    }
+    equipment {
+      prefab_name: "Berlin_Auto-Injector (Hyper)"
+    }
+    equipment {
+      prefab_name: "Berlin_Obvious Cyberarm"
+    }
+    equipment {
+      prefab_name: "Berlin_Obvious Cyberarm Reloader"
+    }
+    equipment {
+      prefab_name: "Berlin_Obvious Cyberarm 2"
+    }
+    equipment {
+      prefab_name: "Muscle Augmentation"
+    }
+    team_id: "Civilians"
+    char_name: "New Actor"
+    pc_spawn_number: -1
+    portrait {
+      filename: "Generic_ESP_kamikaze"
+    }
+    karma: 188
   }
 }
 mapEvents: "SunRising"
@@ -2894,7 +3899,7 @@ mapName: "StreetDoc1"
 parentStory: ""
 scene_title: "Little Chiba"
 scene_subtitle: ""
-scene_synopsis: "Dr. Castle might not be a world class surgeon, but when your half dead body gets dropped on her table, she\'ll patch you up no questions ask, and keep it very discreet."
+scene_synopsis: "Dr. Castle might not be a world-class surgeon, but when your half-dead body gets dropped on her table, she\'ll patch you up no questions ask, and keep it very discreet."
 scene_image: "loadingimage_a2_aztechnologyraid_s3"
 scene_continue_button_skip: false
 scene_restore_runner_health: false
@@ -2953,6 +3958,9 @@ scene_hiring_prerequisites {
   prereq_conditions {
   }
 }
+hiring_slot_count: 0
+hiring_minimum_karma: 0
+hiring_maximum_karma: 0
 roster_overrides {
 }
 use_hiring_cost_warning: true

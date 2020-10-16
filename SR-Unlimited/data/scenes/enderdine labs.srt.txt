@@ -540,17 +540,6 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "club penumbra"
-          }
-        }
-      }
-    }
-    ops {
       functionName: "Set Variable (int)"
       args {
         call_value {
@@ -565,6 +554,321 @@ triggers {
       }
       args {
         int_value: 106
+      }
+    }
+    ops {
+      functionName: "Kill Actor Followers"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "520d1c83336331f008004e21"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "520d1c7f336331f008004e20"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "520d1c83336331f008004e21"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Actor)"
+              args {
+                string_value: "52522ef63363315410004427"
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Kill Actor"
+      args {
+        call_value {
+          functionName: "All Actors Except Some"
+          args {
+            call_value {
+              functionName: "All Actors"
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "AllOrAny"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "All Actors on Team"
+              args {
+                call_value {
+                  functionName: "Get Preset Value (string)"
+                  args {
+                    string_value: "FactionList"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "AllOrAny"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Nothing Selected"
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "AllOrAny"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "DeathMethod"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "FacingDirection"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "club penumbra"
+          }
+        }
       }
     }
   }
@@ -682,7 +986,7 @@ triggers {
         }
       }
       args {
-        string_value: "You notice a pressure plate at the last moment, and are able to avoid setting off the alarm."
+        string_value: "You notice a pressure plate at the last moment and avoid setting off the alarm."
       }
       args {
         float_value: 0
@@ -879,7 +1183,7 @@ triggers {
         }
       }
       args {
-        string_value: "As you stumble down the hallway, you step on a pressure plate. Suddenly loud klaxon\'s begin going off in your ears."
+        string_value: "As you stumble down the hallway, you step on a pressure plate. Suddenly loud klaxons begin going off in your ears."
       }
       args {
         float_value: 0
@@ -1274,7 +1578,7 @@ triggers {
         }
       }
       args {
-        string_value: "Okay, team. Let\'s get in, get the goods and get out in once piece... And Argyle, please refrain from snacking on the guards. "
+        string_value: "Okay, team. Let\'s get in, get the goods, and get out in once piece... And Argyle, please refrain from snacking on the guards. "
       }
       args {
         float_value: 0
@@ -3256,7 +3560,7 @@ triggers {
         }
       }
       args {
-        string_value: "You are able to spoof the system, and enter the node without triggering the security systems."
+        string_value: "You spoof the system and enter the node without triggering the security systems."
       }
       args {
         float_value: 0
@@ -3424,7 +3728,7 @@ triggers {
         }
       }
       args {
-        string_value: "You fail to spoof the system, and trigger the IC."
+        string_value: "You fail to spoof the system and trigger the IC."
       }
       args {
         float_value: 0
@@ -4387,184 +4691,21 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "DocWagon Integrity"
+  name: "on(ActorHit) PC0 die?"
   events {
     ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Respawn_Count"
-          }
-        }
-      }
-      args {
-        int_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Actor Unkillable"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "525237f43363315c1e007350"
-          }
-        }
-      }
+      functionName: "On Actor Damage"
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "IsOrIsNot"
+            string_value: "HPOrAP"
           }
           args {
             int_value: 0
           }
         }
       }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52523121336331642f004b77"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Respawn"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "DocWagon Revive"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Change Actor Control"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525237f43363315c1e007350"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "PlayerOrAI"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Manual Turn Mode"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Actor near Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525237f43363315c1e007350"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 2
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "520162a73363311010001b62"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Medical Attention"
-  events {
-    ops {
-      functionName: "On Actor Downed"
     }
   }
   conditions {
@@ -4595,228 +4736,32 @@ triggers {
         }
       }
     }
-  }
-  actions {
     ops {
-      functionName: "Activate Actor Spawner"
+      functionName: "Compare Actor Attribute"
       args {
         call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "525237f43363315c1e007350"
-          }
+          functionName: "Triggering Target Actor"
         }
       }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Start Conversation"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "525239333363312836004dda"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "525237f43363315c1e007350"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
+            string_value: "BaseOrCurrent"
           }
           args {
             int_value: 1
           }
         }
       }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525239e53363312836004de7"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Paramedic"
-  events {
-    ops {
-      functionName: "On Actor Revived"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Evaluate If Actor Has Item"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525237f43363315c1e007350"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "HasOrHasNot"
+            string_value: "ActorAttributes"
           }
           args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Item)"
-          args {
-            string_value: "DocWagonBasic"
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Change Actor Control"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525237f43363315c1e007350"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "PlayerOrAI"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Kill Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525237f43363315c1e007350"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Manual Turn Mode"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52523860336331642f004bd5"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Respawn (No Insurance)"
-  events {
-    ops {
-      functionName: "On Actor Downed"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "DocWagon"
+            int_value: 8
           }
         }
       }
@@ -4827,29 +4772,23 @@ triggers {
             string_value: "Comparison Ops"
           }
           args {
-            int_value: 0
+            int_value: 4
           }
         }
       }
       args {
-        int_value: 0
+        int_value: 2
       }
     }
+  }
+  actions {
     ops {
-      functionName: "Comparison (Actor)"
+      functionName: "Start Conversation"
       args {
         call_value {
-          functionName: "Triggering Target Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Map Item (Conversation)"
           args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
+            string_value: "5d239278393563d42b000823"
           }
         }
       }
@@ -4861,55 +4800,11 @@ triggers {
           }
         }
       }
-    }
-  }
-  actions {
-    ops {
-      functionName: "End Story With Epilogue"
-      args {
-        string_value: "earlydeath"
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5252345d3363318c10004aea"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Revive-LittleChiba"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Chiba Revive"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f169b733633124330018bf"
-          }
-          args {
-            string_value: "Death"
-          }
-        }
-      }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "bool"
+            string_value: "WithOrWithout"
           }
           args {
             int_value: 1
@@ -4917,8 +4812,27 @@ triggers {
         }
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "5d238e9d39356360410054d8"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Unkillable Player"
+  events {
     ops {
-      functionName: "Heal Actor"
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Actor Unkillable"
       args {
         call_value {
           functionName: "Specific Actor"
@@ -4935,219 +4849,21 @@ triggers {
         }
       }
       args {
-        int_value: 20
-      }
-      args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "HPOrAP"
+            string_value: "IsOrIsNot"
           }
           args {
             int_value: 0
           }
         }
       }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event After Delay"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Revive 1"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
     }
   }
   isActive: true
   idRef {
-    id: "525233943363318c10004ae4"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Revive-Penumbra"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Penumbra Revive"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f169b733633124330018bf"
-          }
-          args {
-            string_value: "Death"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Heal Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 20
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "HPOrAP"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event After Delay"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Revive 2"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525233943363318c10004ae5"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Revive 1"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Revive 1"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "streetdoc1"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525233173363318c10004ae2"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Revive 2"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Revive 2"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "Street_Doc(2)"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5252331a3363318c10004ae3"
+    id: "532af58c336331c4230018ba"
   }
   elseActions {
   }
@@ -6484,6 +6200,52 @@ regions {
   loop_default_music: false
   no_fow_in_region: false
 }
+regions {
+  name: "holding closet"
+  position {
+    x: -11
+    y: 5
+    width: 4
+    height: 4
+  }
+  enabledAtStart: true
+  is_camera_region: false
+  idRef {
+    id: "5a071e81663061a254f55fe6"
+  }
+  highlight_color {
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  }
+  visible_at_start: false
+  is_closet: true
+  is_teleporter_region: false
+  directional_light_dir {
+    x: -0.5
+    y: -1
+    z: -0.75
+  }
+  directional_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambient_light_color {
+    r: 0.50196081
+    g: 0.50196081
+    b: 0.50196081
+    a: 1
+  }
+  ambience_template: ""
+  combat_music: ""
+  default_music: ""
+  loop_combat_music: true
+  loop_default_music: false
+  no_fow_in_region: false
+}
 characters {
   name: "system_spawner_playerSpawner"
   gridPoint {
@@ -6844,7 +6606,7 @@ characters {
       attitude: AttitudeAggressive
     }
     team_id: "LoneStar"
-    char_name: "Basalisk"
+    char_name: "Basilisk"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 0
@@ -6913,6 +6675,7 @@ characters {
   character_instance {
     prefab_name: "Seattle:Creature/CreatureGhoulHumanMale"
     character_sheet_id: "runner Argyle"
+    equipment_sheet_id: "runner Argyle"
     character_mod {
       stats {
         body: 0
@@ -6973,9 +6736,6 @@ characters {
       attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "GhoulFist"
     }
     team_id: "Shadowrunners"
     char_name: "Argyle"
@@ -7804,6 +7564,7 @@ characters {
       }
       specializations {
       }
+      archetypeName: "Player"
       vulnerabilities {
       }
     }
@@ -7889,6 +7650,7 @@ characters {
   character_instance {
     prefab_name: "Seattle:Security/HumanMaleSecurity"
     character_sheet_id: "Runner Verum Julos"
+    equipment_sheet_id: "runner Verum Julos"
     character_mod {
       stats {
         body: 0
@@ -7949,15 +7711,6 @@ characters {
       attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "Sword 2 Katana"
-    }
-    equipment {
-      prefab_name: "SamuraiTrenchcoat"
-    }
-    equipment {
-      prefab_name: "ar SSC czechvz88v"
     }
     team_id: "Shadowrunners"
     char_name: "Verum Julos"
@@ -8172,6 +7925,9 @@ scene_hiring_prerequisites {
   prereq_conditions {
   }
 }
+hiring_slot_count: 0
+hiring_minimum_karma: 0
+hiring_maximum_karma: 25
 roster_overrides {
 }
 use_hiring_cost_warning: true

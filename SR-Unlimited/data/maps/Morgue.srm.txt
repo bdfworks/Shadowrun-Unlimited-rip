@@ -807,7 +807,7 @@ props {
   gridPoint {
     x: 9.1
     y: 0
-    z: 4.2999997
+    z: 4.3
   }
   orientation: ORIENTATION_S
   lod: 0
@@ -2586,7 +2586,7 @@ props {
 props {
   name: "secretLab_furniture_lockerClosed"
   gridPoint {
-    x: 15.400001
+    x: 15.4
     y: 0
     z: 8.4
   }
@@ -2623,7 +2623,7 @@ props {
   name: "morgue_appliance_embalmingMachine"
   gridPoint {
     x: -1.6999998
-    y: 0.099999994
+    y: 0.1
     z: 20.3
   }
   orientation: ORIENTATION_S
@@ -2632,7 +2632,7 @@ props {
 props {
   name: "morgue_decor_pottedFern"
   gridPoint {
-    x: 19.300001
+    x: 19.3
     y: 0
     z: -1.7
   }
@@ -2675,7 +2675,7 @@ props {
 props {
   name: "office_furniture_fileCabinetClosed"
   gridPoint {
-    x: 15.200001
+    x: 15.2
     y: 0
     z: -1.9
   }
@@ -2685,7 +2685,7 @@ props {
 props {
   name: "office_furniture_fileCabinetClosed"
   gridPoint {
-    x: 14.800001
+    x: 14.8
     y: 0
     z: -1.9
   }
@@ -2700,7 +2700,7 @@ props {
   gridPoint {
     x: -12.5
     y: -0.1
-    z: 9.499999
+    z: 9.5
   }
   orientation: ORIENTATION_S
   lod: 0
@@ -2708,7 +2708,7 @@ props {
 props {
   name: "morgue_furniture_steelCounterSink01"
   gridPoint {
-    x: 2.3000002
+    x: 2.3
     y: 0
     z: -1.9
   }
@@ -2718,7 +2718,7 @@ props {
 props {
   name: "morgue_furniture_steelCounter02"
   gridPoint {
-    x: 3.3000002
+    x: 3.3
     y: 0
     z: -1.9
   }
@@ -2832,7 +2832,7 @@ props {
 props {
   name: "office_furniture_fileCabinetClosed"
   gridPoint {
-    x: 14.300001
+    x: 14.3
     y: 0
     z: 3
   }
@@ -2845,9 +2845,9 @@ props {
 props {
   name: "office_furniture_fileCabinetClosed"
   gridPoint {
-    x: 14.300001
+    x: 14.3
     y: 0
-    z: 3.6000001
+    z: 3.6
   }
   orientation: ORIENTATION_S
   idRef {
@@ -2858,7 +2858,7 @@ props {
 props {
   name: "office_furniture_fileCabinetClosed"
   gridPoint {
-    x: 14.300001
+    x: 14.3
     y: 0
     z: 2.7
   }
@@ -3295,8 +3295,8 @@ props {
   name: "diveBar_lighting_flourescentLight01"
   gridPoint {
     x: 14.5
-    y: 0.19999999
-    z: 6.2999997
+    y: 0.2
+    z: 6.3
   }
   orientation: ORIENTATION_S
   idRef {
@@ -3633,7 +3633,7 @@ props {
 props {
   name: "morgue_wall_brickEdge01"
   gridPoint {
-    x: 2.8000002
+    x: 2.8
     y: 0
     z: 22
   }
@@ -4123,7 +4123,7 @@ props {
   gridPoint {
     x: -1.8000004
     y: 0
-    z: 17.399998
+    z: 17.4
   }
   orientation: ORIENTATION_E
   idRef {
@@ -4136,7 +4136,7 @@ props {
   gridPoint {
     x: -1.8000004
     y: 0
-    z: 19.399998
+    z: 19.4
   }
   orientation: ORIENTATION_E
   idRef {
@@ -4208,7 +4208,7 @@ props {
   gridPoint {
     x: 4.4
     y: 0
-    z: 14.400001
+    z: 14.4
   }
   orientation: ORIENTATION_W
   lod: 0
@@ -4453,7 +4453,7 @@ props {
   gridPoint {
     x: -1.1
     y: 1.5
-    z: 17.800001
+    z: 17.8
   }
   orientation: ORIENTATION_S
   lod: 0
@@ -6125,7 +6125,7 @@ props {
   gridPoint {
     x: -0.7
     y: 1.6
-    z: 5.900001
+    z: 5.9
   }
   orientation: ORIENTATION_E
   idRef {
@@ -6594,9 +6594,9 @@ props {
 props {
   name: "system_gizmo_lightbulb"
   gridPoint {
-    x: 0.40000004
+    x: 0.4
     y: 0
-    z: 16.800001
+    z: 16.8
   }
   orientation: ORIENTATION_S
   idRef {
@@ -6750,7 +6750,7 @@ props {
   gridPoint {
     x: 16
     y: 1.9
-    z: 1.4000001
+    z: 1.4
   }
   orientation: ORIENTATION_S
   idRef {
@@ -6891,7 +6891,7 @@ props {
 props {
   name: "asylum_wall_whiteEnd01"
   gridPoint {
-    x: 26.05
+    x: 26
     y: 0
     z: 2
   }
@@ -6904,7 +6904,7 @@ props {
 props {
   name: "asylum_wall_whiteEnd01"
   gridPoint {
-    x: 26.05
+    x: 26
     y: 0
     z: -3
   }
@@ -7132,7 +7132,7 @@ props {
 props {
   name: "office_clutter_paperStacks01"
   gridPoint {
-    x: 14.299999
+    x: 14.3
     y: 1
     z: 3.5
   }
@@ -7176,7 +7176,7 @@ props {
   name: "vfx_fx_newsTicker"
   gridPoint {
     x: 20.6
-    y: 3.04
+    y: 3
     z: 10.3
   }
   orientation: ORIENTATION_S
@@ -7186,7 +7186,7 @@ props {
   }
   properties {
     property_id: "NewsTickerText"
-    string_value: "Breaking News: Telestrian CEO James Telestrian III to announce new Seattle research division, sources say - press conference tonight at 6:00 PST."
+    string_value: "{{000000}}Breaking News:{{-}} Telestrian CEO James Telestrian III to announce new Seattle research division, sources say - press conference tonight at 6:00 PST."
   }
   lod: 0
 }
@@ -7205,7 +7205,7 @@ props {
   gridPoint {
     x: -2.89
     y: 0.33
-    z: 17.08
+    z: 17
   }
   orientation: ORIENTATION_S
   lod: 0
@@ -7239,7 +7239,7 @@ props {
 props {
   name: "vfx_fx_steam"
   gridPoint {
-    x: 4.6000004
+    x: 4.6
     y: 0
     z: 6.1
   }
@@ -7253,7 +7253,7 @@ props {
 props {
   name: "office_clutter_paperStacks01"
   gridPoint {
-    x: 14.299999
+    x: 14.3
     y: 1.2
     z: 3.5
   }
@@ -7266,7 +7266,7 @@ props {
 props {
   name: "office_wallDecoration_harvestersPainting"
   gridPoint {
-    x: 20.199999
+    x: 20.2
     y: 1.3
     z: -1.9
   }
@@ -7277,7 +7277,7 @@ props {
   name: "diveBar_lighting_flourescentLight01"
   gridPoint {
     x: 20
-    y: 0.19999999
+    y: 0.2
     z: -1.5
   }
   orientation: ORIENTATION_E
@@ -7430,7 +7430,7 @@ props {
 props {
   name: "morgue_decor_pottedFern"
   gridPoint {
-    x: 23.300001
+    x: 23.3
     y: 0
     z: 9.3
   }
@@ -7574,8 +7574,8 @@ props {
   name: "asylum_decor_doctorBag"
   gridPoint {
     x: -8.5
-    y: 0.39999998
-    z: 4.6000004
+    y: 0.4
+    z: 4.6
   }
   orientation: ORIENTATION_E
   idRef {
@@ -7648,7 +7648,7 @@ props {
 props {
   name: "office_clutter_paperStacks01"
   gridPoint {
-    x: 15.199999
+    x: 15.2
     y: 1
     z: -2
   }
@@ -7661,7 +7661,7 @@ props {
 props {
   name: "office_clutter_paperStacks01"
   gridPoint {
-    x: 15.199999
+    x: 15.2
     y: 1.2
     z: -2
   }
@@ -7674,7 +7674,7 @@ props {
 props {
   name: "office_clutter_paperStacks02"
   gridPoint {
-    x: 14.799999
+    x: 14.8
     y: 1
     z: -1.9000001
   }

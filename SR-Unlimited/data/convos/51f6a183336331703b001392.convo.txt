@@ -141,7 +141,7 @@ nodes {
     id: "52bdb152336331141b002fb6"
   }
   index: 1
-  text: "Definitely a new blood. No you cannot ask, and no you cannot look. And if anyone asks, you were never here. If you want to stay alive, you\'re gonna have to learn to keep secrets, and keep your nose out of matters that don\'t concern you."
+  text: "Definitely new blood. No, you cannot ask, and no you cannot look. And if anyone asks, you were never here. If you want to stay alive, you\'re gonna have to learn to keep secrets, and keep your nose out of matters that don\'t concern you."
   branches {
     responseText: "Wow. Umm, thanks for the advice. I guess I better get a move on."
     nextNodeIndex: 2
@@ -203,7 +203,7 @@ nodes {
     nextNodeIndex: -1
   }
   branches {
-    responseText: "I\'m looking for a Dwarf named Piper. He\'s sporting obvious cyberware, and looks like the \'runner type."
+    responseText: "I\'m looking for a Dwarf named Piper. He\'s sporting obvious cyberware and looks like the \'runner type."
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -308,7 +308,7 @@ nodes {
           }
         }
         args {
-          string_value: "More thugs are trying to shake down Lucy. Head down to the \'Grinders and take care of them. Hopefully this time they will stay away for good. Pays 540 nuyen, same as last time."
+          string_value: "More thugs are trying to shake down Lucy. Head down to the \'Grinders and take care of them. Hopefully this time they will stay away for good. Pays \302\245$(story.Pay), same as last time."
         }
       }
       ops {
@@ -365,7 +365,7 @@ nodes {
     id: "53369a02336331c018004b75"
   }
   index: 6
-  text: "Yes, thanks to you! The thugs obviously didn\'t get the message the first time."
+  text: "Yes, thanks to you! The thugs didn\'t get the message the first time."
   branches {
     responseText: "Just doing my job."
     actions {
@@ -417,7 +417,7 @@ nodes {
           }
         }
         args {
-          string_value: "Lucy is getting harassed by more gangers. There doesn\'t appear to be any organization to it, just some thugs looking for an easy mark. Pays 540 nuyen, same as before."
+          string_value: "Lucy is getting harassed by more gangers. There doesn\'t appear to be any organization to it, just some thugs looking for an easy mark. Pays \302\245$(story.Pay), same as before."
         }
       }
       ops {
@@ -476,7 +476,7 @@ nodes {
   index: 7
   text: "Yes, but this is getting old fast! I\'m glad you\'re working for Eric $(l.name). You\'ve come along way in such a short amount of time."
   branches {
-    responseText: "Thanks Lucy. Just trying to earn a living, but I\'m glad I can help."
+    responseText: "Thanks Lucy, Just trying to earn a living, but I\'m glad I can help."
     actions {
       ops {
         functionName: "Set Variable (string)"
@@ -526,7 +526,7 @@ nodes {
           }
         }
         args {
-          string_value: "Lucy is having issues with more two-bit thugs. She needs help and she asked for you by name. Pays 540 nuyen, same as before."
+          string_value: "Lucy is having issues with more two-bit thugs. She needs help and she asked for you by name. Pays \302\245$(story.Pay), same as before."
         }
       }
       ops {
@@ -583,7 +583,7 @@ nodes {
     id: "53369c0e336331c018004b80"
   }
   index: 8
-  text: "Well I keep paying Eric for protection, so hopefully he keeps sending you when I need protecting."
+  text: "Well, I keep paying Eric for protection, so hopefully, he keeps sending you when I need protection."
   nodeType: ConversationNodeType_Simple
 }
 nodes {
@@ -643,7 +643,7 @@ nodes {
           }
         }
         args {
-          string_value: "Lucy is having more ganger problems and she pays me a nice premium to help take care of these issues. Pays 540 nuyen, same as before."
+          string_value: "Lucy is having more ganger problems and she pays me a nice premium to help take care of these issues. Pays \302\245$(story.Pay), same as before."
         }
       }
       ops {
@@ -760,7 +760,7 @@ nodes {
           }
         }
         args {
-          string_value: "I need you to punish some gangers for tespassing at the Organ Grinders again. Pays 540 nuyen, same as before."
+          string_value: "I need you to punish some gangers for tespassing at the Organ Grinders again. Pays \302\245$(story.Pay), same as before."
         }
       }
     }

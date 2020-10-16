@@ -50,7 +50,7 @@ nodes {
     auxiliaryLink: true
   }
   branches {
-    responseText: "Use MagLock Skeleton Key"
+    responseText: "Use MagLock Skeleton Key\n{{CC}}Skeleton Key $(story.TestDifficulty)+{{/CC}}"
     conditions {
       ops {
         functionName: "OR"
@@ -162,22 +162,6 @@ nodes {
         }
         args {
           int_value: 0
-        }
-      }
-    }
-    actions {
-      ops {
-        functionName: "Send Event After Delay"
-        args {
-          call_value {
-            functionName: "Get Map Item (Event)"
-            args {
-              string_value: "DoorPanelTest"
-            }
-          }
-        }
-        args {
-          float_value: 1
         }
       }
     }
@@ -438,7 +422,7 @@ nodes {
               string_value: "Comparison Ops"
             }
             args {
-              int_value: 2
+              int_value: 4
             }
           }
         }
@@ -554,7 +538,7 @@ nodes {
               string_value: "Comparison Ops"
             }
             args {
-              int_value: 5
+              int_value: 3
             }
           }
         }

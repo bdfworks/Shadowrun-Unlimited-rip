@@ -1099,7 +1099,7 @@ triggers {
         }
       }
       args {
-        string_value: "You finally arrive at Chimo Place after what must have been an hour long taxi ride. You told the drive to wait while you ran the package upstairs."
+        string_value: "You finally arrive at Chimo Place after what must have been an hour-long taxi ride. You told the driver to wait while you run the package upstairs."
       }
       args {
         float_value: 0
@@ -1892,7 +1892,7 @@ triggers {
         }
       }
       args {
-        string_value: "Holy drek! Andy! I have to stop him before he gets to my place! He better answer his comm!"
+        string_value: "Holy drek! Andy! I have to stop him before he gets to my place! He had better answer his comm!"
       }
       args {
         float_value: 0
@@ -2223,7 +2223,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (Scene)"
           args {
-            string_value: "6_Months_Later"
+            string_value: "welcome"
           }
         }
       }
@@ -3184,6 +3184,9 @@ scene_hiring_prerequisites {
   prereq_conditions {
   }
 }
+hiring_slot_count: 0
+hiring_minimum_karma: 0
+hiring_maximum_karma: 25
 roster_overrides {
 }
 use_hiring_cost_warning: true

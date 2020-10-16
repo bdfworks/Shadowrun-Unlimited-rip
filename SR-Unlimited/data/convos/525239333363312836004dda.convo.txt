@@ -1,7 +1,7 @@
 idRef {
   id: "525239333363312836004dda"
 }
-ui_name: "DocWagon"
+ui_name: "Shared-DocWagon"
 nodes {
   idRef {
     id: "525239393363312836004de4"
@@ -9,7 +9,7 @@ nodes {
   index: 0
   text: "{{GM}}You were defeated, but the DocWagon has arrived, saving you from the clutches of death...{{/GM}}"
   branches {
-    responseText: "Have the DocWagon paramedics revive you. {{CC}}250 Nuyen{{/CC}}\n\n"
+    responseText: "Have the DocWagon paramedics revive you. {{CC}}250\302\245{{/CC}}\n\n"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -42,6 +42,17 @@ nodes {
     }
     actions {
       ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "DocWagon Revive"
+            }
+          }
+        }
+      }
+      ops {
         functionName: "Remove Nuyen"
         args {
           int_value: 250
@@ -62,17 +73,6 @@ nodes {
         }
         args {
           int_value: 1
-        }
-      }
-      ops {
-        functionName: "Send Event"
-        args {
-          call_value {
-            functionName: "Get Map Item (Event)"
-            args {
-              string_value: "DocWagon Revive"
-            }
-          }
         }
       }
     }
@@ -108,7 +108,7 @@ nodes {
               string_value: "51f15c62336331d02c00440e"
             }
             args {
-              string_value: "Runner_Slot_1"
+              string_value: "TeamCount"
             }
           }
         }
@@ -119,12 +119,12 @@ nodes {
               string_value: "Comparison Ops"
             }
             args {
-              int_value: 1
+              int_value: 3
             }
           }
         }
         args {
-          int_value: 0
+          int_value: 1
         }
       }
     }
@@ -139,7 +139,7 @@ nodes {
   index: 1
   text: "{{GM}}You were defeated, but the DocWagon has arrived, saving you from the clutches of death...{{/GM}}"
   branches {
-    responseText: "Have the DocWagon paramedics revive you. {{CC}}125 Nuyen{{/CC}}\n"
+    responseText: "Have the DocWagon paramedics revive you. {{CC}}125\302\245{{/CC}}\n"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -172,6 +172,17 @@ nodes {
     }
     actions {
       ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "DocWagon Revive"
+            }
+          }
+        }
+      }
+      ops {
         functionName: "Remove Nuyen"
         args {
           int_value: 125
@@ -192,17 +203,6 @@ nodes {
         }
         args {
           int_value: 1
-        }
-      }
-      ops {
-        functionName: "Send Event"
-        args {
-          call_value {
-            functionName: "Get Map Item (Event)"
-            args {
-              string_value: "DocWagon Revive"
-            }
-          }
         }
       }
     }
@@ -238,7 +238,7 @@ nodes {
               string_value: "51f15c62336331d02c00440e"
             }
             args {
-              string_value: "Runner_Slot_1"
+              string_value: "TeamCount"
             }
           }
         }
@@ -249,12 +249,12 @@ nodes {
               string_value: "Comparison Ops"
             }
             args {
-              int_value: 1
+              int_value: 3
             }
           }
         }
         args {
-          int_value: 0
+          int_value: 1
         }
       }
     }
@@ -302,6 +302,17 @@ nodes {
     }
     actions {
       ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "DocWagon Revive"
+            }
+          }
+        }
+      }
+      ops {
         functionName: "Add To Variable (int)"
         args {
           call_value {
@@ -316,17 +327,6 @@ nodes {
         }
         args {
           int_value: 1
-        }
-      }
-      ops {
-        functionName: "Send Event"
-        args {
-          call_value {
-            functionName: "Get Map Item (Event)"
-            args {
-              string_value: "DocWagon Revive"
-            }
-          }
         }
       }
     }
@@ -404,7 +404,7 @@ nodes {
               string_value: "51f15c62336331d02c00440e"
             }
             args {
-              string_value: "Runner_Slot_1"
+              string_value: "TeamCount"
             }
           }
         }
@@ -415,12 +415,12 @@ nodes {
               string_value: "Comparison Ops"
             }
             args {
-              int_value: 1
+              int_value: 3
             }
           }
         }
         args {
-          int_value: 0
+          int_value: 1
         }
       }
     }

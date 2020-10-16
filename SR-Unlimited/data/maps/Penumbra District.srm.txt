@@ -1,7 +1,7 @@
 minX: -139
 minZ: -43
 numX: 198
-numZ: 167
+numZ: 158
 props {
   name: "barrens_ground_twoLaneDouble01"
   gridPoint {
@@ -5093,7 +5093,7 @@ props {
   name: "pikePlace_sign_grocerySign01"
   gridPoint {
     x: -50.7
-    y: 7.8999996
+    y: 7.9
     z: 20.5
   }
   orientation: ORIENTATION_N
@@ -5804,7 +5804,7 @@ props {
   name: "diveBar_lighting_lanternString02"
   gridPoint {
     x: -41.2
-    y: 1.8000001
+    y: 1.8
     z: -15.2
   }
   orientation: ORIENTATION_E
@@ -6316,7 +6316,7 @@ props {
   name: "diveBar_lighting_lanternString01"
   gridPoint {
     x: -37.600002
-    y: 2.1000001
+    y: 2.1
     z: -15.2
   }
   orientation: ORIENTATION_E
@@ -7104,7 +7104,7 @@ props {
   name: "diveBar_lighting_lanternString01"
   gridPoint {
     x: -39.100002
-    y: 1.8000001
+    y: 1.8
     z: 20.4
   }
   orientation: ORIENTATION_S
@@ -23283,7 +23283,7 @@ props {
   gridPoint {
     x: -97.9
     y: 0
-    z: 18.099998
+    z: 18.1
   }
   orientation: ORIENTATION_S
   idRef {
@@ -24443,7 +24443,7 @@ props {
   name: "pikePlace_buildingOrnament_cyberpunkPlates03"
   gridPoint {
     x: -92.799995
-    y: 7.6000004
+    y: 7.6
     z: 34.5
   }
   orientation: ORIENTATION_E
@@ -25640,8 +25640,8 @@ props {
   name: "diveBar_lighting_lanternString02"
   gridPoint {
     x: -40.8
-    y: 0.20000005
-    z: 2.8000002
+    y: 0.2
+    z: 2.8
   }
   orientation: ORIENTATION_E
   idRef {
@@ -25693,7 +25693,7 @@ props {
   gridPoint {
     x: -42
     y: 0
-    z: 0.90000004
+    z: 0.9
   }
   orientation: ORIENTATION_S
   idRef {
@@ -25742,7 +25742,7 @@ props {
   gridPoint {
     x: -42
     y: 0
-    z: 0.10000002
+    z: 0.1
   }
   orientation: ORIENTATION_E
   idRef {
@@ -26609,7 +26609,7 @@ props {
   name: "pikePlace_buildingOrnament_ledCorner01"
   gridPoint {
     x: -95.3
-    y: 14.400001
+    y: 14.4
     z: 38.2
   }
   orientation: ORIENTATION_S
@@ -26622,7 +26622,7 @@ props {
   name: "pikePlace_buildingOrnament_ledCorner01"
   gridPoint {
     x: -95.3
-    y: 10.200001
+    y: 10.2
     z: 38.2
   }
   orientation: ORIENTATION_S
@@ -26635,8 +26635,8 @@ props {
   name: "pikePlace_buildingOrnament_ledCorner01"
   gridPoint {
     x: -69.3
-    y: 15.400001
-    z: 5.2000008
+    y: 15.4
+    z: 5.2
   }
   orientation: ORIENTATION_E
   idRef {
@@ -26649,7 +26649,7 @@ props {
   gridPoint {
     x: -69.3
     y: 11.4
-    z: 5.2000008
+    z: 5.2
   }
   orientation: ORIENTATION_E
   idRef {
@@ -26687,8 +26687,8 @@ props {
   name: "pikePlace_buildingOrnament_ledCorner01"
   gridPoint {
     x: -72.100006
-    y: 6.4000006
-    z: 15.700001
+    y: 6.4
+    z: 15.7
   }
   orientation: ORIENTATION_S
   idRef {
@@ -26701,7 +26701,7 @@ props {
   gridPoint {
     x: -72.100006
     y: 10.6
-    z: 15.700001
+    z: 15.7
   }
   orientation: ORIENTATION_S
   idRef {
@@ -26713,8 +26713,8 @@ props {
   name: "pikePlace_buildingOrnament_ledCorner01"
   gridPoint {
     x: -72.100006
-    y: 14.400001
-    z: 15.700001
+    y: 14.4
+    z: 15.7
   }
   orientation: ORIENTATION_S
   idRef {
@@ -26828,7 +26828,7 @@ props {
   gridPoint {
     x: -16.3
     y: 5.2
-    z: 7.2000008
+    z: 7.2
   }
   orientation: ORIENTATION_E
   idRef {
@@ -27321,7 +27321,7 @@ props {
   name: "barrens_street_scaffolding03"
   gridPoint {
     x: 14
-    y: 5.1000004
+    y: 5.1
     z: 18.9
   }
   orientation: ORIENTATION_E
@@ -27334,7 +27334,7 @@ props {
   name: "barrens_street_scaffolding03"
   gridPoint {
     x: 1
-    y: 5.1000004
+    y: 5.1
     z: 19.9
   }
   orientation: ORIENTATION_E
@@ -30915,7 +30915,7 @@ props {
   gridPoint {
     x: -71.8
     y: 5.5
-    z: 2.3999996
+    z: 2.4
   }
   orientation: ORIENTATION_S
   idRef {
@@ -30954,7 +30954,7 @@ props {
   gridPoint {
     x: -69
     y: 7
-    z: 6.3999996
+    z: 6.4
   }
   orientation: ORIENTATION_E
   idRef {
@@ -30993,7 +30993,7 @@ props {
   gridPoint {
     x: -67.2
     y: 12.8
-    z: 8.5999994
+    z: 8.6
   }
   orientation: ORIENTATION_E
   idRef {
@@ -31006,7 +31006,7 @@ props {
   gridPoint {
     x: -67.2
     y: 12.8
-    z: 12.599999
+    z: 12.6
   }
   orientation: ORIENTATION_E
   idRef {
@@ -31169,7 +31169,7 @@ props {
   gridPoint {
     x: -36
     y: 1.5
-    z: 12.200001
+    z: 12.2
   }
   orientation: ORIENTATION_E
   idRef {
@@ -31207,7 +31207,7 @@ props {
   name: "barrens_street_scaffolding03"
   gridPoint {
     x: -14
-    y: 6.1000004
+    y: 6.1
     z: -10.1
   }
   orientation: ORIENTATION_S
@@ -31234,7 +31234,7 @@ props {
   gridPoint {
     x: -69
     y: 0.4
-    z: 12.200001
+    z: 12.2
   }
   orientation: ORIENTATION_E
   idRef {
@@ -31247,7 +31247,7 @@ props {
   gridPoint {
     x: -69
     y: 0.4
-    z: 12.200001
+    z: 12.2
   }
   orientation: ORIENTATION_E
   idRef {
@@ -32961,7 +32961,7 @@ props {
   name: "barrens_ground_HalloweenersGraffiti02"
   gridPoint {
     x: -45.2
-    y: 2.6000001
+    y: 2.6
     z: 31.5
   }
   orientation: ORIENTATION_E
@@ -32975,7 +32975,7 @@ props {
   gridPoint {
     x: -37.86
     y: 0
-    z: 33.07
+    z: 33
   }
   orientation: ORIENTATION_W
   displayName: "Halloweeners Motorcycle03"
@@ -33229,7 +33229,7 @@ props {
   gridPoint {
     x: -45
     y: 0
-    z: 0.10000002
+    z: 0.1
   }
   orientation: ORIENTATION_E
   idRef {
@@ -33903,7 +33903,7 @@ props {
 props {
   name: "barrens_market_stall03"
   gridPoint {
-    x: 19.199997
+    x: 19.2
     y: 0
     z: -4.9000015
   }
@@ -33957,7 +33957,7 @@ props {
   gridPoint {
     x: -42
     y: 0
-    z: 0.10000002
+    z: 0.1
   }
   orientation: ORIENTATION_E
   idRef {
@@ -33981,7 +33981,7 @@ props {
 props {
   name: "pikePlace_buildingOrnament_techPanel01"
   gridPoint {
-    x: 13.500001
+    x: 13.5
     y: 2
     z: -4.7999992
   }
@@ -34475,7 +34475,7 @@ props {
   name: "vfx_fx_fallingwater"
   gridPoint {
     x: -32.4
-    y: 3.1999998
+    y: 3.2
     z: 17.3
   }
   orientation: ORIENTATION_S
@@ -34865,7 +34865,7 @@ props {
   name: "pikePlace_buildingOrnament_cyberpunkPlates03"
   gridPoint {
     x: -22.299997
-    y: 4.1000004
+    y: 4.1
     z: -5.6
   }
   orientation: ORIENTATION_S
@@ -34901,7 +34901,7 @@ props {
   gridPoint {
     x: -45.5
     y: 0.5
-    z: 45.699997
+    z: 45.7
   }
   orientation: ORIENTATION_S
   properties {
@@ -35169,7 +35169,7 @@ props {
   name: "vfx_fx_flicker"
   gridPoint {
     x: -46
-    y: 4.3999996
+    y: 4.4
     z: -8.4
   }
   orientation: ORIENTATION_S
@@ -35186,7 +35186,7 @@ props {
   name: "vfx_fx_flicker"
   gridPoint {
     x: -33.9
-    y: 10.299999
+    y: 10.3
     z: 17.7
   }
   orientation: ORIENTATION_S
@@ -35227,7 +35227,7 @@ props {
   gridPoint {
     x: -50.4
     y: 1.9
-    z: 34.800003
+    z: 34.8
   }
   orientation: ORIENTATION_S
   idRef {
@@ -35299,7 +35299,7 @@ props {
   name: "pikePlace_buildingOrnament_wallPipe01"
   gridPoint {
     x: -87
-    y: 0.10000007
+    y: 0.1
     z: 15
   }
   orientation: ORIENTATION_S
@@ -35574,7 +35574,7 @@ props {
   name: "barrens_signs_billboard11"
   gridPoint {
     x: -26.400003
-    y: 3.2000003
+    y: 3.2
     z: 18.6
   }
   orientation: ORIENTATION_E
@@ -35586,7 +35586,7 @@ props {
 props {
   name: "secretLab_tech_largeWallMonitor03"
   gridPoint {
-    x: 16.899998
+    x: 16.9
     y: 2
     z: -3.8999996
   }
@@ -35600,7 +35600,7 @@ props {
   name: "secretLab_tech_largeWallMonitor04"
   gridPoint {
     x: -68.7
-    y: 2.8999999
+    y: 2.9
     z: 13.9
   }
   orientation: ORIENTATION_E
@@ -35613,8 +35613,8 @@ props {
   name: "secretLab_tech_largeWallMonitor04"
   gridPoint {
     x: -15.7
-    y: 2.8999999
-    z: 6.8999996
+    y: 2.9
+    z: 6.9
   }
   orientation: ORIENTATION_E
   idRef {
@@ -36230,282 +36230,6 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -81
-    y: 0
-    z: 36
-  }
-  orientation: ORIENTATION_S
-  displayName: "InspectFootprints"
-  idRef {
-    id: "519701bd62333114100044dc"
-  }
-  interactionRoot {
-    isEnabled: false
-    interactionRadius: 1
-    prerequisites {
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Variable (bool)"
-            args {
-              string_value: "canEnterCrimescene"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Variable (bool)"
-            args {
-              string_value: "hasCompletedInvestigations"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
-    inspectInteraction {
-      dispalyTime: 0
-      fadeTime: 0
-      inspectText: "There are two distinct sets of footprints. A human\'s, ending at the chalk outline, and a larger set, possibly Ork or Troll, following just behind the first."
-      disableAfterInteracting: false
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -80.899994
-    y: 1
-    z: 38.1
-  }
-  orientation: ORIENTATION_S
-  displayName: "InspectWorklights"
-  idRef {
-    id: "5197001462333114100043f1"
-  }
-  interactionRoot {
-    isEnabled: false
-    interactionRadius: 1
-    prerequisites {
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Variable (bool)"
-            args {
-              string_value: "canEnterCrimescene"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Variable (bool)"
-            args {
-              string_value: "hasCompletedInvestigations"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
-    inspectInteraction {
-      dispalyTime: 0
-      fadeTime: 0
-      inspectText: "This worklight is new. You can see that all of the alley\342\200\231s normal lights have been ruined. Upon closer inspection, it seems that they\'ve all imploded - as if some force shattered them all at the same time."
-      disableAfterInteracting: false
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -78
-    y: 0
-    z: 38
-  }
-  orientation: ORIENTATION_S
-  displayName: "InspectBrokenGlass"
-  idRef {
-    id: "519700256233311410004465"
-  }
-  interactionRoot {
-    isEnabled: false
-    interactionRadius: 1
-    prerequisites {
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Variable (bool)"
-            args {
-              string_value: "canEnterCrimescene"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Variable (bool)"
-            args {
-              string_value: "hasCompletedInvestigations"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-    }
-    inspectInteraction {
-      dispalyTime: 0
-      fadeTime: 0
-      inspectText: "Amidst the shards of glass from the broken lights, you find a small piece of glass which looks like the bottom of a test tube."
-      disableAfterInteracting: true
-    }
-  }
-  lod: 0
-}
-props {
   name: "tenements_lighting_standingLight04"
   gridPoint {
     x: -80.899994
@@ -36529,103 +36253,11 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -81
-    y: 0
-    z: 39
-  }
-  orientation: ORIENTATION_S
-  displayName: "BlanketInspect"
-  idRef {
-    id: "519931b06233316401004412"
-  }
-  interactionRoot {
-    isEnabled: false
-    interactionRadius: 1
-    prerequisites {
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Variable (bool)"
-            args {
-              string_value: "hasInspectedBlanket"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Comparison (bool)"
-        args {
-          call_value {
-            functionName: "Get Variable (bool)"
-            args {
-              string_value: "canEnterCrimescene"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-    }
-    inspectInteraction {
-      dispalyTime: 0
-      fadeTime: 0
-      inspectText: ""
-      disableAfterInteracting: false
-    }
-  }
-  lod: 0
-}
-props {
   name: "pikePlace_street_displayFlower"
   gridPoint {
     x: -82.9
     y: 0
-    z: 29.099998
+    z: 29.1
   }
   orientation: ORIENTATION_W
   idRef {
@@ -37844,7 +37476,7 @@ props {
   name: "barrens_signs_sign35"
   gridPoint {
     x: -39.3
-    y: 0.49999997
+    y: 0.5
     z: 7
   }
   orientation: ORIENTATION_E
@@ -39532,7 +39164,7 @@ props {
   name: "tenements_decor_clothesline03"
   gridPoint {
     x: -14.5
-    y: 3.3000002
+    y: 3.3
     z: -16.1
   }
   orientation: ORIENTATION_E
@@ -39605,7 +39237,7 @@ props {
   gridPoint {
     x: -17.199999
     y: 6.5
-    z: 5.7999997
+    z: 5.8
   }
   orientation: ORIENTATION_S
   idRef {
@@ -39669,7 +39301,7 @@ props {
   name: "pikePlace_buildingOrnament_cyberpunkPlates03"
   gridPoint {
     x: -92.799995
-    y: 7.6000004
+    y: 7.6
     z: 34.5
   }
   orientation: ORIENTATION_E
@@ -39682,7 +39314,7 @@ props {
   name: "pikePlace_buildingOrnament_cyberpunkPlates03"
   gridPoint {
     x: -36.799995
-    y: 4.2000003
+    y: 4.2
     z: 11.5
   }
   orientation: ORIENTATION_E
@@ -39719,7 +39351,7 @@ props {
   gridPoint {
     x: -69.7
     y: 7.4
-    z: 12.300001
+    z: 12.3
   }
   orientation: ORIENTATION_E
   idRef {
@@ -39744,7 +39376,7 @@ props {
   name: "pikePlace_sign_grocerySign01"
   gridPoint {
     x: -26
-    y: 2.1999998
+    y: 2.2
     z: -4.5
   }
   orientation: ORIENTATION_N
@@ -39767,7 +39399,7 @@ props {
   name: "barrens_signs_sign66"
   gridPoint {
     x: -36.4
-    y: 7.1000004
+    y: 7.1
     z: 18.5
   }
   orientation: ORIENTATION_N
@@ -39780,7 +39412,7 @@ props {
   name: "barrens_signs_sign66"
   gridPoint {
     x: -36.4
-    y: 7.1000004
+    y: 7.1
     z: 18.5
   }
   orientation: ORIENTATION_N
@@ -39924,7 +39556,7 @@ props {
   name: "diveBar_sign_neonBeer02"
   gridPoint {
     x: -4.1
-    y: 1.8000001
+    y: 1.8
     z: -5.3
   }
   orientation: ORIENTATION_E
@@ -39937,7 +39569,7 @@ props {
   name: "diveBar_sign_neonBeer02"
   gridPoint {
     x: -67.9
-    y: 1.9000001
+    y: 1.9
     z: 9.6
   }
   orientation: ORIENTATION_S
@@ -40273,7 +39905,7 @@ props {
   gridPoint {
     x: -83.4
     y: 2
-    z: 15.699999
+    z: 15.7
   }
   orientation: ORIENTATION_S
   idRef {
@@ -40526,7 +40158,7 @@ props {
   name: "secretLab_tech_largeWallMonitor04"
   gridPoint {
     x: -67.7
-    y: 3.4999998
+    y: 3.5
     z: 34.8
   }
   orientation: ORIENTATION_E
@@ -40549,7 +40181,7 @@ props {
   name: "secretLab_tech_largeWallMonitor02"
   gridPoint {
     x: -26.900002
-    y: 3.8000002
+    y: 3.8
     z: 19.2
   }
   orientation: ORIENTATION_E
@@ -40562,7 +40194,7 @@ props {
   name: "secretLab_tech_largeWallMonitor02"
   gridPoint {
     x: -71
-    y: 1.7000002
+    y: 1.7
     z: 40.3
   }
   orientation: ORIENTATION_E
@@ -40678,7 +40310,7 @@ props {
 props {
   name: "barrens_buildingOrnament_solarPanel04"
   gridPoint {
-    x: 2.4999993
+    x: 2.5
     y: 0
     z: -4.9
   }
@@ -40991,7 +40623,7 @@ props {
   name: "pikePlace_buildingOrnament_wallPipe01"
   gridPoint {
     x: -48.700005
-    y: 0.50000006
+    y: 0.5
     z: -2.4
   }
   orientation: ORIENTATION_S
@@ -41004,7 +40636,7 @@ props {
   name: "pikePlace_buildingOrnament_wallPipe01"
   gridPoint {
     x: -14.700005
-    y: 0.50000006
+    y: 0.5
     z: -7.8
   }
   orientation: ORIENTATION_S
@@ -41016,8 +40648,8 @@ props {
 props {
   name: "pikePlace_buildingOrnament_wallPipe01"
   gridPoint {
-    x: 15.299995
-    y: 0.50000006
+    x: 15.3
+    y: 0.5
     z: 16.7
   }
   orientation: ORIENTATION_S
@@ -41029,8 +40661,8 @@ props {
 props {
   name: "pikePlace_buildingOrnament_wallPipe01"
   gridPoint {
-    x: 15.299995
-    y: 0.50000006
+    x: 15.3
+    y: 0.5
     z: 16.7
   }
   orientation: ORIENTATION_S
@@ -41043,7 +40675,7 @@ props {
   name: "pikePlace_buildingOrnament_wallPipe01"
   gridPoint {
     x: -58.700005
-    y: 0.50000006
+    y: 0.5
     z: 59.7
   }
   orientation: ORIENTATION_S
@@ -41096,8 +40728,8 @@ props {
   name: "vfx_fx_fallingwater"
   gridPoint {
     x: -36.4
-    y: 3.3999999
-    z: 9.499999
+    y: 3.4
+    z: 9.5
   }
   orientation: ORIENTATION_S
   properties {
@@ -41131,7 +40763,7 @@ props {
   gridPoint {
     x: -15.900002
     y: 3.8
-    z: 6.499999
+    z: 6.5
   }
   orientation: ORIENTATION_S
   properties {
@@ -41165,7 +40797,7 @@ props {
   gridPoint {
     x: -47.9
     y: 3.1
-    z: 22.099998
+    z: 22.1
   }
   orientation: ORIENTATION_S
   properties {
@@ -41181,7 +40813,7 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -48.2
-    y: 0.10000001
+    y: 0.1
     z: 21.8
   }
   orientation: ORIENTATION_S
@@ -41199,7 +40831,7 @@ props {
   gridPoint {
     x: -47.9
     y: 3.1
-    z: 22.099998
+    z: 22.1
   }
   orientation: ORIENTATION_S
   properties {
@@ -41215,7 +40847,7 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -48.2
-    y: 0.10000001
+    y: 0.1
     z: 21.8
   }
   orientation: ORIENTATION_S
@@ -41284,8 +40916,8 @@ props {
   name: "pikePlace_wallDecoration_dandelionEaters"
   gridPoint {
     x: -15.899999
-    y: 4.7999997
-    z: 12.599998
+    y: 4.8
+    z: 12.6
   }
   orientation: ORIENTATION_S
   idRef {
@@ -41298,7 +40930,7 @@ props {
   gridPoint {
     x: 3.5
     y: 4.3
-    z: 14.300002
+    z: 14.3
   }
   orientation: ORIENTATION_S
   idRef {
@@ -41311,7 +40943,7 @@ props {
   gridPoint {
     x: -86.2
     y: 1
-    z: 12.000002
+    z: 12
   }
   orientation: ORIENTATION_S
   idRef {
@@ -41688,7 +41320,7 @@ props {
   name: "barrens_signs_sign35"
   gridPoint {
     x: -39.3
-    y: 0.49999997
+    y: 0.5
     z: 7
   }
   orientation: ORIENTATION_E
@@ -41836,7 +41468,7 @@ props {
   gridPoint {
     x: -66.8
     y: 4.4
-    z: 10.700001
+    z: 10.7
   }
   orientation: ORIENTATION_S
   properties {
@@ -42640,7 +42272,7 @@ props {
   gridPoint {
     x: -38.9
     y: 2.1
-    z: 43.699997
+    z: 43.7
   }
   orientation: ORIENTATION_S
   properties {
@@ -42656,8 +42288,8 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -39.2
-    y: 0.10000001
-    z: 43.399998
+    y: 0.1
+    z: 43.4
   }
   orientation: ORIENTATION_S
   properties {
@@ -42674,7 +42306,7 @@ props {
   gridPoint {
     x: -46.100002
     y: 2.5
-    z: 44.699997
+    z: 44.7
   }
   orientation: ORIENTATION_S
   properties {
@@ -42690,8 +42322,8 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -46.4
-    y: 0.10000001
-    z: 44.399998
+    y: 0.1
+    z: 44.4
   }
   orientation: ORIENTATION_S
   properties {
@@ -42707,8 +42339,8 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -49.7
-    y: 0.10000001
-    z: 38.399998
+    y: 0.1
+    z: 38.4
   }
   orientation: ORIENTATION_S
   properties {
@@ -42725,7 +42357,7 @@ props {
   gridPoint {
     x: -49.4
     y: 2.5
-    z: 38.699997
+    z: 38.7
   }
   orientation: ORIENTATION_S
   properties {
@@ -42741,7 +42373,7 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -70.7
-    y: 0.10000001
+    y: 0.1
     z: 20.999998
   }
   orientation: ORIENTATION_S
@@ -42759,7 +42391,7 @@ props {
   gridPoint {
     x: -70.4
     y: 2.5
-    z: 21.299997
+    z: 21.3
   }
   orientation: ORIENTATION_S
   properties {
@@ -42775,8 +42407,8 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -70
-    y: 0.10000001
-    z: 21.199997
+    y: 0.1
+    z: 21.2
   }
   orientation: ORIENTATION_S
   properties {
@@ -42793,7 +42425,7 @@ props {
   gridPoint {
     x: -69.700005
     y: 2.5
-    z: 21.499996
+    z: 21.5
   }
   orientation: ORIENTATION_S
   properties {
@@ -42824,7 +42456,7 @@ props {
   gridPoint {
     x: -66.4
     y: 2.5
-    z: 40.499996
+    z: 40.5
   }
   orientation: ORIENTATION_S
   properties {
@@ -42840,8 +42472,8 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -66.7
-    y: 0.10000001
-    z: 40.199997
+    y: 0.1
+    z: 40.2
   }
   orientation: ORIENTATION_S
   properties {
@@ -42858,7 +42490,7 @@ props {
   gridPoint {
     x: -71.4
     y: 2.5
-    z: 42.499996
+    z: 42.5
   }
   orientation: ORIENTATION_S
   properties {
@@ -42875,7 +42507,7 @@ props {
   gridPoint {
     x: -71.7
     y: -0.099999994
-    z: 42.199997
+    z: 42.2
   }
   orientation: ORIENTATION_S
   properties {
@@ -42909,7 +42541,7 @@ props {
   gridPoint {
     x: -73
     y: -0.099999994
-    z: 42.699997
+    z: 42.7
   }
   orientation: ORIENTATION_S
   properties {
@@ -42942,8 +42574,8 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -86.7
-    y: 0.10000001
-    z: 17.699997
+    y: 0.1
+    z: 17.7
   }
   orientation: ORIENTATION_S
   properties {
@@ -42989,8 +42621,8 @@ props {
   name: "vfx_fx_watersplashes"
   gridPoint {
     x: -86.7
-    y: 0.10000001
-    z: 17.699997
+    y: 0.1
+    z: 17.7
   }
   orientation: ORIENTATION_S
   properties {
@@ -48483,7 +48115,7 @@ props {
   }
   orientation: ORIENTATION_S
   GeneralTags: "way_psp_14"
-  GeneralTags: "way_pjp_Telestrian RD"
+  GeneralTags: "way_pjp_Telestrian R&D"
   GeneralTags: "way_pjp_Generax"
   GeneralTags: "way_pjp_AG Chemicals"
   GeneralTags: "way_pjp_Bottling Plant"
@@ -48514,6 +48146,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Downtown"
   }
   lod: 0
 }
@@ -48525,7 +48158,7 @@ props {
     z: 20.16
   }
   orientation: ORIENTATION_E
-  GeneralTags: "way_pjs_Telestrian RD"
+  GeneralTags: "way_pjs_Telestrian R&D"
   GeneralTags: "way_pjs_Generax"
   GeneralTags: "way_pjs_AG Chemicals"
   GeneralTags: "way_pjs_Bottling Plant"
@@ -48557,6 +48190,7 @@ props {
     isEnabled: true
     interactionRadius: 1
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Club Penumbra"
   }
   lod: 0
 }
@@ -48653,6 +48287,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Penumbra Clinic"
   }
   lod: 0
 }
@@ -48674,23 +48309,28 @@ props {
     interactionRadius: 1
     prerequisites {
       ops {
-        functionName: "Comparison (bool)"
+        functionName: "OR"
         args {
           call_value {
-            functionName: "Get Story Variable (bool)"
+            functionName: "Comparison (int)"
             args {
-              string_value: "51f15c62336331d02c00440e"
+              call_value {
+                functionName: "Get Variable (int)"
+                args {
+                  string_value: "PhoneRing"
+                }
+              }
             }
             args {
-              string_value: "Employed"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "IsOrIsNot"
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Comparison Ops"
+                }
+                args {
+                  int_value: 0
+                }
+              }
             }
             args {
               int_value: 1
@@ -48699,73 +48339,80 @@ props {
         }
         args {
           call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "OR"
-        args {
-          call_value {
-            functionName: "Comparison (int)"
-            args {
-              int_value: 13
-            }
+            functionName: "OR"
             args {
               call_value {
-                functionName: "Get Preset Value (int)"
+                functionName: "Comparison (bool)"
                 args {
-                  string_value: "Comparison Ops"
+                  call_value {
+                    functionName: "Get Story Variable (bool)"
+                    args {
+                      string_value: "51f15c62336331d02c00440e"
+                    }
+                    args {
+                      string_value: "Informant_Corp"
+                    }
+                  }
                 }
                 args {
-                  int_value: 0
+                  call_value {
+                    functionName: "Get Preset Value (int)"
+                    args {
+                      string_value: "IsOrIsNot"
+                    }
+                    args {
+                      int_value: 1
+                    }
+                  }
+                }
+                args {
+                  call_value {
+                    functionName: "Get Preset Value (int)"
+                    args {
+                      string_value: "bool"
+                    }
+                    args {
+                      int_value: 1
+                    }
+                  }
                 }
               }
             }
             args {
               call_value {
-                functionName: "Get Story Variable (int)"
+                functionName: "Comparison (bool)"
                 args {
-                  string_value: "51f15c62336331d02c00440e"
+                  call_value {
+                    functionName: "Get Story Variable (bool)"
+                    args {
+                      string_value: "51f15c62336331d02c00440e"
+                    }
+                    args {
+                      string_value: "Call_Andy"
+                    }
+                  }
                 }
                 args {
-                  string_value: "StoryStep"
-                }
-              }
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Comparison (int)"
-            args {
-              int_value: 18
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "Comparison Ops"
+                  call_value {
+                    functionName: "Get Preset Value (int)"
+                    args {
+                      string_value: "IsOrIsNot"
+                    }
+                    args {
+                      int_value: 1
+                    }
+                  }
                 }
                 args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Story Variable (int)"
-                args {
-                  string_value: "51f15c62336331d02c00440e"
-                }
-                args {
-                  string_value: "StoryStep"
+                  call_value {
+                    functionName: "Get Preset Value (int)"
+                    args {
+                      string_value: "bool"
+                    }
+                    args {
+                      int_value: 1
+                    }
+                  }
                 }
               }
             }
@@ -48824,6 +48471,7 @@ props {
     isEnabled: true
     interactionRadius: 1
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Puyallup Barrens"
   }
   lod: 0
 }
@@ -49041,68 +48689,6 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -82
-    y: 0
-    z: 122
-  }
-  orientation: ORIENTATION_S
-  GeneralTags: "TaxiStop"
-  displayName: "Taxi Region E"
-  idRef {
-    id: "533694e33363312c13007b51"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -63
-    y: 0
-    z: 82
-  }
-  orientation: ORIENTATION_S
-  GeneralTags: "TaxiStop"
-  displayName: "Taxi Region S"
-  idRef {
-    id: "533694e33363312c13007b52"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -80
-    y: 0
-    z: 93
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop E"
-  idRef {
-    id: "533694e33363312c13007b53"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
   name: "memphismotors_car_fordamericartaxi"
   gridPoint {
     x: -88
@@ -49161,26 +48747,6 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -89
-    y: 0
-    z: 81
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop S"
-  idRef {
-    id: "533694e33363312c13007b59"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
   name: "pikePlace_ground_cobblestone04"
   gridPoint {
     x: -102
@@ -49196,32 +48762,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -77
+    x: -51
     y: 0
     z: 45
   }
   orientation: ORIENTATION_S
-  displayName: "Taxi Stop 1"
-  idRef {
-    id: "533696763363312c13007b5b"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -51
-    y: 0
-    z: 46
-  }
-  orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "south"
   displayName: "Taxi Region 1"
   idRef {
     id: "533696763363312c13007b5c"
@@ -49237,32 +48784,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -51
+    x: -25
     y: 0
     z: 45
   }
   orientation: ORIENTATION_S
-  displayName: "Taxi Stop 2"
-  idRef {
-    id: "533696833363312c13007b5d"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -25
-    y: 0
-    z: 46
-  }
-  orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "south"
   displayName: "Taxi Region 2"
   idRef {
     id: "533696833363312c13007b5e"
@@ -49278,32 +48806,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -77
-    y: 0
-    z: 24
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 3"
-  idRef {
-    id: "533696af3363312c13007b5f"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
     x: -51
     y: 0
     z: 24
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "south"
   displayName: "Taxi Region 3"
   idRef {
     id: "533696af3363312c13007b60"
@@ -49319,32 +48828,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -55
+    x: -22
     y: 0
     z: 24
   }
   orientation: ORIENTATION_S
-  displayName: "Taxi Stop 4"
-  idRef {
-    id: "533696c43363312c13007b61"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -22
-    y: 0
-    z: 25
-  }
-  orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 4"
   idRef {
     id: "533696c43363312c13007b62"
@@ -49360,12 +48850,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -62
+    x: -61
     y: 0
     z: 37
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 5"
   idRef {
     id: "533697683363312c13007b65"
@@ -49381,55 +48872,16 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -60
-    y: 0
-    z: 8
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 5"
-  idRef {
-    id: "533697683363312c13007b66"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -11
+    x: -10
     y: 0
     z: 17
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 6"
   idRef {
     id: "5336978f3363312c13007b67"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -9
-    y: 0
-    z: -14
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 6"
-  idRef {
-    id: "5336978f3363312c13007b68"
   }
   interactionRoot {
     isEnabled: true
@@ -49506,6 +48958,27 @@ props {
   GeneralTags: "insert_13"
   idRef {
     id: "557ef99c6466329c230011de"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: -81
+    y: 0
+    z: 36
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "insert_-998"
+  displayName: "transition - sewers"
+  idRef {
+    id: "5b46a16d343032dc2a001221"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Smells Bad"
   }
   lod: 0
 }

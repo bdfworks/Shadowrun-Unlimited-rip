@@ -1103,43 +1103,21 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "Revive-LittleChiba"
+  name: "on(ActorHit) PC0 die?"
   events {
     ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Revive 1"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Open Scene"
+      functionName: "On Actor Damage"
       args {
         call_value {
-          functionName: "Get Map Item (Scene)"
+          functionName: "Get Preset Value (int)"
           args {
-            string_value: "streetdoc1"
+            string_value: "HPOrAP"
+          }
+          args {
+            int_value: 0
           }
         }
       }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525232a33363315c1e0072ec"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Respawn (No Insurance)"
-  events {
-    ops {
-      functionName: "On Actor Downed"
     }
   }
   conditions {
@@ -1170,18 +1148,134 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Compare Actor Attribute"
+      args {
+        call_value {
+          functionName: "Triggering Target Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "BaseOrCurrent"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "ActorAttributes"
+          }
+          args {
+            int_value: 8
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        int_value: 2
+      }
+    }
   }
   actions {
     ops {
-      functionName: "End Story With Epilogue"
+      functionName: "Start Conversation"
       args {
-        string_value: "earlydeath"
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5d239278393563d42b000823"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
   isActive: true
   idRef {
-    id: "5252345d3363318c10004aea"
+    id: "5d238e9d39356360410054d8"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "Unkillable Player"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Actor Unkillable"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "532af58c336331c4230018ba"
   }
   elseActions {
   }
@@ -3007,7 +3101,7 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "Access Node-Spoof_Pass(A)"
+  name: "Access Node-Spoof_Pass (A)"
   events {
     ops {
       functionName: "Get Map Item (Event)"
@@ -3059,7 +3153,7 @@ triggers {
                     string_value: "BaseOrCurrent"
                   }
                   args {
-                    int_value: 1
+                    int_value: 0
                   }
                 }
               }
@@ -3335,7 +3429,7 @@ triggers {
         }
       }
       args {
-        string_value: "You are able to spoof the system, and disable the Access IC without alerting the security systems."
+        string_value: "You spoof the system and disable the Access IC without alerting the security systems."
       }
       args {
         float_value: 0
@@ -3374,21 +3468,34 @@ triggers {
       functionName: "Delete Props by Tag"
       args {
         call_value {
-          functionName: "Tag From String"
+          functionName: "Get Map Item (SenseTagList)"
           args {
             string_value: "Barrier"
           }
         }
       }
       args {
-        float_value: 15
+        float_value: 10
       }
       args {
         call_value {
-          functionName: "Current Location of Actor"
+          functionName: "Current Location of Prop"
           args {
             call_value {
-              functionName: "Last Created Persona"
+              functionName: "Nearest Tagged Prop to Actor"
+              args {
+                call_value {
+                  functionName: "Get Map Item (SenseTagList)"
+                  args {
+                    string_value: "Peaceful"
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Last Created Persona"
+                }
+              }
             }
           }
         }
@@ -3456,7 +3563,7 @@ triggers {
                     string_value: "BaseOrCurrent"
                   }
                   args {
-                    int_value: 1
+                    int_value: 0
                   }
                 }
               }
@@ -3635,10 +3742,10 @@ triggers {
         float_value: 0.17
       }
       args {
-        float_value: 0
+        float_value: 1
       }
       args {
-        float_value: 1
+        float_value: 0
       }
       args {
         float_value: 0
@@ -3834,7 +3941,7 @@ triggers {
         }
       }
       args {
-        string_value: "You manage to subvert control of the CPU, and gain a significant advantage within the system."
+        string_value: "You manage to subvert control of the CPU and gain a significant advantage within the system."
       }
       args {
         float_value: 0
@@ -4657,2282 +4764,6 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "MatrixDataTest (Paydata)"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "MatrixData"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "SkillTest"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Actor Skill"
-              args {
-                call_value {
-                  functionName: "Active Actor"
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "BaseOrCurrent"
-                  }
-                  args {
-                    int_value: 1
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "ActorSkills"
-                  }
-                  args {
-                    int_value: 5
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "DeckerTraining"
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "Program_Rating_BROWSE"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "decker"
-          }
-          args {
-            string_value: "Matrix_GenericStart"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "PayDataStart"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        string_value: "You rolled a"
-      }
-      args {
-        float_value: 0.25
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 1
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Convert (int) to (string)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "SkillTest"
-              }
-            }
-          }
-        }
-      }
-      args {
-        float_value: 0.29
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52d4487a33633174040046dc"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Masking Test"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "MatrixDataTest (Download)"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "MatrixRunData"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "SkillTest"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Actor Skill"
-              args {
-                call_value {
-                  functionName: "Active Actor"
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "BaseOrCurrent"
-                  }
-                  args {
-                    int_value: 1
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "ActorSkills"
-                  }
-                  args {
-                    int_value: 5
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "DeckerTraining"
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "Program_Rating_BROWSE"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "decker"
-          }
-          args {
-            string_value: "Matrix_GenericStart"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "After skimming the files for several minutes, you find the one you\'re after."
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Add Item to Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Item)"
-          args {
-            string_value: "Matrix_Data"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "MatrixRunComplete"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "RunSuccess"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        string_value: "You rolled a"
-      }
-      args {
-        float_value: 0.25
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 1
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Convert (int) to (string)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "SkillTest"
-              }
-            }
-          }
-        }
-      }
-      args {
-        float_value: 0.29
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Information"
-          }
-        }
-      }
-      args {
-        string_value: "I need to return this data to my fixer."
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52d4487a33633174040046dd"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Masking Test"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "MatrixDataTest (Browse-Edit)"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Matrix Browse-Edit"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "SkillTest"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Actor Skill"
-              args {
-                call_value {
-                  functionName: "Active Actor"
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "BaseOrCurrent"
-                  }
-                  args {
-                    int_value: 1
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "ActorSkills"
-                  }
-                  args {
-                    int_value: 5
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "DeckerTraining"
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "Program_Rating_BROWSE"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "decker"
-          }
-          args {
-            string_value: "Matrix_GenericStart"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "After skimming the files for several minutes, you find the one you\'re after. Now it\'s just a matter of trying to Edit it."
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "Located_File"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        string_value: "You rolled a"
-      }
-      args {
-        float_value: 0.25
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 1
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Convert (int) to (string)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "SkillTest"
-              }
-            }
-          }
-        }
-      }
-      args {
-        float_value: 0.29
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52d4491833633174040046de"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Masking Test"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "MatrixDataTest (Edit)"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Matrix-Edit"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "SkillTest"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Actor Skill"
-              args {
-                call_value {
-                  functionName: "Active Actor"
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "BaseOrCurrent"
-                  }
-                  args {
-                    int_value: 1
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "ActorSkills"
-                  }
-                  args {
-                    int_value: 5
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "DeckerTraining"
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "Program_Rating_EDIT"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "decker"
-          }
-          args {
-            string_value: "Matrix_GenericStart"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "After working for several minutes you are able to Edit the necessary file, to the given specifications."
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "MatrixRun"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "MatrixRunComplete"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "RunSuccess"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        string_value: "You rolled a"
-      }
-      args {
-        float_value: 0.25
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 1
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Convert (int) to (string)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "SkillTest"
-              }
-            }
-          }
-        }
-      }
-      args {
-        float_value: 0.29
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Information"
-          }
-        }
-      }
-      args {
-        string_value: "I need to contact my Fixer for my reward."
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52d4491f33633174040046df"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Masking Test"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "MatrixDataTest (Browse-Delete)"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Matrix Browse-Delete"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "SkillTest"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Actor Skill"
-              args {
-                call_value {
-                  functionName: "Active Actor"
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "BaseOrCurrent"
-                  }
-                  args {
-                    int_value: 1
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "ActorSkills"
-                  }
-                  args {
-                    int_value: 5
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "DeckerTraining"
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "Program_Rating_BROWSE"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "decker"
-          }
-          args {
-            string_value: "Matrix_GenericStart"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "After skimming the files for several minutes, you find the one you\'re after. Now it\'s just a matter of trying to Delete all traces of it."
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "Located_File"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        string_value: "You rolled a"
-      }
-      args {
-        float_value: 0.25
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 1
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Convert (int) to (string)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "SkillTest"
-              }
-            }
-          }
-        }
-      }
-      args {
-        float_value: 0.29
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52d4405533633174040046e0"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Masking Test"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "MatrixDataTest (Delete)"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Matrix-Delete"
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "SkillTest"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 5
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Actor Skill"
-              args {
-                call_value {
-                  functionName: "Active Actor"
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "BaseOrCurrent"
-                  }
-                  args {
-                    int_value: 1
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "ActorSkills"
-                  }
-                  args {
-                    int_value: 5
-                  }
-                }
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Arithmetic (int)"
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "DeckerTraining"
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Preset Value (int)"
-                  args {
-                    string_value: "Arithmetic Ops"
-                  }
-                  args {
-                    int_value: 0
-                  }
-                }
-              }
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "Program_Rating_DELETE"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Play Sound"
-      args {
-        call_value {
-          functionName: "Get Map Item (Sound)"
-          args {
-            string_value: "decker"
-          }
-          args {
-            string_value: "Matrix_GenericStart"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "After working for several minutes you are able to Delete the necessary file, and all back-ups."
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "MatrixRun"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "MatrixRunComplete"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "RunSuccess"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        string_value: "You rolled a"
-      }
-      args {
-        float_value: 0.25
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 1
-      }
-    }
-    ops {
-      functionName: "Display Text at Screen Position"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 2
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Convert (int) to (string)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "SkillTest"
-              }
-            }
-          }
-        }
-      }
-      args {
-        float_value: 0.29
-      }
-      args {
-        float_value: 0.17
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 4
-      }
-      args {
-        float_value: 3
-      }
-      args {
-        float_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Information"
-          }
-        }
-      }
-      args {
-        string_value: "I need to contact my Fixer for my reward."
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52d4405533633174040046e1"
-  }
-  elseActions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Masking Test"
-          }
-        }
-      }
-    }
-  }
-  is_oneshot: false
-}
-triggers {
   name: "Masking Test"
   events {
     ops {
@@ -7176,7 +5007,7 @@ triggers {
         }
       }
       args {
-        string_value: "Your accidentally trip a security measure, but are able to Mask your presence. Security resets itself after a few minutes."
+        string_value: "Your accidentally trip a security measure Mask your presence. Security resets itself after a few minutes."
       }
       args {
         float_value: 0
@@ -7419,42 +5250,6 @@ triggers {
     }
   }
   conditions {
-    ops {
-      functionName: "Comparison (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "MatrixRunComplete"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
   }
   actions {
     ops {
@@ -7964,31 +5759,6 @@ triggers {
   }
   actions {
     ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "MatrixRunData"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
       functionName: "Set Variable (string)"
       args {
         call_value {
@@ -8000,175 +5770,42 @@ triggers {
       }
       args {
         string_value: "DS 1"
+      }
+    }
+    ops {
+      functionName: "Start Conversation"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5ca63a10333535c045001b11"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5263ff8e3363311c210066c7"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
   isActive: true
   idRef {
     id: "52d4477033633174040046da"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "System Data-Browse-Edit"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "52d9eb1f33633124270012de"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Current_Run-Objective"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Edit"
-      }
-    }
-    ops {
-      functionName: "Comparison (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "MatrixRunComplete"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Comparison (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "Located_File"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Matrix Browse-Edit"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "IC_Location"
-          }
-        }
-      }
-      args {
-        string_value: "DS 1"
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52d4490a3363317404005077"
   }
   elseActions {
   }
@@ -8254,66 +5891,8 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Comparison (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "Located_File"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
   }
   actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Matrix-Edit"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
     ops {
       functionName: "Set Variable (string)"
       args {
@@ -8326,175 +5905,42 @@ triggers {
       }
       args {
         string_value: "DS 1"
+      }
+    }
+    ops {
+      functionName: "Start Conversation"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5ca63a10333535c045001b11"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5263ff8e3363311c210066c7"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
   isActive: true
   idRef {
     id: "52d43b803363317404005079"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "System Data-Browse-Delete"
-  events {
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "52d9eae5336331242700127d"
-          }
-        }
-      }
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Current_Run-Objective"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        string_value: "Delete"
-      }
-    }
-    ops {
-      functionName: "Comparison (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "MatrixRunComplete"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Comparison (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "Located_File"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Matrix Browse-Delete"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Variable (string)"
-          args {
-            string_value: "IC_Location"
-          }
-        }
-      }
-      args {
-        string_value: "DS 1"
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52d43be6336331740400507b"
   }
   elseActions {
   }
@@ -8580,66 +6026,8 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Comparison (bool)"
-      args {
-        call_value {
-          functionName: "Get Variable (bool)"
-          args {
-            string_value: "Located_File"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
   }
   actions {
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Test"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Matrix-Delete"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "End Current Actor Turn"
-    }
     ops {
       functionName: "Set Variable (string)"
       args {
@@ -8652,6 +6040,36 @@ triggers {
       }
       args {
         string_value: "DS 1"
+      }
+    }
+    ops {
+      functionName: "Start Conversation"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5ca63a10333535c045001b11"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "5263ff8e3363311c210066c7"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
@@ -13463,7 +10881,7 @@ triggers {
         }
       }
       args {
-        string_value: "Your successfully circumvent the Firewall using your Exploit Program."
+        string_value: "You successfully circumvent the Firewall using your Exploit Program."
       }
       args {
         float_value: 0
@@ -13660,7 +11078,7 @@ triggers {
         }
       }
       args {
-        string_value: "Your fail to circumvent the Firewall using your Exploit Program."
+        string_value: "You fail to circumvent the Firewall using your Exploit Program."
       }
       args {
         float_value: 0
@@ -13962,7 +11380,7 @@ triggers {
         }
       }
       args {
-        int_value: 25
+        int_value: 100
       }
     }
     ops {
@@ -14015,23 +11433,6 @@ triggers {
             }
           }
         }
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Deck_Storage_MaxCapacity"
-          }
-        }
-      }
-      args {
-        int_value: 75
       }
     }
   }
@@ -14104,7 +11505,7 @@ triggers {
         }
       }
       args {
-        int_value: 50
+        int_value: 250
       }
     }
     ops {
@@ -14159,23 +11560,6 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Deck_Storage_MaxCapacity"
-          }
-        }
-      }
-      args {
-        int_value: 150
-      }
-    }
   }
   isActive: true
   idRef {
@@ -14226,6 +11610,256 @@ triggers {
           functionName: "Get Map Item (Item)"
           args {
             string_value: "SSC CyberdeckVirtuaX"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Deck_Storage"
+          }
+        }
+      }
+      args {
+        int_value: 500
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Deck_Total_Storage"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Deck_Storage"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Deck_Storage_Upgrade"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "52e0a136336331640d0076e3"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Calculate Deck Storage 4"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor Has Item"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "SSC CyberdeckExcalibur"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Deck_Storage"
+          }
+        }
+      }
+      args {
+        int_value: 1000
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Deck_Total_Storage"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Deck_Storage"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Deck_Storage_Upgrade"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "52e0a136336331640d0076e4"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Calculate Deck Storage 1A"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate If Actor Has Item"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "CyberdeckSony"
           }
         }
       }
@@ -14299,307 +11933,6 @@ triggers {
             }
           }
         }
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Deck_Storage_MaxCapacity"
-          }
-        }
-      }
-      args {
-        int_value: 300
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52e0a136336331640d0076e3"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Calculate Deck Storage 4"
-  events {
-    ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Evaluate If Actor Has Item"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "HasOrHasNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Item)"
-          args {
-            string_value: "SSC CyberdeckExcalibur"
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Deck_Storage"
-          }
-        }
-      }
-      args {
-        int_value: 200
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Deck_Total_Storage"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "Deck_Storage"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "Deck_Storage_Upgrade"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Deck_Storage_MaxCapacity"
-          }
-        }
-      }
-      args {
-        int_value: 600
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52e0a136336331640d0076e4"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Calculate Deck Storage 1A"
-  events {
-    ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Evaluate If Actor Has Item"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "HasOrHasNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Item)"
-          args {
-            string_value: "CyberdeckSony"
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Deck_Storage"
-          }
-        }
-      }
-      args {
-        int_value: 25
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Deck_Total_Storage"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "Deck_Storage"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "Deck_Storage_Upgrade"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Deck_Storage_MaxCapacity"
-          }
-        }
-      }
-      args {
-        int_value: 75
       }
     }
   }
@@ -15246,47 +12579,9 @@ triggers {
       }
     }
     ops {
-      functionName: "Kill Actor"
+      functionName: "End Story With Epilogue"
       args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Persona\'s Host"
-              args {
-                call_value {
-                  functionName: "Last Created Persona"
-                }
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
+        string_value: "earlydeath"
       }
     }
   }
@@ -16162,7 +13457,7 @@ triggers {
                     string_value: "BaseOrCurrent"
                   }
                   args {
-                    int_value: 1
+                    int_value: 0
                   }
                 }
               }
@@ -16438,7 +13733,7 @@ triggers {
         }
       }
       args {
-        string_value: "You are able to spoof the login protocols, and disable the Access IC without alerting the security systems."
+        string_value: "You spoof the login protocols and disable the Access IC without alerting the security systems."
       }
       args {
         float_value: 0
@@ -16477,7 +13772,7 @@ triggers {
       functionName: "Delete Props by Tag"
       args {
         call_value {
-          functionName: "Tag From String"
+          functionName: "Get Map Item (SenseTagList)"
           args {
             string_value: "BarrierB"
           }
@@ -16488,10 +13783,23 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Current Location of Actor"
+          functionName: "Current Location of Prop"
           args {
             call_value {
-              functionName: "Last Created Persona"
+              functionName: "Nearest Tagged Prop to Actor"
+              args {
+                call_value {
+                  functionName: "Get Map Item (SenseTagList)"
+                  args {
+                    string_value: "Peaceful"
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Last Created Persona"
+                }
+              }
             }
           }
         }
@@ -17578,58 +14886,6 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "PayData Start"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "PayDataStart"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Start Conversation"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "5585e35e646632c00f000faf"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "5263ff8e3363311c210066c7"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52fe2d4c3363311c1b00019f"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
   name: "exit(entry)"
   events {
     ops {
@@ -17719,23 +14975,26 @@ triggers {
       }
     }
     ops {
-      functionName: "Enable/Disable Trigger"
+      functionName: "Set Variable (bool)"
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Story Variable (bool)"
           args {
-            string_value: "EnableOrDisable"
+            string_value: "51f15c62336331d02c00440e"
           }
           args {
-            int_value: 1
+            string_value: "Matrix-LogOffGraceful"
           }
         }
       }
       args {
         call_value {
-          functionName: "Get Map Item (Trigger)"
+          functionName: "Get Preset Value (int)"
           args {
-            string_value: "5914a2da653737a016006e5f"
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
           }
         }
       }
@@ -17749,10 +15008,397 @@ triggers {
   }
   is_oneshot: false
 }
+triggers {
+  name: "graceful logout"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "51f91fd2336331a847005da6"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (bool)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Matrix-LogOffGraceful"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "59ff64646537375421004f0d"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "on(CurtainUp) stock paydata 1 3 6 7 6 3 1"
+  events {
+    ops {
+      functionName: "On Curtains Up"
+    }
+  }
+  conditions {
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Matrix-Paydata1"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Random (int)"
+              args {
+                int_value: 0
+              }
+              args {
+                int_value: 2
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Random (int)"
+                  args {
+                    int_value: 0
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Random (int)"
+                  args {
+                    int_value: 0
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Matrix-Paydata2"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Random (int)"
+              args {
+                int_value: 0
+              }
+              args {
+                int_value: 2
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Random (int)"
+                  args {
+                    int_value: 0
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Random (int)"
+                  args {
+                    int_value: 0
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Matrix-Paydata3"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Random (int)"
+              args {
+                int_value: 0
+              }
+              args {
+                int_value: 2
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Random (int)"
+                  args {
+                    int_value: 0
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Random (int)"
+                  args {
+                    int_value: 0
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Matrix-Paydata4"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Random (int)"
+              args {
+                int_value: 0
+              }
+              args {
+                int_value: 2
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Random (int)"
+                  args {
+                    int_value: 0
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 0
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Random (int)"
+                  args {
+                    int_value: 0
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5aa4506a3430323441006d2f"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
 regions {
   name: "Hub Camera"
   position {
-    x: 150.98001
+    x: 150.98
     y: -104
     width: 3
     height: 3
@@ -18523,8 +16169,9 @@ characters {
       }
       specializations {
       }
+      archetypeName: "Non-Combatant"
     }
-    team_id: "Shadowrunners"
+    team_id: "Civilians"
     char_name: "Invisible Runner"
     pc_spawn_number: -1
     ai_ignores: true
@@ -20775,7 +18422,6 @@ variables {
 }
 mapEvents: "SunRising"
 mapEvents: "NightFall"
-mapEvents: "MatrixData"
 mapEvents: "MatrixAlarm"
 mapEvents: "NodeLoad"
 mapEvents: "SpoofTest"
@@ -20787,12 +18433,7 @@ mapEvents: "RandomSystem"
 mapEvents: "TargetSystem"
 mapEvents: "JackOut"
 mapEvents: "Test"
-mapEvents: "PayData"
-mapEvents: "DataAssurance"
-mapEvents: "PayDataStart"
-mapEvents: "MatrixDataTest Mk2"
 mapEvents: "MatrixRunData"
-mapEvents: "Hacked Data Node"
 mapEvents: "CPU Disable"
 mapEvents: "CPU Hacked"
 mapEvents: "Skeleton Crew"
@@ -20812,9 +18453,7 @@ mapEvents: "Node Hacked"
 mapEvents: "IC Trip Node Disable"
 mapEvents: "Firewall Test"
 mapEvents: "Passive Alert"
-mapEvents: "PayData Integrity"
 mapEvents: "Special Disable Test"
-mapEvents: "Random Data"
 senseTags: "Hacked"
 worldMapLocation {
   filename: ""
@@ -20825,10 +18464,10 @@ worldMapLocation {
 }
 mapName: "Matrix_System-Simsense Company"
 parentStory: ""
-scene_title: "SYSTEM ID: BROKEN REALITY PRODUCTIONS"
+scene_title: "ss SYSTEM ID: BROKEN REALITY PRODUCTIONS"
 scene_subtitle: ""
 scene_synopsis: "A quick analysis shows this system is associated with a small simsense company."
-scene_image: "Loading_Screen__JB192"
+scene_image: "cyberspace"
 scene_continue_button_skip: false
 scene_restore_runner_health: false
 directional_light_dir {
@@ -20899,7 +18538,7 @@ scene_hiring_prerequisites {
 }
 hiring_slot_count: 0
 hiring_minimum_karma: 0
-hiring_maximum_karma: 25
+hiring_maximum_karma: 0
 roster_overrides {
 }
 use_hiring_cost_warning: true

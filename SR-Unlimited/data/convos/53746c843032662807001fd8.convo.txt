@@ -1,7 +1,7 @@
 idRef {
   id: "53746c843032662807001fd8"
 }
-ui_name: "Prelude-Eric"
+ui_name: "Story-0:6wks:2_Eric"
 nodes {
   idRef {
     id: "53746c913032662807001fde"
@@ -196,7 +196,7 @@ nodes {
     id: "5378a78e303266400f007fcb"
   }
   index: 12
-  text: "I *might* survive? Is that really the best I can hope for?"
+  text: "I *might* survive? Is that the best I can hope for?"
   branches {
     responseText: ""
     nextNodeIndex: 13
@@ -213,6 +213,25 @@ nodes {
   text: "For now, yeah. If you can survive on your own for a few months, try to get back to Seattle. Head for the Redmond Barrens, and look me up. Good luck, chummer."
   nodeType: ConversationNodeType_Simple
   sourceWithTagInScene: "isEric"
+  actions {
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Current_Run-Location"
+          }
+        }
+      }
+      args {
+        string_value: "WyvernsTooth"
+      }
+    }
+  }
 }
 nodes {
   idRef {
@@ -416,7 +435,7 @@ nodes {
     id: "5374a45930326628070023c4"
   }
   index: 28
-  text: "{{GM}}The ork\'s face appears on your comm again, this time without ringing.{{/GM}}\n\nAlright, chummer. That\'s enough of that drek."
+  text: "{{GM}}The orks face appears on your comm again, this time without ringing.{{/GM}}\n\nAlright, chummer. That\'s enough of that drek."
   branches {
     responseText: "Wait, how did you--"
     nextNodeIndex: 29
@@ -486,7 +505,7 @@ nodes {
     id: "5374a7b0303266280700268e"
   }
   index: 33
-  text: "Yeah, you\'re real cute."
+  text: "Yeah, you\'re really cute."
   branches {
     responseText: ""
     nextNodeIndex: 4

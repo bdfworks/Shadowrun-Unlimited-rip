@@ -1,0 +1,53 @@
+idRef {
+  id: "59ebde1e65373780460001ee"
+}
+ui_name: "StreetDoc-cybermat"
+nodes {
+  idRef {
+    id: "59ebde2a65373780460001f4"
+  }
+  index: 0
+  text: "Welcome to the automated cybermat.\nWhat can I do for you?"
+  branches {
+    responseText: "Cyberware implant"
+    actions {
+      ops {
+        functionName: "Open Cyberware Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "59ebdb7865373780460001ec"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "Medical and other supplies"
+    actions {
+      ops {
+        functionName: "Open Store Screen From Actor"
+        args {
+          call_value {
+            functionName: "Get Map Item (Actor)"
+            args {
+              string_value: "59ebdb7865373780460001ec"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: -1
+  }
+  branches {
+    responseText: "Nothing"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+roots {
+  nextNodeIndex: 0
+}

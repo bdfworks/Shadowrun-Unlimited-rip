@@ -210,7 +210,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 16
   }
   branches {
     responseText: "Nevermind."
@@ -224,7 +224,7 @@ nodes {
     id: "523c2cb5336331b808004d5d"
   }
   index: 2
-  text: "You.... I sense a unique potential in you. Come closer..."
+  text: "You... I sense a unique potential in you. Come closer..."
   branches {
     responseText: "Who... what are you?"
     nextNodeIndex: 3
@@ -260,7 +260,7 @@ nodes {
     id: "523c2cb5336331b808004d66"
   }
   index: 5
-  text: "Have you ever heard of a Spirit Pact? It is when a willing metahuman enters into a symbiotic bond with one of my kind. We spirits cannot grow and flourish as your kind does. We must be fed living energy by a partner. In exchange we offer to share our power with those who feed us.  I would ask that you enter into this pact with me, so we can both grow powerful."
+  text: "Have you ever heard of a Spirit Pact? It is when a willing metahuman enters into a symbiotic bond with one of my kind. We spirits cannot grow and flourish as your kind does. We must be fed living energy by a partner. In exchange, we offer to share our power with those who feed us.  I would ask that you enter into this pact with me, so we can both grow powerful."
   branches {
     responseText: "I don\'t like the sound of \"feeding you my living energy\"..."
     nextNodeIndex: 6
@@ -272,9 +272,9 @@ nodes {
     id: "523c2cb5336331b808004d69"
   }
   index: 6
-  text: "Although it is true that you will become weaker with each exchange, you metahumans have the ability to recover that lost power simply by existing. That is why you are perfect partners, you can generate the energy we spirits so desperately crave, but it must be given over willingly. It is rare for one of my kind to find someone such as yourself, who shows such raw potential. Please, I beg you! If you enter this pact and I can grant you many boons..."
+  text: "Although you will indeed become weaker with each exchange, you metahumans can recover that lost power simply by existing. That is why you are perfect partners, you can generate the energy I so desperately crave, but it must be given over willingly. It is rare for one of my kind to find someone such as yourself, who shows such raw potential. Please, I beg you! If you enter this pact and I can grant you many boons..."
   branches {
-    responseText: "What kind of \"boons\" are we talking here?"
+    responseText: "What kind of \"boons\" are we talking about here?"
     nextNodeIndex: 7
   }
   nodeType: ConversationNodeType_Simple
@@ -284,7 +284,7 @@ nodes {
     id: "523c2cb5336331b808004d6c"
   }
   index: 7
-  text: "Wealth, Power, Health, Knowledge, almost anything you can desire. When you are willing I will siphon off some of your Karmic Energy. When enough Karmic Energy is siphoned off, I will grant you a service. You can then barter these services with me in exchange for a boon or pact of your choosing..."
+  text: "Wealth, Power, Health, Knowledge, almost anything you can desire. When you are willing I will siphon off some of your Karmic Energy. When enough Karmic Energy is siphoned off, I will grant you one service. You can then barter these services with me in exchange for a boon or pact of your choosing..."
   branches {
     responseText: "Let me think about it..."
     actions {
@@ -547,6 +547,17 @@ nodes {
             }
             args {
               int_value: 0
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "Display Favors"
             }
           }
         }
@@ -900,6 +911,10 @@ nodes {
     responseText: "Goodbye"
     nextNodeIndex: -1
   }
+  branches {
+    responseText: "Unspent Karma"
+    nextNodeIndex: 15
+  }
   nodeType: ConversationNodeType_Simple
   comment: "skills / specializations"
 }
@@ -1136,6 +1151,90 @@ nodes {
         functionName: "Comparison (int)"
         args {
           call_value {
+            functionName: "Get Actor Skill"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "BaseOrCurrent"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "ActorSkills"
+                }
+                args {
+                  int_value: 1
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Actor Specialization"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "BaseOrCurrent"
+                }
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "ActorSpecializations"
+                }
+                args {
+                  int_value: 5
+                }
+              }
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
             functionName: "Get Actor Attribute"
             args {
               call_value {
@@ -1210,90 +1309,6 @@ nodes {
                 }
                 args {
                   int_value: 2
-                }
-              }
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Actor Skill"
-            args {
-              call_value {
-                functionName: "Get Map Item (Player)"
-                args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "BaseOrCurrent"
-                }
-                args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "ActorSkills"
-                }
-                args {
-                  int_value: 1
-                }
-              }
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 2
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Actor Specialization"
-            args {
-              call_value {
-                functionName: "Get Map Item (Player)"
-                args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "BaseOrCurrent"
-                }
-                args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-              call_value {
-                functionName: "Get Preset Value (int)"
-                args {
-                  string_value: "ActorSpecializations"
-                }
-                args {
-                  int_value: 4
                 }
               }
             }
@@ -2378,6 +2393,19 @@ nodes {
     nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Display Favors"
+          }
+        }
+      }
+    }
+  }
   comment: "close combat"
 }
 nodes {
@@ -2551,7 +2579,7 @@ nodes {
                   string_value: "ActorSkills"
                 }
                 args {
-                  int_value: 1
+                  int_value: 0
                 }
               }
             }
@@ -2719,7 +2747,7 @@ nodes {
                   string_value: "ActorSkills"
                 }
                 args {
-                  int_value: 1
+                  int_value: 0
                 }
               }
             }
@@ -2803,7 +2831,7 @@ nodes {
                   string_value: "ActorSkills"
                 }
                 args {
-                  int_value: 1
+                  int_value: 0
                 }
               }
             }
@@ -2887,7 +2915,7 @@ nodes {
                   string_value: "ActorSkills"
                 }
                 args {
-                  int_value: 1
+                  int_value: 0
                 }
               }
             }
@@ -4837,6 +4865,19 @@ nodes {
     nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Display Favors"
+          }
+        }
+      }
+    }
+  }
   comment: "Qu *"
 }
 nodes {
@@ -6711,6 +6752,19 @@ nodes {
     nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Display Favors"
+          }
+        }
+      }
+    }
+  }
   comment: "Intelligence Tree"
 }
 nodes {
@@ -7658,6 +7712,19 @@ nodes {
     nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Display Favors"
+          }
+        }
+      }
+    }
+  }
   comment: "Willpower Tree"
 }
 nodes {
@@ -8411,6 +8478,7 @@ nodes {
       }
     }
     nextNodeIndex: 14
+    comment: "FIXME"
   }
   branches {
     responseText: "{{GM}}Ch Conjuring{{/GM}}"
@@ -9228,6 +9296,19 @@ nodes {
     nextNodeIndex: -1
   }
   nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Display Favors"
+          }
+        }
+      }
+    }
+  }
   comment: "Charisma Tree"
 }
 nodes {
@@ -9235,7 +9316,7 @@ nodes {
     id: "56df64a86466321419006036"
   }
   index: 14
-  text: "Around whom do you wish to become tongue tied?"
+  text: "Around whom do you wish to become tongue-tied?"
   branches {
     responseText: "Gangs"
     conditions {
@@ -10255,9 +10336,559 @@ nodes {
 }
 nodes {
   idRef {
-    id: "56f366e8646632800f006dcf"
+    id: "5a46bf79653737342c002f03"
   }
   index: 15
+  text: ""
+  branches {
+    responseText: "1 Karma"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Actor Unspent Karma"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Genera_Use"
+            }
+          }
+        }
+        args {
+          int_value: 1
+        }
+      }
+      ops {
+        functionName: "Add Actor Karma"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Arithmetic (int)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (int)"
+                args {
+                  string_value: "51f15c62336331d02c00440e"
+                }
+                args {
+                  string_value: "Genera_Use"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Arithmetic Ops"
+                }
+                args {
+                  int_value: 2
+                }
+              }
+            }
+            args {
+              int_value: -1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Add To Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "KarmicEnergy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Genera_Use"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 15
+    hideIfUnavailable: true
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "4 Karma"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Actor Unspent Karma"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 4
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Genera_Use"
+            }
+          }
+        }
+        args {
+          int_value: 4
+        }
+      }
+      ops {
+        functionName: "Add Actor Karma"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Arithmetic (int)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (int)"
+                args {
+                  string_value: "51f15c62336331d02c00440e"
+                }
+                args {
+                  string_value: "Genera_Use"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Arithmetic Ops"
+                }
+                args {
+                  int_value: 2
+                }
+              }
+            }
+            args {
+              int_value: -1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Add To Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "KarmicEnergy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Genera_Use"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 15
+    hideIfUnavailable: true
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "10 Karma"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Actor Unspent Karma"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 10
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Genera_Use"
+            }
+          }
+        }
+        args {
+          int_value: 10
+        }
+      }
+      ops {
+        functionName: "Add Actor Karma"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Arithmetic (int)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (int)"
+                args {
+                  string_value: "51f15c62336331d02c00440e"
+                }
+                args {
+                  string_value: "Genera_Use"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Arithmetic Ops"
+                }
+                args {
+                  int_value: 2
+                }
+              }
+            }
+            args {
+              int_value: -1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Add To Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "KarmicEnergy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Genera_Use"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 15
+    hideIfUnavailable: true
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "40 Karma"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Actor Unspent Karma"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 40
+        }
+      }
+    }
+    actions {
+      ops {
+        functionName: "Set Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Genera_Use"
+            }
+          }
+        }
+        args {
+          int_value: 40
+        }
+      }
+      ops {
+        functionName: "Add Actor Karma"
+        args {
+          call_value {
+            functionName: "Specific Actor"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+            args {
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Arithmetic (int)"
+            args {
+              call_value {
+                functionName: "Get Story Variable (int)"
+                args {
+                  string_value: "51f15c62336331d02c00440e"
+                }
+                args {
+                  string_value: "Genera_Use"
+                }
+              }
+            }
+            args {
+              call_value {
+                functionName: "Get Preset Value (int)"
+                args {
+                  string_value: "Arithmetic Ops"
+                }
+                args {
+                  int_value: 2
+                }
+              }
+            }
+            args {
+              int_value: -1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Add To Variable (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "KarmicEnergy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Genera_Use"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 15
+    hideIfUnavailable: true
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Nevermind"
+    nextNodeIndex: 8
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Goodbye"
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+  actions {
+    ops {
+      functionName: "Send Event"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "Display Favors"
+          }
+        }
+      }
+    }
+  }
+}
+nodes {
+  idRef {
+    id: "56f366e8646632800f006dcf"
+  }
+  index: 16
   text: ""
   branches {
     responseText: ""
@@ -10354,7 +10985,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 16
     auxiliaryLink: true
   }
   branches {
@@ -10389,7 +11020,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 16
+    nextNodeIndex: 17
   }
   nodeType: ConversationNodeType_Simple
   comment: "loopy 9"
@@ -10398,7 +11029,7 @@ nodes {
   idRef {
     id: "523c2cb5336331b808004d73"
   }
-  index: 16
+  index: 17
   text: "It seems I owe you some services..."
   branches {
     responseText: "Yes, let\'s deal."
@@ -10418,7 +11049,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 17
+    nextNodeIndex: 18
   }
   branches {
     responseText: "Nevermind."
@@ -10427,114 +11058,14 @@ nodes {
   nodeType: ConversationNodeType_Simple
   actions {
     ops {
-      functionName: "Set Variable (int)"
+      functionName: "Send Event"
       args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Get Map Item (Event)"
           args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Genera_Use"
+            string_value: "Display Favors"
           }
         }
-      }
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "KarmicEnergy"
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "Arithmetic Ops"
-              }
-              args {
-                int_value: 3
-              }
-            }
-          }
-          args {
-            int_value: 30
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Display Text over Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Append (string)"
-          args {
-            string_value: " Spirit Services"
-          }
-          args {
-            call_value {
-              functionName: "Convert (int) to (string)"
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "Genera_Use"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
       }
     }
   }
@@ -10543,78 +11074,18 @@ nodes {
   idRef {
     id: "523c2cb5336331b808004d76"
   }
-  index: 17
+  index: 18
   text: "Well of course... what would interest you?"
   branches {
-    responseText: "I want wealth!"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51f15c62336331d02c00440e"
-            }
-            args {
-              string_value: "KarmicEnergy"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          int_value: 30
-        }
-      }
-    }
-    nextNodeIndex: 18
-  }
-  branches {
-    responseText: "I want greater healing abilities!"
-    conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51f15c62336331d02c00440e"
-            }
-            args {
-              string_value: "KarmicEnergy"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          int_value: 60
-        }
-      }
-    }
+    responseText: "I want wealth! {{CC}}1+ service(s){{/CC}}"
     nextNodeIndex: 19
   }
   branches {
-    responseText: "I want to be fast!"
+    responseText: "I want greater healing abilities! {{CC}}2+ services{{/CC}}"
+    nextNodeIndex: 20
+  }
+  branches {
+    responseText: "I want to be fast! {{CC}}3+ services and no pact of speed{{/CC}}"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -10644,40 +11115,12 @@ nodes {
           int_value: 0
         }
       }
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51f15c62336331d02c00440e"
-            }
-            args {
-              string_value: "KarmicEnergy"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          int_value: 90
-        }
-      }
     }
-    nextNodeIndex: 21
+    nextNodeIndex: 22
     hideIfUnavailable: true
   }
   branches {
-    responseText: "I want to be even faster!"
+    responseText: "I want to be even faster! {{CC}}5+ services and lesser speed pact{{/CC}}"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -10707,69 +11150,13 @@ nodes {
           int_value: 1
         }
       }
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51f15c62336331d02c00440e"
-            }
-            args {
-              string_value: "KarmicEnergy"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          int_value: 150
-        }
-      }
     }
-    nextNodeIndex: 22
+    nextNodeIndex: 23
     hideIfUnavailable: true
   }
   branches {
-    responseText: "I want my punches to be strong enough to reduce concrete to dust!"
+    responseText: "I want my punches to be strong enough to reduce concrete to dust! {{CC}}1+ service(s) no prior strength pact{{/CC}}"
     conditions {
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51f15c62336331d02c00440e"
-            }
-            args {
-              string_value: "KarmicEnergy"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          int_value: 30
-        }
-      }
       ops {
         functionName: "Evaluate If Actor Has Item"
         args {
@@ -10808,10 +11195,11 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 23
+    nextNodeIndex: 24
+    hideIfUnavailable: true
   }
   branches {
-    responseText: "I want to recover some of my magical power that has diminished when I purchased Cyberware."
+    responseText: "I want to recover some of my magical power that has diminished when I purchased Cyberware. {{CC}}Magic < 6 and 3+ services{{/CC}}"
     conditions {
       ops {
         functionName: "Compare Actor Attribute"
@@ -10860,39 +11248,11 @@ nodes {
           int_value: 6
         }
       }
-      ops {
-        functionName: "Comparison (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51f15c62336331d02c00440e"
-            }
-            args {
-              string_value: "KarmicEnergy"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 3
-            }
-          }
-        }
-        args {
-          int_value: 90
-        }
-      }
     }
-    nextNodeIndex: 24
+    nextNodeIndex: 25
   }
   branches {
-    responseText: "I want peace."
+    responseText: "I want peace. {{CC}}Notoriety 10+, Heat 10+ and 1+ service(s){{/CC}}"
     conditions {
       ops {
         functionName: "Comparison (int)"
@@ -10950,6 +11310,24 @@ nodes {
           int_value: 10
         }
       }
+    }
+    nextNodeIndex: 26
+  }
+  branches {
+    responseText: "Nevermind."
+    nextNodeIndex: -1
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523c3447336331b808005017"
+  }
+  index: 19
+  text: "As a single service, I can give you 10,000\302\245 that I have accumulated. I have little need for such things."
+  branches {
+    responseText: "You have a deal."
+    conditions {
       ops {
         functionName: "Comparison (int)"
         args {
@@ -10979,17 +11357,9 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 25
-  }
-  branches {
-    responseText: "Nevermind."
-    nextNodeIndex: -1
-  }
-  branches {
-    responseText: "How crazy fast can I go."
-    conditions {
+    actions {
       ops {
-        functionName: "Comparison (int)"
+        functionName: "Add To Variable (int)"
         args {
           call_value {
             functionName: "Get Story Variable (int)"
@@ -10997,25 +11367,51 @@ nodes {
               string_value: "51f15c62336331d02c00440e"
             }
             args {
-              string_value: "SuperSpeed"
+              string_value: "KarmicEnergy"
             }
           }
         }
         args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "Comparison Ops"
-            }
-            args {
-              int_value: 0
-            }
-          }
-        }
-        args {
-          int_value: 2
+          int_value: -30
         }
       }
+      ops {
+        functionName: "Add Nuyen"
+        args {
+          int_value: 10000
+        }
+      }
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "Display Favors"
+            }
+          }
+        }
+      }
+    }
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  branches {
+    responseText: "Nevermind."
+    nextNodeIndex: 0
+    auxiliaryLink: true
+  }
+  nodeType: ConversationNodeType_Simple
+}
+nodes {
+  idRef {
+    id: "523c279f336331b80800513f"
+  }
+  index: 20
+  text: "For two services, I can create an astral link between us, providing you with regenerative powers. This Pact of Health is a potent service, sought greatly by mortals. {{GM}}This can be taken multiple times with a stacking effect.{{/GM}}"
+  branches {
+    responseText: "That sounds great!"
+    conditions {
       ops {
         functionName: "Comparison (int)"
         args {
@@ -11041,135 +11437,10 @@ nodes {
           }
         }
         args {
-          int_value: 240
+          int_value: 60
         }
       }
     }
-    nextNodeIndex: 26
-    hideIfUnavailable: true
-  }
-  nodeType: ConversationNodeType_Simple
-  actions {
-    ops {
-      functionName: "Display Text over Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TextPopupStyle"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Append (string)"
-          args {
-            string_value: " Spirit Services"
-          }
-          args {
-            call_value {
-              functionName: "Convert (int) to (string)"
-              args {
-                call_value {
-                  functionName: "Get Story Variable (int)"
-                  args {
-                    string_value: "51f15c62336331d02c00440e"
-                  }
-                  args {
-                    string_value: "Genera_Use"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 1
-      }
-      args {
-        float_value: 0
-      }
-      args {
-        float_value: 0
-      }
-    }
-  }
-}
-nodes {
-  idRef {
-    id: "523c3447336331b808005017"
-  }
-  index: 18
-  text: "As a single service I can give you 10000 Nuyen that I have accumulated. I have little need for such things."
-  branches {
-    responseText: "You have a deal."
-    actions {
-      ops {
-        functionName: "Add To Variable (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51f15c62336331d02c00440e"
-            }
-            args {
-              string_value: "KarmicEnergy"
-            }
-          }
-        }
-        args {
-          int_value: -30
-        }
-      }
-      ops {
-        functionName: "Add Nuyen"
-        args {
-          int_value: 10000
-        }
-      }
-    }
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "Nevermind."
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "523c279f336331b80800513f"
-  }
-  index: 19
-  text: "For two services I can create an astral link between us, providing you with regenerative powers. This Pact of Health is a potent service, sought greatly by mortals. {{GM}}This can be taken multiple times with a stacking effect.{{/GM}}"
-  branches {
-    responseText: "That sounds great!"
     actions {
       ops {
         functionName: "Send Event"
@@ -11230,9 +11501,19 @@ nodes {
           int_value: -60
         }
       }
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "Display Favors"
+            }
+          }
+        }
+      }
     }
-    nextNodeIndex: 20
-    comment: "FIXME"
+    nextNodeIndex: 21
   }
   branches {
     responseText: "I don\'t think so."
@@ -11245,7 +11526,7 @@ nodes {
   idRef {
     id: "56f5cc5d646632bc04006a51"
   }
-  index: 20
+  index: 21
   text: ""
   branches {
     responseText: ""
@@ -11327,7 +11608,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 16
     auxiliaryLink: true
   }
   branches {
@@ -11371,7 +11652,7 @@ nodes {
         }
       }
     }
-    nextNodeIndex: 15
+    nextNodeIndex: 16
     auxiliaryLink: true
   }
   nodeType: ConversationNodeType_Simple
@@ -11380,10 +11661,40 @@ nodes {
   idRef {
     id: "523c2d5e336331b808005283"
   }
-  index: 21
+  index: 22
   text: "I can make your steps quicker with a lesser Pact of Haste for three services."
   branches {
     responseText: "Deal!"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "KarmicEnergy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 90
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Set Actor Run Speed"
@@ -11485,6 +11796,17 @@ nodes {
           int_value: -90
         }
       }
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "Display Favors"
+            }
+          }
+        }
+      }
     }
     nextNodeIndex: 0
     auxiliaryLink: true
@@ -11500,10 +11822,40 @@ nodes {
   idRef {
     id: "523c29d3336331e437002bd9"
   }
-  index: 22
+  index: 23
   text: "A greater Haste pact would allow you to move at supernatural speeds for five services."
   branches {
     responseText: "Deal!"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "KarmicEnergy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 150
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Set Actor Run Speed"
@@ -11642,8 +11994,20 @@ nodes {
           int_value: -150
         }
       }
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "Display Favors"
+            }
+          }
+        }
+      }
     }
     nextNodeIndex: 0
+    hideIfUnavailable: true
     auxiliaryLink: true
   }
   branches {
@@ -11657,10 +12021,40 @@ nodes {
   idRef {
     id: "523c2ca1336331e437002c5d"
   }
-  index: 23
-  text: "For a service I can grant a gift akin to Killing Hands. You strikes will be imbued with mystic energy, and your body will become a lethal weapon."
+  index: 24
+  text: "For one service, I can grant a gift akin to Killing Hands. Your strikes will be imbued with mystic energy, and your body will become a lethal weapon."
   branches {
     responseText: "That sounds great!"
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "KarmicEnergy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 30
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Add Item to Actor"
@@ -11762,6 +12156,17 @@ nodes {
           int_value: -30
         }
       }
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "Display Favors"
+            }
+          }
+        }
+      }
     }
     nextNodeIndex: 0
     auxiliaryLink: true
@@ -11777,10 +12182,40 @@ nodes {
   idRef {
     id: "523c3184336331e437002ce6"
   }
-  index: 24
-  text: "For three services I can create a Geas Pact between us. Your spells you will also draw upon a portion of my own power to supplement what you have lost... {{GM}}This Pact can be taken many times, with a stacking effect{{/GM}}"
+  index: 25
+  text: "For three services, I can create a Gaes Pact between us. Your spells you will also draw upon a portion of my power to supplement what you have lost... {{GM}}This Pact can be taken many times, with a stacking effect{{/GM}}"
   branches {
     responseText: "I accept."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "KarmicEnergy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 90
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Add To Variable (int)"
@@ -11910,6 +12345,17 @@ nodes {
           int_value: -90
         }
       }
+      ops {
+        functionName: "Send Event"
+        args {
+          call_value {
+            functionName: "Get Map Item (Event)"
+            args {
+              string_value: "Display Favors"
+            }
+          }
+        }
+      }
     }
     nextNodeIndex: 0
     auxiliaryLink: true
@@ -11925,10 +12371,40 @@ nodes {
   idRef {
     id: "523c27a3336331e437002ece"
   }
-  index: 25
-  text: "For a service I can influence the minds of those who would pursue you. They would lose interest in you, for now... {{GM}}This will reduce Notoriety and Heat to 0{{/GM}}"
+  index: 26
+  text: "For one service, I can influence the minds of those who would pursue you. They would lose interest in you, for now... {{GM}}This will reduce Notoriety and Heat to 0{{/GM}}"
   branches {
     responseText: "I accept."
+    conditions {
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (int)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "KarmicEnergy"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 3
+            }
+          }
+        }
+        args {
+          int_value: 30
+        }
+      }
+    }
     actions {
       ops {
         functionName: "Set Variable (int)"
@@ -11981,140 +12457,15 @@ nodes {
           int_value: -30
         }
       }
-    }
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  branches {
-    responseText: "I don\'t think so."
-    nextNodeIndex: 0
-    auxiliaryLink: true
-  }
-  nodeType: ConversationNodeType_Simple
-}
-nodes {
-  idRef {
-    id: "523c29d3336331e437002bd9"
-  }
-  index: 26
-  text: "A blink pact would allow you to move at near instantaneous speeds for eight services."
-  branches {
-    responseText: "Deal!"
-    conditions {
       ops {
-        functionName: "Invert Bool"
+        functionName: "Send Event"
         args {
           call_value {
-            functionName: "Get Preset Value (int)"
+            functionName: "Get Map Item (Event)"
             args {
-              string_value: "bool"
-            }
-            args {
-              int_value: 1
+              string_value: "Display Favors"
             }
           }
-        }
-      }
-    }
-    actions {
-      ops {
-        functionName: "Set Actor Run Speed"
-        args {
-          call_value {
-            functionName: "Specific Actor"
-            args {
-              call_value {
-                functionName: "Get Map Item (Player)"
-                args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "RunSpeedMethod"
-            }
-            args {
-              int_value: 4
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Add To Variable (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51f15c62336331d02c00440e"
-            }
-            args {
-              string_value: "SuperSpeed"
-            }
-          }
-        }
-        args {
-          int_value: 1
-        }
-      }
-      ops {
-        functionName: "Remove Item from Actor"
-        args {
-          call_value {
-            functionName: "Get Map Item (Item)"
-            args {
-              string_value: "Greater Pact of Haste"
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Specific Actor"
-            args {
-              call_value {
-                functionName: "Get Map Item (Player)"
-                args {
-                  int_value: 0
-                }
-              }
-            }
-            args {
-            }
-          }
-        }
-        args {
-          call_value {
-            functionName: "Get Preset Value (int)"
-            args {
-              string_value: "WithOrWithout"
-            }
-            args {
-              int_value: 1
-            }
-          }
-        }
-      }
-      ops {
-        functionName: "Add To Variable (int)"
-        args {
-          call_value {
-            functionName: "Get Story Variable (int)"
-            args {
-              string_value: "51f15c62336331d02c00440e"
-            }
-            args {
-              string_value: "KarmicEnergy"
-            }
-          }
-        }
-        args {
-          int_value: -240
         }
       }
     }

@@ -1341,6 +1341,7 @@ props {
     isEnabled: true
     interactionRadius: 1
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Downtown"
   }
   lod: 0
 }
@@ -2015,7 +2016,7 @@ props {
     z: 209
   }
   orientation: ORIENTATION_S
-  GeneralTags: "way_pjs_Telestrian RD"
+  GeneralTags: "way_pjs_Telestrian R&D"
   GeneralTags: "way_pjs_Generax"
   GeneralTags: "way_pjs_AG Chemicals"
   GeneralTags: "way_pjs_Bottling Plant"
@@ -2555,7 +2556,7 @@ props {
 props {
   name: "vfx_fx_fallingsparks"
   gridPoint {
-    x: 14.450001
+    x: 14.45
     y: 0
     z: 205
   }
@@ -2799,7 +2800,24 @@ props {
   interactionRoot {
     isEnabled: true
     interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "The Skeleton Club"
   }
   lod: 0
 }
@@ -2849,7 +2867,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "Generax Labs"
   }
   lod: 0
 }
@@ -2861,7 +2879,7 @@ props {
     z: 210
   }
   orientation: ORIENTATION_S
-  GeneralTags: "way_pjp_Telestrian RD"
+  GeneralTags: "way_pjp_Telestrian R&D"
   displayName: "TelestrianTravel"
   idRef {
     id: "52640b2b3363319815004d69"
@@ -2894,12 +2912,12 @@ props {
           }
         }
         args {
-          string_value: "Telestrian RD"
+          string_value: "Telestrian R&D"
         }
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "Telestrian R&D"
   }
   lod: 0
 }
@@ -2920,68 +2938,7 @@ props {
     isEnabled: true
     interactionRadius: 1
     interactionIcon: InteractionIcon_Generic
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: 30
-    y: 0
-    z: 106
-  }
-  orientation: ORIENTATION_S
-  GeneralTags: "TaxiStop"
-  displayName: "Taxi Region E"
-  idRef {
-    id: "53369b823363312c13007b8a"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: 33
-    y: 0
-    z: 126
-  }
-  orientation: ORIENTATION_S
-  GeneralTags: "TaxiStop"
-  displayName: "Taxi Region S"
-  idRef {
-    id: "53369b823363312c13007b8b"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: 0
-    y: 0
-    z: 118
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop E"
-  idRef {
-    id: "53369b823363312c13007b8c"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
+    interaction_info_text: "Ranier Tower"
   }
   lod: 0
 }
@@ -3066,26 +3023,6 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -1
-    y: 0
-    z: 120
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop S"
-  idRef {
-    id: "53369b823363312c13007b93"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
   name: "pikePlace_ground_cobblestone04"
   gridPoint {
     x: -13
@@ -3101,32 +3038,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -52
+    x: -20
     y: 0
     z: 187
   }
   orientation: ORIENTATION_S
-  displayName: "Taxi Stop 1"
-  idRef {
-    id: "53369c0a3363312c13007b96"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -20
-    y: 0
-    z: 188
-  }
-  orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "south"
   displayName: "Taxi Region 1"
   idRef {
     id: "53369c0a3363312c13007b97"
@@ -3142,32 +3060,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -30
+    x: 3
     y: 0
     z: 187
   }
   orientation: ORIENTATION_S
-  displayName: "Taxi Stop 2"
-  idRef {
-    id: "53369c333363312c13007b98"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: 3
-    y: 0
-    z: 188
-  }
-  orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "south"
   displayName: "Taxi Region 2"
   idRef {
     id: "53369c333363312c13007b99"
@@ -3183,32 +3082,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -30
+    x: 3
     y: 0
     z: 163
   }
   orientation: ORIENTATION_S
-  displayName: "Taxi Stop 3"
-  idRef {
-    id: "53369c603363312c13007b9a"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: 3
-    y: 0
-    z: 164
-  }
-  orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "south"
   displayName: "Taxi Region 3"
   idRef {
     id: "53369c603363312c13007b9b"
@@ -3224,12 +3104,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -37
+    x: -36
     y: 0
     z: 183
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 4"
   idRef {
     id: "53369caa3363312c13007b9c"
@@ -3245,32 +3126,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -38
-    y: 0
-    z: 150
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 4"
-  idRef {
-    id: "53369caa3363312c13007b9d"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -16
+    x: -12
     y: 0
     z: 203
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 5"
   idRef {
     id: "53369cd33363312c13007b9e"
@@ -3286,32 +3148,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -14
-    y: 0
-    z: 174
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 5"
-  idRef {
-    id: "53369cd33363312c13007b9f"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -38
+    x: -36
     y: 0
     z: 212
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 6"
   idRef {
     id: "53369d023363312c13007ba0"
@@ -3327,55 +3170,16 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -38
-    y: 0
-    z: 178
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 6"
-  idRef {
-    id: "53369d023363312c13007ba1"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -37
+    x: -36
     y: 0
     z: 164
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 7"
   idRef {
     id: "5336a20f3363312c13007bc8"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -38
-    y: 0
-    z: 128
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 7"
-  idRef {
-    id: "5336a2243363312c13007bca"
   }
   interactionRoot {
     isEnabled: true
@@ -5712,7 +5516,7 @@ props {
 props {
   name: "pikePlace_building_02roofFrontCorner"
   gridPoint {
-    x: 46.800003
+    x: 46.8
     y: 19.9
     z: 218
   }
@@ -7040,7 +6844,7 @@ props {
   gridPoint {
     x: -9
     y: 16.12
-    z: 255.20999
+    z: 255.21
   }
   orientation: ORIENTATION_E
   idRef {
@@ -8794,7 +8598,7 @@ props {
   name: "pikePlace_buildingOrnament_wallPipe01"
   gridPoint {
     x: 7.0999985
-    y: 6.1000004
+    y: 6.1
     z: 231.3
   }
   orientation: ORIENTATION_S
@@ -9513,7 +9317,7 @@ props {
   name: "pikePlace_buildingOrnament_wallPipe01"
   gridPoint {
     x: -2.9000015
-    y: 6.1000004
+    y: 6.1
     z: 231.3
   }
   orientation: ORIENTATION_S
@@ -9838,7 +9642,7 @@ props {
   name: "pikePlace_buildingOrnament_wallPipe01"
   gridPoint {
     x: -14.100002
-    y: 6.1000004
+    y: 6.1
     z: 231.6
   }
   orientation: ORIENTATION_S
@@ -9850,7 +9654,7 @@ props {
 props {
   name: "vfx_fx_fallingsparks"
   gridPoint {
-    x: 15.950001
+    x: 15.95
     y: 1
     z: 205.9
   }
@@ -9884,7 +9688,7 @@ props {
 props {
   name: "haven_lighting_modernStreetLightTop01"
   gridPoint {
-    x: 15.200001
+    x: 15.2
     y: -0.6
     z: 205
   }
@@ -10486,7 +10290,7 @@ props {
 props {
   name: "vfx_fx_fallingsparks"
   gridPoint {
-    x: 1.9500008
+    x: 1.95
     y: 0.7
     z: 212.9
   }
@@ -10689,7 +10493,7 @@ props {
 props {
   name: "pikePlace_buildingOrnament_led02"
   gridPoint {
-    x: 5.2700005
+    x: 5.27
     y: 1
     z: 207.73
   }
@@ -12005,7 +11809,7 @@ props {
 props {
   name: "pikePlace_buildingOrnament_led02"
   gridPoint {
-    x: 5.2700005
+    x: 5.27
     y: 1
     z: 201.73
   }
@@ -18034,7 +17838,7 @@ props {
 props {
   name: "diveBar_clutter_wineGlass01"
   gridPoint {
-    x: 7.7000008
+    x: 7.7
     y: 0
     z: 174.1
   }
@@ -18696,7 +18500,7 @@ props {
 props {
   name: "haven_street_cafeChair01"
   gridPoint {
-    x: 7.4000006
+    x: 7.4
     y: 0
     z: 172.6
   }
@@ -21593,7 +21397,7 @@ props {
 props {
   name: "haven_clutter_trashBin01"
   gridPoint {
-    x: 0.4000001
+    x: 0.4
     y: 0
     z: 156.2
   }
@@ -29438,7 +29242,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: "Some Big Corporate Building"
+    interaction_info_text: "Mitsuhama RHQ"
   }
   lod: 0
 }
@@ -35445,7 +35249,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash01"
   gridPoint {
-    x: 16.400002
+    x: 16.4
     y: 0
     z: 214
   }
@@ -35458,7 +35262,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash01"
   gridPoint {
-    x: 16.400002
+    x: 16.4
     y: 0
     z: 214
   }
@@ -35484,7 +35288,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash03"
   gridPoint {
-    x: 15.400002
+    x: 15.4
     y: 0
     z: 214.8
   }
@@ -35562,7 +35366,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash01"
   gridPoint {
-    x: 16.400002
+    x: 16.4
     y: 0
     z: 196
   }
@@ -35588,7 +35392,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash03"
   gridPoint {
-    x: 15.400002
+    x: 15.4
     y: 0
     z: 196.8
   }
@@ -35705,7 +35509,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash01"
   gridPoint {
-    x: 23.400002
+    x: 23.4
     y: 0
     z: 183
   }
@@ -35848,7 +35652,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash01"
   gridPoint {
-    x: 17.400002
+    x: 17.4
     y: 0
     z: 182
   }
@@ -35874,7 +35678,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash03"
   gridPoint {
-    x: 16.400002
+    x: 16.4
     y: 0
     z: 182.8
   }
@@ -36526,7 +36330,7 @@ props {
   gridPoint {
     x: -41.7
     y: 0
-    z: 199.90001
+    z: 199.9
   }
   orientation: ORIENTATION_S
   idRef {
@@ -36792,7 +36596,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "Mitsuhama RHQ Sewer Access"
   }
   lod: 0
 }
@@ -47575,7 +47379,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "Generax Labs"
   }
   lod: 0
 }
@@ -47619,12 +47423,12 @@ props {
           }
         }
         args {
-          string_value: "Telestrian RD"
+          string_value: "Telestrian R&D"
         }
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "Telestrian R&D"
   }
   lod: 0
 }
@@ -97497,7 +97301,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "AG Chemicals"
   }
   lod: 0
 }
@@ -97546,7 +97350,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "AG Chemicals"
   }
   lod: 0
 }
@@ -97708,7 +97512,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "Mitsuhama RHQ Parking Garage"
   }
   lod: 0
 }
@@ -97728,7 +97532,45 @@ props {
   interactionRoot {
     isEnabled: true
     interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: -91
+    y: 0
+    z: 190
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "insert_-994"
+  displayName: "transition - sewers"
+  idRef {
+    id: "5b46905b343032dc2a00121c"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Smells Bad"
   }
   lod: 0
 }

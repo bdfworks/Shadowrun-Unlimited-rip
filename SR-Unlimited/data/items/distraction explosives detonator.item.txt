@@ -1,0 +1,8 @@
+id: "distraction explosives detonator"
+type: ItemType_QuestItem
+uirep {
+  name: "Distraction Explosives detonator"
+  description: "As simple as using your wrist comm."
+}
+credentials: 0
+sorting_group: "Quest"

@@ -7,9 +7,9 @@ nodes {
     id: "51f5205d336331ec1a004523"
   }
   index: 0
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -103,7 +103,7 @@ nodes {
     nextNodeIndex: 1
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -389,9 +389,9 @@ nodes {
     id: "53369d74336331487a003490"
   }
   index: 3
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -485,7 +485,7 @@ nodes {
     nextNodeIndex: 4
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -771,9 +771,9 @@ nodes {
     id: "533699b4336331c018003f27"
   }
   index: 6
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -867,7 +867,7 @@ nodes {
     nextNodeIndex: 7
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -1153,9 +1153,9 @@ nodes {
     id: "53369a3b336331c018003f39"
   }
   index: 9
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -1249,7 +1249,7 @@ nodes {
     nextNodeIndex: 10
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -1535,9 +1535,9 @@ nodes {
     id: "53369a55336331c018003f42"
   }
   index: 12
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -1631,7 +1631,7 @@ nodes {
     nextNodeIndex: 13
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -1917,9 +1917,9 @@ nodes {
     id: "53369a81336331c018003f54"
   }
   index: 15
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -2013,7 +2013,7 @@ nodes {
     nextNodeIndex: 16
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -2299,9 +2299,9 @@ nodes {
     id: "53369aaa336331c018003f66"
   }
   index: 18
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -2395,7 +2395,7 @@ nodes {
     nextNodeIndex: 19
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -2681,9 +2681,9 @@ nodes {
     id: "53369abf336331c018003f6f"
   }
   index: 21
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -2777,7 +2777,7 @@ nodes {
     nextNodeIndex: 22
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -3063,9 +3063,9 @@ nodes {
     id: "53369ada336331c018003f78"
   }
   index: 24
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -3159,7 +3159,7 @@ nodes {
     nextNodeIndex: 25
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -3445,9 +3445,9 @@ nodes {
     id: "53369af4336331c018003f81"
   }
   index: 27
-  text: "Yeah? Well you found him. What do you want?"
+  text: "Yeah? Well, you found him. What do you want?"
   branches {
-    responseText: "Good. I have a pay day waiting for me if I clear your crew out of here. Tough break chummer."
+    responseText: "Good. I have a payday waiting for me if I clear your crew out of here. Tough break chummer."
     actions {
       ops {
         functionName: "Set Team Alliance"
@@ -3541,7 +3541,7 @@ nodes {
     nextNodeIndex: 28
   }
   branches {
-    responseText: "{{GM}}Gang Etiquette, 150 nuyen{{/GM}} I\'ve been offered a few hundred nuyen to clear you guys out of here. How about we split it, you guys take off, and I dont have to get my hands dirty."
+    responseText: "{{GM}}Gang Etiquette, \302\245150{{/GM}} I\'ve been offered a few hundred Nuyen to clear you guys out of here. How about we split it, you guys take off, and I don't have to get my hands dirty."
     conditions {
       ops {
         functionName: "Compare Actor Skill"
@@ -3883,79 +3883,11 @@ roots {
         }
       }
       args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
       }
     }
   }
   nextNodeIndex: 0
-  hideIfUnavailable: true
-}
-roots {
-  responseText: "I\'m looking for $(story.Random_Ganger_Name)."
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Eric_Job_Count_2"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        int_value: 1
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Variable (int)"
-          args {
-            string_value: "Combat"
-          }
-        }
-      }
-      args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Variable (string)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (string)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Eric_Job_Description_2"
-          }
-        }
-      }
-      args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
-      }
-    }
-  }
-  nextNodeIndex: 3
   hideIfUnavailable: true
 }
 roots {
@@ -4019,11 +3951,11 @@ roots {
         }
       }
       args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
       }
     }
   }
-  nextNodeIndex: 6
+  nextNodeIndex: 3
   hideIfUnavailable: true
 }
 roots {
@@ -4087,11 +4019,11 @@ roots {
         }
       }
       args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
       }
     }
   }
-  nextNodeIndex: 9
+  nextNodeIndex: 6
   hideIfUnavailable: true
 }
 roots {
@@ -4155,11 +4087,11 @@ roots {
         }
       }
       args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
       }
     }
   }
-  nextNodeIndex: 12
+  nextNodeIndex: 9
   hideIfUnavailable: true
 }
 roots {
@@ -4223,11 +4155,11 @@ roots {
         }
       }
       args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
       }
     }
   }
-  nextNodeIndex: 15
+  nextNodeIndex: 12
   hideIfUnavailable: true
 }
 roots {
@@ -4291,11 +4223,11 @@ roots {
         }
       }
       args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
       }
     }
   }
-  nextNodeIndex: 18
+  nextNodeIndex: 15
   hideIfUnavailable: true
 }
 roots {
@@ -4359,11 +4291,11 @@ roots {
         }
       }
       args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
       }
     }
   }
-  nextNodeIndex: 21
+  nextNodeIndex: 18
   hideIfUnavailable: true
 }
 roots {
@@ -4427,11 +4359,11 @@ roots {
         }
       }
       args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
       }
     }
   }
-  nextNodeIndex: 24
+  nextNodeIndex: 21
   hideIfUnavailable: true
 }
 roots {
@@ -4457,7 +4389,7 @@ roots {
             string_value: "Comparison Ops"
           }
           args {
-            int_value: 3
+            int_value: 0
           }
         }
       }
@@ -4495,7 +4427,75 @@ roots {
         }
       }
       args {
-        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another 400 nuyen to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
+      }
+    }
+  }
+  nextNodeIndex: 24
+  hideIfUnavailable: true
+}
+roots {
+  responseText: "I\'m looking for $(story.Random_Ganger_Name)."
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Eric_Job_Count_2"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        int_value: 10
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Variable (int)"
+          args {
+            string_value: "Combat"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+    ops {
+      functionName: "Set Variable (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Eric_Job_Description_2"
+          }
+        }
+      }
+      args {
+        string_value: "It looks like more gangers have moved back into the docks. They\'re like rats. Client is willing to pay another \302\245$(story.Pay) to clear them out again. this time you\'re looking for a guy named $(story.Random_Ganger_Name)."
       }
     }
   }

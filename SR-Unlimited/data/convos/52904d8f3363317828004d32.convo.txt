@@ -105,7 +105,7 @@ nodes {
     id: "52904d9d3363317828004d5e"
   }
   index: 1
-  text: "Are you sure? The basic level includes a simple gym to temporarily increase your Body attribute and Unarmed Combat skill. Additional upgrades will further increase these effects, as well as buffing additional combat skills.\n\nCost: 1000 Nuyen."
+  text: "Are you sure? The basic level includes a simple gym to temporarily increase your Body attribute and Unarmed Combat skill. Additional upgrades will further increase these effects, as well as buffing additional combat skills.\n\nCost: 1000\302\245."
   branches {
     responseText: "Yes."
     conditions {
@@ -267,7 +267,7 @@ nodes {
   index: 3
   text: "Martial Training Area"
   branches {
-    responseText: "Upgrade to level 2.\n\n{{GM}}Cost: 20,000 Nuyen{{/GM}}"
+    responseText: "Upgrade to level 2.\n\n{{GM}}Cost: 20,000\302\245{{/GM}}"
     conditions {
       ops {
         functionName: "Evaluate Nuyen"
@@ -343,7 +343,7 @@ nodes {
     nextNodeIndex: -1
   }
   branches {
-    responseText: "Upgrade to level 3.\n\n{{GM}}Cost: 50,000 Nuyen{{/GM}}"
+    responseText: "Upgrade to level 3.\n\n{{GM}}Cost: 50,000\302\245{{/GM}}"
     conditions {
       ops {
         functionName: "Evaluate Nuyen"
@@ -527,7 +527,7 @@ nodes {
   index: 5
   text: "Mystic Lodge"
   branches {
-    responseText: "Upgrade to level 2.\n\n{{GM}}Cost: 20,000 Nuyen{{/GM}}"
+    responseText: "Upgrade to level 2.\n\n{{GM}}Cost: 20,000\302\245{{/GM}}"
     conditions {
       ops {
         functionName: "Evaluate Nuyen"
@@ -603,7 +603,7 @@ nodes {
     nextNodeIndex: -1
   }
   branches {
-    responseText: "Upgrade to level 3.\n\n{{GM}}Cost: 50,000 Nuyen{{/GM}}"
+    responseText: "Upgrade to level 3.\n\n{{GM}}Cost: 50,000\302\245{{/GM}}"
     conditions {
       ops {
         functionName: "Evaluate Nuyen"

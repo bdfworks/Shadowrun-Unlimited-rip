@@ -759,8 +759,23 @@ props {
           int_value: 0
         }
       }
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Albino Dragon Apartments"
   }
   lod: 0
 }
@@ -824,6 +839,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Wyvern\'s Tooth Bar"
   }
   lod: 0
 }
@@ -896,8 +912,23 @@ props {
           int_value: 0
         }
       }
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: ""
   }
   lod: 0
 }
@@ -1068,6 +1099,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_Inspect
+    interaction_info_text: "Stokers Coffin Motel"
   }
   lod: 0
 }
@@ -1115,6 +1147,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Run-Down Tenement"
   }
   lod: 0
 }
@@ -1176,6 +1209,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Organ Grinders"
   }
   lod: 0
 }
@@ -1188,7 +1222,7 @@ props {
   }
   orientation: ORIENTATION_S
   GeneralTags: "x"
-  GeneralTags: "way_pjp_Telestrian RD"
+  GeneralTags: "way_pjp_Telestrian R&D"
   GeneralTags: "way_pjp_AG Chemicals"
   GeneralTags: "way_pjp_Generax"
   GeneralTags: "way_pjp_ClubPenumbra"
@@ -1537,7 +1571,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "The Jackals Lantern"
   }
   lod: 0
 }
@@ -1576,7 +1610,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: "Graveyard"
+    interaction_info_text: "the Graveyard"
   }
   lod: 0
 }
@@ -6156,126 +6190,6 @@ props {
   lod: 0
 }
 props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -39
-    y: 0
-    z: 150
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 1"
-  idRef {
-    id: "533697b83363313044004e4e"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -33
-    y: 0
-    z: 176
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 2"
-  idRef {
-    id: "533697c13363313044004e4f"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -44
-    y: 0
-    z: 213
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 3"
-  idRef {
-    id: "533697d73363313044004e51"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: 12
-    y: 0
-    z: 176
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 4"
-  idRef {
-    id: "533697e63363313044004e52"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: -42
-    y: 0
-    z: 192
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 5"
-  idRef {
-    id: "533697fd3363313044004e53"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
-  name: "system_invisible_nonsolidProp"
-  gridPoint {
-    x: 12
-    y: 0
-    z: 146
-  }
-  orientation: ORIENTATION_S
-  displayName: "Taxi Stop 6"
-  idRef {
-    id: "533698033363313044004e54"
-  }
-  interactionRoot {
-    isEnabled: true
-    interactionRadius: 1
-    dummyInteraciton {
-    }
-  }
-  lod: 0
-}
-props {
   name: "memphismotors_car_fordamericartaxi"
   gridPoint {
     x: -11
@@ -6316,12 +6230,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -36
+    x: -34
     y: 0
     z: 206
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 2"
   idRef {
     id: "53369e34336331944400074e"
@@ -6337,12 +6252,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: -35
+    x: -33.79
     y: 0
     z: 181
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 1"
   idRef {
     id: "53369ff93363311c41005a54"
@@ -6360,10 +6276,11 @@ props {
   gridPoint {
     x: -12
     y: 0
-    z: 215
+    z: 213
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "south"
   displayName: "Taxi Region 3"
   idRef {
     id: "5336a171336331fc2d006d96"
@@ -6379,12 +6296,13 @@ props {
 props {
   name: "system_invisible_nonsolidProp"
   gridPoint {
-    x: 13
+    x: 15
     y: 0
     z: 201
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 4"
   idRef {
     id: "53369579336331d01000422f"
@@ -6402,10 +6320,11 @@ props {
   gridPoint {
     x: -10
     y: 0
-    z: 194
+    z: 191
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "south"
   displayName: "Taxi Region 5"
   idRef {
     id: "53369632336331d010004233"
@@ -6427,6 +6346,7 @@ props {
   }
   orientation: ORIENTATION_S
   GeneralTags: "TaxiStop"
+  GeneralTags: "east"
   displayName: "Taxi Region 6"
   idRef {
     id: "5336963f336331d010004234"
@@ -6575,6 +6495,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Albino Dragon Apartments"
   }
   lod: 0
 }
@@ -6649,6 +6570,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Stokers Coffin Motel"
   }
   lod: 0
 }
@@ -6721,7 +6643,7 @@ props {
 props {
   name: "system_gizmo_lightbulb"
   gridPoint {
-    x: 5.8999996
+    x: 5.9
     y: 6.8
     z: 190.1
   }
@@ -6891,7 +6813,7 @@ props {
 props {
   name: "system_gizmo_lightbulb"
   gridPoint {
-    x: 12.799999
+    x: 12.8
     y: 3.6
     z: 195.2
   }
@@ -7808,7 +7730,7 @@ props {
 props {
   name: "telestrianEstate_vehicle_motorcycle01"
   gridPoint {
-    x: 28.199999
+    x: 28.2
     y: 0
     z: 213.9
   }
@@ -8059,7 +7981,7 @@ props {
 props {
   name: "vfx_fx_fallingsparks"
   gridPoint {
-    x: 7.3999996
+    x: 7.4
     y: 5.3
     z: 220.4
   }
@@ -8940,7 +8862,7 @@ props {
 props {
   name: "barrens_street_junkPile04"
   gridPoint {
-    x: 4.3999996
+    x: 4.4
     y: 0
     z: 209.2
   }
@@ -8992,7 +8914,7 @@ props {
 props {
   name: "haven_wallDecoration_graffiti38"
   gridPoint {
-    x: 2.2999992
+    x: 2.3
     y: 2.8
     z: 208
   }
@@ -9005,7 +8927,7 @@ props {
 props {
   name: "barrens_street_junkPile04"
   gridPoint {
-    x: 5.7999992
+    x: 5.8
     y: 0
     z: 206.7
   }
@@ -9135,7 +9057,7 @@ props {
 props {
   name: "barrens_street_bench01"
   gridPoint {
-    x: 21.599998
+    x: 21.6
     y: 0
     z: 189.3
   }
@@ -10831,7 +10753,7 @@ props {
 props {
   name: "barrens_street_junkPile04"
   gridPoint {
-    x: 9.0999994
+    x: 9.1
     y: 0
     z: 183.1
   }
@@ -10948,7 +10870,7 @@ props {
 props {
   name: "barrens_street_junkPile04"
   gridPoint {
-    x: 6.8999996
+    x: 6.9
     y: 0
     z: 184.4
   }
@@ -12328,7 +12250,7 @@ props {
 props {
   name: "barrens_decor_graffiti03"
   gridPoint {
-    x: 7.3999996
+    x: 7.4
     y: 0
     z: 169.1
   }
@@ -12544,7 +12466,7 @@ props {
 props {
   name: "barrens_street_junkPile04"
   gridPoint {
-    x: 6.8999996
+    x: 6.9
     y: 0
     z: 168.4
   }
@@ -13037,7 +12959,7 @@ props {
 props {
   name: "tenements_clutter_trashpile04"
   gridPoint {
-    x: 4.3999996
+    x: 4.4
     y: 0
     z: 165.2
   }
@@ -17031,7 +16953,7 @@ props {
   name: "tenements_wallDecoration_cyberpunk02"
   gridPoint {
     x: -67.5
-    y: 1.1999998
+    y: 1.2
     z: 208.5
   }
   orientation: ORIENTATION_E
@@ -21105,7 +21027,7 @@ props {
   name: "tenements_wallDecoration_cyberpunk02"
   gridPoint {
     x: -40.6
-    y: 1.1999998
+    y: 1.2
     z: 155.6
   }
   orientation: ORIENTATION_E
@@ -21467,7 +21389,7 @@ props {
 props {
   name: "mitte_groundDecoration_signBus"
   gridPoint {
-    x: 5.8999996
+    x: 5.9
     y: 0
     z: 213.6
   }
@@ -21570,7 +21492,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash05"
   gridPoint {
-    x: 5.8999996
+    x: 5.9
     y: 0
     z: 207.6
   }
@@ -22849,7 +22771,7 @@ props {
 props {
   name: "tenements_clutter_piecesOfTrash01"
   gridPoint {
-    x: 6.8999996
+    x: 6.9
     y: 0
     z: 167.6
   }
@@ -24687,7 +24609,7 @@ props {
 props {
   name: "barrens_ground_sidewalk08"
   gridPoint {
-    x: 34
+    x: 33
     y: 0
     z: 213
   }
@@ -24728,7 +24650,7 @@ props {
   gridPoint {
     x: 34
     y: 0
-    z: 213
+    z: 212
   }
   orientation: ORIENTATION_S
   idRef {
@@ -34362,7 +34284,7 @@ props {
       }
     }
     interactionIcon: InteractionIcon_SceneTransition
-    interaction_info_text: ""
+    interaction_info_text: "The Rat\'s Nest"
   }
   lod: 0
 }
@@ -34616,6 +34538,93 @@ props {
   displayName: "drop Matrix"
   idRef {
     id: "55450717646632580b005e15"
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: -14.5
+    y: 0
+    z: 188.5
+  }
+  orientation: ORIENTATION_S
+  displayName: "fire barrel sumon"
+  idRef {
+    id: "5b3d1d39343032f02d001b59"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 7
+    prerequisites {
+      ops {
+        functionName: "Evaluate Turn Mode"
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "TurnBasedOrFreeMove"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+      ops {
+        functionName: "Comparison (int)"
+        args {
+          call_value {
+            functionName: "Get Actor Unspent Karma"
+            args {
+              call_value {
+                functionName: "Get Map Item (Player)"
+                args {
+                  int_value: 0
+                }
+              }
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "Comparison Ops"
+            }
+            args {
+              int_value: 2
+            }
+          }
+        }
+        args {
+          int_value: 0
+        }
+      }
+    }
+    interactionIcon: InteractionIcon_Summon
+    interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "system_invisible_nonsolidProp"
+  gridPoint {
+    x: 25
+    y: 0
+    z: 189
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "insert_-992"
+  displayName: "transition - sewers"
+  idRef {
+    id: "5b468c5d343032dc2a001217"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    interactionIcon: InteractionIcon_SceneTransition
+    interaction_info_text: "Smells Bad"
   }
   lod: 0
 }

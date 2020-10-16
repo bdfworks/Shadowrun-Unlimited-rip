@@ -1,7 +1,7 @@
 minX: -59
 minZ: -21
-numX: 74
-numZ: 38
+numX: 79
+numZ: 46
 props {
   name: "diveBar_furniture_barBack01"
   gridPoint {
@@ -1689,6 +1689,18 @@ props {
     z: -10.5
   }
   orientation: ORIENTATION_S
+  idRef {
+    id: "5a0c6ac36630610b2bae5f98"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    conversationPoint {
+      conversationID: "5a00fc75653737183e001557"
+      turnToFace: true
+    }
+    interaction_info_text: "jukebox"
+  }
   lod: 0
 }
 props {
@@ -3615,6 +3627,55 @@ props {
     interactionRadius: 1
     interactionIcon: InteractionIcon_Generic
     interaction_info_text: ""
+  }
+  lod: 0
+}
+props {
+  name: "whitebox_indoor_floor"
+  gridPoint {
+    x: 17
+    y: 0
+    z: -20
+  }
+  orientation: ORIENTATION_S
+  lod: 0
+}
+props {
+  name: "warehouse_floor_01"
+  gridPoint {
+    x: -58
+    y: 0
+    z: 21
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5dfd57743966397410003580"
+  }
+  lod: 0
+}
+props {
+  name: "warehouse_floor_01"
+  gridPoint {
+    x: -57
+    y: 0
+    z: 13
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5dfd57743966397410003581"
+  }
+  lod: 0
+}
+props {
+  name: "warehouse_floor_01"
+  gridPoint {
+    x: -57
+    y: 0
+    z: 10
+  }
+  orientation: ORIENTATION_S
+  idRef {
+    id: "5dfd57753966397410003582"
   }
   lod: 0
 }

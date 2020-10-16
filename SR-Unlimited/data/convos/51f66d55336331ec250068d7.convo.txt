@@ -3,7 +3,7 @@ idRef {
 }
 ui_name: "Run-Wetwork 3 (Run Down Tenement)"
 roots {
-  responseText: "Okay tough guy. It\'s time to pay the piper... {{GM}} You attack the target{{/GM}}"
+  responseText: "Okay, tough guy. It\'s time to pay the piper... {{GM}} You attack the target{{/GM}}"
   conditions {
     ops {
       functionName: "Comparison (int)"
@@ -193,7 +193,7 @@ roots {
         }
       }
       args {
-        string_value: "It seems another problem neighbor has taken up residence in the run-down tenement. I have a contract here for anyone willing ot ice the guy. The job pays 475 nuyen. You interested?"
+        string_value: "It seems another problem neighbor has taken up residence in the run-down tenement. I have a contract here for anyone willing to ice the guy. The job pays \302\245$(story.Pay). You interested?"
       }
     }
   }
@@ -391,7 +391,7 @@ roots {
         }
       }
       args {
-        string_value: "It seems another problem neighbor has taken up residence in the run-down tenement. I have a contract here for anyone willing ot ice the guy. The job pays 475 nuyen. You interested?"
+        string_value: "It seems another problem neighbor has taken up residence in the run-down tenement. I have a contract here for anyone willing ot ice the guy. The job pays \302\245$(story.Pay). You interested?"
       }
     }
   }

@@ -1,0 +1,8 @@
+id: "pyrotechnic initiator"
+type: ItemType_QuestItem
+uirep {
+  name: "pyrotechnic initiator"
+  description: "As simple as using your wrist comm."
+}
+credentials: 0
+sorting_group: "Quest"

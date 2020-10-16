@@ -218,12 +218,56 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "inside"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
   }
   isActive: true
   idRef {
     id: "51f2b333336331d02d001c56"
   }
   elseActions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "inside"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
   }
   is_oneshot: true
 }
@@ -540,43 +584,75 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "On Item Interaction"
-      args {
-        call_value {
-          functionName: "Get Map Item (InteractableObject)"
-          args {
-            string_value: "53e136733864616811004190"
-          }
-        }
-      }
-    }
   }
   conditions {
     ops {
-      functionName: "Comparison (int)"
-      args {
-        int_value: 19
-      }
+      functionName: "OR"
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Comparison (bool)"
           args {
-            string_value: "Comparison Ops"
+            call_value {
+              functionName: "Get Story Variable (bool)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Called_Andy"
+              }
+            }
           }
           args {
-            int_value: 1
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "bool"
+              }
+              args {
+                int_value: 0
+              }
+            }
           }
         }
       }
       args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Comparison (int)"
           args {
-            string_value: "51f15c62336331d02c00440e"
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "StoryStep"
+              }
+            }
           }
           args {
-            string_value: "StoryStep"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            int_value: 21
           }
         }
       }
@@ -667,46 +743,12 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Set Environmental Effect Amount"
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "EnvironmentalEffects"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        int_value: 0
-      }
-    }
   }
   isActive: true
   idRef {
     id: "520a1165336331e815006962"
   }
   elseActions {
-    ops {
-      functionName: "Set Environmental Effect Amount"
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "EnvironmentalEffects"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        int_value: 0
-      }
-    }
     ops {
       functionName: "Teleport Actor"
       args {
@@ -810,62 +852,6 @@ triggers {
     }
   }
   conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Universal_Random"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 4
-          }
-        }
-      }
-      args {
-        int_value: 6
-      }
-    }
-    ops {
-      functionName: "Comparison (float)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (float)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Daylight"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 4
-          }
-        }
-      }
-      args {
-        float_value: 3
-      }
-    }
   }
   actions {
     ops {
@@ -952,113 +938,12 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Set Environmental Effect Amount"
-      args {
-        call_value {
-          functionName: "Get Preset Value (string)"
-          args {
-            string_value: "EnvironmentalEffects"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        int_value: 100
-      }
-    }
   }
   isActive: true
   idRef {
     id: "520a11a4336331e815006964"
   }
   elseActions {
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "All Actors on Team"
-          args {
-            call_value {
-              functionName: "Get Preset Value (string)"
-              args {
-                string_value: "FactionList"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Map Item (SceneDimension)"
-              args {
-                string_value: "Default"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Current Location of Prop"
-          args {
-            call_value {
-              functionName: "Get Map Item (Prop)"
-              args {
-                string_value: "53e137f838646168110051ea"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
   }
   is_oneshot: true
 }
@@ -1247,7 +1132,7 @@ triggers {
             string_value: "51f15c62336331d02c00440e"
           }
           args {
-            string_value: "Runner_Slot_1"
+            string_value: "TeamCount"
           }
         }
       }
@@ -1882,184 +1767,21 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "DocWagon Integrity"
+  name: "on(ActorHit) PC0 die?"
   events {
     ops {
-      functionName: "On Map Start"
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Respawn_Count"
-          }
-        }
-      }
-      args {
-        int_value: 0
-      }
-    }
-    ops {
-      functionName: "Set Actor Unkillable"
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "525230593363315c1e00731a"
-          }
-        }
-      }
+      functionName: "On Actor Damage"
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "IsOrIsNot"
+            string_value: "HPOrAP"
           }
           args {
             int_value: 0
           }
         }
       }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52523121336331642f004b77"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Respawn"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "DocWagon Revive"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Change Actor Control"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525230593363315c1e00731a"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "PlayerOrAI"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Manual Turn Mode"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Actor near Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525230593363315c1e00731a"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 2
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "520162a73363311010001b62"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Medical Attention"
-  events {
-    ops {
-      functionName: "On Actor Downed"
     }
   }
   conditions {
@@ -2090,329 +1812,32 @@ triggers {
         }
       }
     }
-  }
-  actions {
     ops {
-      functionName: "Activate Actor Spawner"
+      functionName: "Compare Actor Attribute"
       args {
         call_value {
-          functionName: "Get Map Item (Actor Reference)"
-          args {
-            string_value: "525230593363315c1e00731a"
-          }
+          functionName: "Triggering Target Actor"
         }
       }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Start Conversation"
-      args {
-        call_value {
-          functionName: "Get Map Item (Conversation)"
-          args {
-            string_value: "525239333363312836004dda"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Actor)"
-          args {
-            string_value: "525230593363315c1e00731a"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
+            string_value: "BaseOrCurrent"
           }
           args {
             int_value: 1
           }
         }
       }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525239e53363312836004de7"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Paramedic"
-  events {
-    ops {
-      functionName: "On Actor Revived"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Evaluate If Actor Has Item"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525230593363315c1e00731a"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "HasOrHasNot"
+            string_value: "ActorAttributes"
           }
           args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Item)"
-          args {
-            string_value: "DocWagonBasic"
-          }
-        }
-      }
-    }
-  }
-  actions {
-    ops {
-      functionName: "Change Actor Control"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525230593363315c1e00731a"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "PlayerOrAI"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Kill Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Actor)"
-              args {
-                string_value: "525230593363315c1e00731a"
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DeathMethod"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Manual Turn Mode"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "52523860336331642f004bd5"
-  }
-  elseActions {
-  }
-  is_oneshot: false
-}
-triggers {
-  name: "Revive-Penumbra"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Penumbra Revive"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "Street_Doc(2)"
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f169b733633124330018bf"
-          }
-          args {
-            string_value: "Death"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Heal Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 20
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "HPOrAP"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525233423363315c1e007311"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Respawn (No Insurance)"
-  events {
-    ops {
-      functionName: "On Actor Downed"
-    }
-  }
-  conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "DocWagon"
+            int_value: 8
           }
         }
       }
@@ -2423,29 +1848,23 @@ triggers {
             string_value: "Comparison Ops"
           }
           args {
-            int_value: 0
+            int_value: 4
           }
         }
       }
       args {
-        int_value: 0
+        int_value: 2
       }
     }
+  }
+  actions {
     ops {
-      functionName: "Comparison (Actor)"
+      functionName: "Start Conversation"
       args {
         call_value {
-          functionName: "Triggering Target Actor"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Map Item (Conversation)"
           args {
-            string_value: "IsOrIsNot"
-          }
-          args {
-            int_value: 1
+            string_value: "5d239278393563d42b000823"
           }
         }
       }
@@ -2457,93 +1876,6 @@ triggers {
           }
         }
       }
-    }
-  }
-  actions {
-    ops {
-      functionName: "End Story With Epilogue"
-      args {
-        string_value: "earlydeath"
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5252345d3363318c10004aea"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Revive-LittleChiba"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Chiba Revive"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f169b733633124330018bf"
-          }
-          args {
-            string_value: "Death"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Heal Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 20
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "HPOrAP"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
@@ -2556,198 +1888,14 @@ triggers {
         }
       }
     }
-    ops {
-      functionName: "Send Event After Delay"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Revive 1"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
-    }
   }
   isActive: true
   idRef {
-    id: "525233943363318c10004ae4"
+    id: "5d238e9d39356360410054d8"
   }
   elseActions {
   }
-  is_oneshot: true
-}
-triggers {
-  name: "Revive-Penumbra"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Penumbra Revive"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Set Variable (bool)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (bool)"
-          args {
-            string_value: "51f169b733633124330018bf"
-          }
-          args {
-            string_value: "Death"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Heal Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        int_value: 20
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "HPOrAP"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Send Event After Delay"
-      args {
-        call_value {
-          functionName: "Get Map Item (Event)"
-          args {
-            string_value: "Revive 2"
-          }
-        }
-      }
-      args {
-        float_value: 1
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525233943363318c10004ae5"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Revive 1"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Revive 1"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "streetdoc1"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "525233173363318c10004ae2"
-  }
-  elseActions {
-  }
-  is_oneshot: true
-}
-triggers {
-  name: "Revive 2"
-  events {
-    ops {
-      functionName: "Get Map Item (Event)"
-      args {
-        string_value: "Revive 2"
-      }
-    }
-  }
-  conditions {
-  }
-  actions {
-    ops {
-      functionName: "Open Scene"
-      args {
-        call_value {
-          functionName: "Get Map Item (Scene)"
-          args {
-            string_value: "Street_Doc(2)"
-          }
-        }
-      }
-    }
-  }
-  isActive: true
-  idRef {
-    id: "5252331a3363318c10004ae3"
-  }
-  elseActions {
-  }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Journal"
@@ -4197,6 +3345,9 @@ triggers {
         string_value: "SunRising"
       }
     }
+    ops {
+      functionName: "On Actor Teleport"
+    }
   }
   conditions {
     ops {
@@ -4247,12 +3398,23 @@ triggers {
             string_value: "Comparison Ops"
           }
           args {
-            int_value: 4
+            int_value: 2
           }
         }
       }
       args {
-        float_value: 3
+        float_value: 12
+      }
+    }
+    ops {
+      functionName: "Invert Bool"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "inside"
+          }
+        }
       }
     }
   }
@@ -4592,7 +3754,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -4605,7 +3767,72 @@ triggers {
         }
       }
       args {
-        int_value: -1
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Ricky_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            int_value: 2
+          }
+        }
       }
     }
   }
@@ -4615,7 +3842,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-Ricky Damage Pay Integrity"
@@ -5131,7 +4358,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -5144,7 +4371,72 @@ triggers {
         }
       }
       args {
-        int_value: -1
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Verum_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            int_value: 2
+          }
+        }
       }
     }
   }
@@ -5154,7 +4446,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner- Verum BattleCry"
@@ -5748,7 +5040,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -5761,7 +5053,72 @@ triggers {
         }
       }
       args {
-        int_value: -1
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Clockwork_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            int_value: 2
+          }
+        }
       }
     }
   }
@@ -5771,7 +5128,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-Clockwork Hire"
@@ -6401,7 +5758,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -6414,7 +5771,72 @@ triggers {
         }
       }
       args {
-        int_value: -1
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Argyle_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            int_value: 2
+          }
+        }
       }
     }
   }
@@ -6424,7 +5846,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-Arglye Hire"
@@ -6940,7 +6362,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -6953,7 +6375,72 @@ triggers {
         }
       }
       args {
-        int_value: -1
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Trent_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            int_value: 2
+          }
+        }
       }
     }
   }
@@ -6963,7 +6450,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-Trent Hire"
@@ -7479,7 +6966,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -7492,7 +6979,72 @@ triggers {
         }
       }
       args {
-        int_value: -1
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_SmashJacker_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            int_value: 2
+          }
+        }
       }
     }
   }
@@ -7502,7 +7054,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-SmashJacker Hire"
@@ -7859,46 +7411,59 @@ triggers {
         call_value {
           functionName: "Arithmetic (int)"
           args {
-            int_value: 50
-          }
-          args {
             call_value {
-              functionName: "Get Preset Value (int)"
+              functionName: "Arithmetic (int)"
               args {
-                string_value: "Arithmetic Ops"
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Contract_Ricky"
+                  }
+                }
               }
               args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "Ricky_Damage_Pay"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Remove Nuyen"
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
               }
               args {
-                string_value: "Pay"
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Ricky_Damage_Pay"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 50
+                  }
+                }
               }
             }
           }
@@ -7914,7 +7479,86 @@ triggers {
             }
           }
           args {
-            int_value: 20
+            int_value: 100
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    int_value: 5
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Contract_Ricky"
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Pay"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            int_value: 10000
           }
         }
       }
@@ -7990,7 +7634,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -8003,24 +7647,72 @@ triggers {
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Arithmetic (int)"
           args {
-            string_value: "51f15c62336331d02c00440e"
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Ricky_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
           }
           args {
-            string_value: "Contract_Ricky"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 2
           }
         }
-      }
-      args {
-        int_value: 0
       }
     }
   }
@@ -8030,7 +7722,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-Verum Payment"
@@ -8087,46 +7779,59 @@ triggers {
         call_value {
           functionName: "Arithmetic (int)"
           args {
-            int_value: 150
-          }
-          args {
             call_value {
-              functionName: "Get Preset Value (int)"
+              functionName: "Arithmetic (int)"
               args {
-                string_value: "Arithmetic Ops"
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Contract_Verum"
+                  }
+                }
               }
               args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "Verum_Damage_Pay"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Remove Nuyen"
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
               }
               args {
-                string_value: "Pay"
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Verum_Damage_Pay"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 150
+                  }
+                }
               }
             }
           }
@@ -8142,7 +7847,86 @@ triggers {
             }
           }
           args {
-            int_value: 10
+            int_value: 100
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    int_value: 10
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Contract_Verum"
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Pay"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            int_value: 10000
           }
         }
       }
@@ -8218,7 +8002,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -8231,24 +8015,72 @@ triggers {
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Arithmetic (int)"
           args {
-            string_value: "51f15c62336331d02c00440e"
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Verum_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
           }
           args {
-            string_value: "Contract_Verum"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 2
           }
         }
-      }
-      args {
-        int_value: 0
       }
     }
   }
@@ -8258,7 +8090,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-Clockwork Payment"
@@ -8315,46 +8147,59 @@ triggers {
         call_value {
           functionName: "Arithmetic (int)"
           args {
-            int_value: 150
-          }
-          args {
             call_value {
-              functionName: "Get Preset Value (int)"
+              functionName: "Arithmetic (int)"
               args {
-                string_value: "Arithmetic Ops"
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Contract_Clockwork"
+                  }
+                }
               }
               args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "Clockwork_Damage_Pay"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Remove Nuyen"
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
               }
               args {
-                string_value: "Pay"
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Clockwork_Damage_Pay"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 150
+                  }
+                }
               }
             }
           }
@@ -8370,7 +8215,86 @@ triggers {
             }
           }
           args {
-            int_value: 10
+            int_value: 100
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    int_value: 10
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Contract_Clockwork"
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Pay"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            int_value: 10000
           }
         }
       }
@@ -8446,7 +8370,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -8459,24 +8383,72 @@ triggers {
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Arithmetic (int)"
           args {
-            string_value: "51f15c62336331d02c00440e"
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Clockwork_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
           }
           args {
-            string_value: "Contract_Clockwork"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 2
           }
         }
-      }
-      args {
-        int_value: 0
       }
     }
   }
@@ -8486,7 +8458,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-Arglye Payment"
@@ -8543,46 +8515,59 @@ triggers {
         call_value {
           functionName: "Arithmetic (int)"
           args {
-            int_value: 200
-          }
-          args {
             call_value {
-              functionName: "Get Preset Value (int)"
+              functionName: "Arithmetic (int)"
               args {
-                string_value: "Arithmetic Ops"
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Contract_Argyle"
+                  }
+                }
               }
               args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "Argyle_Damage_Pay"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Remove Nuyen"
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
               }
               args {
-                string_value: "Pay"
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Argyle_Damage_Pay"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 200
+                  }
+                }
               }
             }
           }
@@ -8598,7 +8583,86 @@ triggers {
             }
           }
           args {
-            int_value: 10
+            int_value: 100
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    int_value: 10
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Contract_Argyle"
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Pay"
+                  }
+                }
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            int_value: 10000
           }
         }
       }
@@ -8674,7 +8738,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -8687,24 +8751,72 @@ triggers {
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Arithmetic (int)"
           args {
-            string_value: "51f15c62336331d02c00440e"
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Argyle_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
           }
           args {
-            string_value: "Contract_Argyle"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 2
           }
         }
-      }
-      args {
-        int_value: 0
       }
     }
   }
@@ -8714,7 +8826,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-Trent Payment"
@@ -8771,46 +8883,59 @@ triggers {
         call_value {
           functionName: "Arithmetic (int)"
           args {
-            int_value: 200
-          }
-          args {
             call_value {
-              functionName: "Get Preset Value (int)"
+              functionName: "Arithmetic (int)"
               args {
-                string_value: "Arithmetic Ops"
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Contract_Trent"
+                  }
+                }
               }
               args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "Trent_Damage_Pay"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Remove Nuyen"
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
               }
               args {
-                string_value: "Pay"
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Trent_Damage_Pay"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 200
+                  }
+                }
               }
             }
           }
@@ -8826,12 +8951,86 @@ triggers {
             }
           }
           args {
+            int_value: 100
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
             call_value {
-              functionName: "Convert (float) to (int)"
+              functionName: "Arithmetic (int)"
               args {
-                float_value: 6.67
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    int_value: 15
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Contract_Trent"
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Pay"
+                  }
+                }
               }
             }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            int_value: 10000
           }
         }
       }
@@ -8907,7 +9106,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -8920,24 +9119,72 @@ triggers {
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Arithmetic (int)"
           args {
-            string_value: "51f15c62336331d02c00440e"
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_Trent_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
           }
           args {
-            string_value: "Contract_Trent"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 2
           }
         }
-      }
-      args {
-        int_value: 0
       }
     }
   }
@@ -8947,7 +9194,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Runner-SmashJacker Payment"
@@ -9004,46 +9251,59 @@ triggers {
         call_value {
           functionName: "Arithmetic (int)"
           args {
-            int_value: 200
-          }
-          args {
             call_value {
-              functionName: "Get Preset Value (int)"
+              functionName: "Arithmetic (int)"
               args {
-                string_value: "Arithmetic Ops"
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Contract_SmashJacker"
+                  }
+                }
               }
               args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
-              }
-              args {
-                string_value: "SmashJacker_Damage_Pay"
-              }
-            }
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Remove Nuyen"
-      args {
-        call_value {
-          functionName: "Arithmetic (int)"
-          args {
-            call_value {
-              functionName: "Get Story Variable (int)"
-              args {
-                string_value: "51f15c62336331d02c00440e"
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
               }
               args {
-                string_value: "Pay"
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "SmashJacker_Damage_Pay"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 0
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 200
+                  }
+                }
               }
             }
           }
@@ -9059,12 +9319,86 @@ triggers {
             }
           }
           args {
+            int_value: 100
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Remove Nuyen"
+      args {
+        call_value {
+          functionName: "Arithmetic (int)"
+          args {
             call_value {
-              functionName: "Convert (float) to (int)"
+              functionName: "Arithmetic (int)"
               args {
-                float_value: 6.67
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    int_value: 15
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Contract_SmashJacker"
+                      }
+                    }
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 2
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Story Variable (int)"
+                  args {
+                    string_value: "51f15c62336331d02c00440e"
+                  }
+                  args {
+                    string_value: "Pay"
+                  }
+                }
               }
             }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 3
+              }
+            }
+          }
+          args {
+            int_value: 10000
           }
         }
       }
@@ -9140,7 +9474,7 @@ triggers {
       }
     }
     ops {
-      functionName: "Add To Variable (int)"
+      functionName: "Set Variable (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -9153,24 +9487,72 @@ triggers {
         }
       }
       args {
-        int_value: 1
-      }
-    }
-    ops {
-      functionName: "Set Variable (int)"
-      args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Arithmetic (int)"
           args {
-            string_value: "51f15c62336331d02c00440e"
+            call_value {
+              functionName: "Arithmetic (int)"
+              args {
+                call_value {
+                  functionName: "Arithmetic (int)"
+                  args {
+                    call_value {
+                      functionName: "Get Story Variable (int)"
+                      args {
+                        string_value: "51f15c62336331d02c00440e"
+                      }
+                      args {
+                        string_value: "Runner_SmashJacker_Loyalty"
+                      }
+                    }
+                  }
+                  args {
+                    call_value {
+                      functionName: "Get Preset Value (int)"
+                      args {
+                        string_value: "Arithmetic Ops"
+                      }
+                      args {
+                        int_value: 2
+                      }
+                    }
+                  }
+                  args {
+                    int_value: 19
+                  }
+                }
+              }
+              args {
+                call_value {
+                  functionName: "Get Preset Value (int)"
+                  args {
+                    string_value: "Arithmetic Ops"
+                  }
+                  args {
+                    int_value: 3
+                  }
+                }
+              }
+              args {
+                int_value: 20
+              }
+            }
           }
           args {
-            string_value: "Contract_SmashJacker"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Arithmetic Ops"
+              }
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            int_value: 2
           }
         }
-      }
-      args {
-        int_value: 0
       }
     }
   }
@@ -9180,7 +9562,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Geas Pact"
@@ -9330,7 +9712,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "Killable Player"
+  name: "Unkillable Player"
   events {
     ops {
       functionName: "On Map Start"
@@ -9363,7 +9745,7 @@ triggers {
             string_value: "IsOrIsNot"
           }
           args {
-            int_value: 1
+            int_value: 0
           }
         }
       }
@@ -11664,15 +12046,92 @@ triggers {
   is_oneshot: false
 }
 triggers {
-  name: "unified Training innate"
+  name: "Body Training"
   events {
     ops {
       functionName: "On Map Start"
     }
   }
   conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "FitnessTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
   }
   actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "General_Use3"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Actor Attribute"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "BaseOrCurrent"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "ActorAttributes"
+              }
+              args {
+                int_value: 14
+              }
+            }
+          }
+        }
+      }
+    }
     ops {
       functionName: "Set Variable (int)"
       args {
@@ -11790,7 +12249,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -11838,6 +12297,93 @@ triggers {
         }
       }
     }
+    ops {
+      functionName: "Set Actor Base Attribute"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "General_Use3"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "ActorAttributes"
+          }
+          args {
+            int_value: 14
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "529961613363310822005749"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Combat Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "CombatTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -11887,7 +12433,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -11895,6 +12441,53 @@ triggers {
         int_value: -1
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "5299617a336331082200574a"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Decker Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "DeckerTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -11944,7 +12537,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -11952,23 +12545,25 @@ triggers {
         int_value: -1
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "52996195336331082200574b"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Drone Training"
+  events {
     ops {
-      functionName: "Apply Skill Status Effect to Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Get Map Item (Player)"
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-          }
-        }
-      }
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
       args {
         call_value {
           functionName: "Get Story Variable (int)"
@@ -11976,7 +12571,7 @@ triggers {
             string_value: "51f15c62336331d02c00440e"
           }
           args {
-            string_value: "FireArmsTraining"
+            string_value: "DroneTraining"
           }
         }
       }
@@ -11984,31 +12579,19 @@ triggers {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "ActorSkills"
+            string_value: "Comparison Ops"
           }
           args {
-            int_value: 0
+            int_value: 2
           }
         }
       }
       args {
-        string_value: "Firearms Training"
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "BuffDebuffType"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        int_value: -1
+        int_value: 0
       }
     }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -12058,7 +12641,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -12066,6 +12649,157 @@ triggers {
         int_value: -1
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "529961b0336331082200574c"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "FireArms Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "FireArmsTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Apply Skill Status Effect to Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
+            call_value {
+              functionName: "Get Map Item (Player)"
+              args {
+                int_value: 0
+              }
+            }
+          }
+          args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "FireArmsTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "ActorSkills"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "Firearms Training"
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "BuffDebuffType"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        int_value: -1
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "529961c8336331082200574d"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Spell Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "SpellTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -12115,7 +12849,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -12123,6 +12857,53 @@ triggers {
         int_value: -1
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "529961e6336331082200574e"
+  }
+  elseActions {
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Summon Training"
+  events {
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "SummonTraining"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        int_value: 0
+      }
+    }
+  }
+  actions {
     ops {
       functionName: "Apply Skill Status Effect to Actor"
       args {
@@ -12172,7 +12953,7 @@ triggers {
             string_value: "BuffDebuffType"
           }
           args {
-            int_value: 0
+            int_value: 1
           }
         }
       }
@@ -12183,7 +12964,7 @@ triggers {
   }
   isActive: true
   idRef {
-    id: "55a7fd31336637c81c003433"
+    id: "52996202336331082200574f"
   }
   elseActions {
   }
@@ -12225,7 +13006,7 @@ triggers {
       }
     }
   }
-  isActive: true
+  isActive: false
   idRef {
     id: "56f5b8e26466322c17005efe"
   }
@@ -12249,62 +13030,6 @@ triggers {
     }
   }
   conditions {
-    ops {
-      functionName: "Comparison (int)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (int)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Universal_Random"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 4
-          }
-        }
-      }
-      args {
-        int_value: 6
-      }
-    }
-    ops {
-      functionName: "Comparison (float)"
-      args {
-        call_value {
-          functionName: "Get Story Variable (float)"
-          args {
-            string_value: "51f15c62336331d02c00440e"
-          }
-          args {
-            string_value: "Daylight"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "Comparison Ops"
-          }
-          args {
-            int_value: 4
-          }
-        }
-      }
-      args {
-        float_value: 3
-      }
-    }
   }
   actions {
     ops {
@@ -12499,175 +13224,6 @@ triggers {
     id: "58dd487130373600272b0f65"
   }
   elseActions {
-    ops {
-      functionName: "Teleport Actor"
-      args {
-        call_value {
-          functionName: "All Actors on Team"
-          args {
-            call_value {
-              functionName: "Get Preset Value (string)"
-              args {
-                string_value: "FactionList"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Map Item (SceneDimension)"
-              args {
-                string_value: "Default"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Current Location of Prop"
-          args {
-            call_value {
-              functionName: "Get Map Item (Prop)"
-              args {
-                string_value: "53e137f838646168110051ea"
-              }
-            }
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "FacingDirection"
-          }
-          args {
-            int_value: 3
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "TeleportMethod"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Teleport Camera To Actor"
-      args {
-        call_value {
-          functionName: "Get Map Item (Player)"
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Activate Actor Spawner By Tag"
-      args {
-        call_value {
-          functionName: "Get Map Item (SenseTagList)"
-          args {
-            string_value: "Watching"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "WithOrWithout"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Set Prop Visible by Tag"
-      args {
-        call_value {
-          functionName: "Get Map Item (SenseTagList)"
-          args {
-            string_value: "car"
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "bool"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        float_value: -1
-      }
-      args {
-        call_value {
-          functionName: "Everywhere"
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "DoesOrDoesNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-    }
-    ops {
-      functionName: "Enable/Disable Trigger"
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "EnableOrDisable"
-          }
-          args {
-            int_value: 0
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (Trigger)"
-          args {
-            string_value: "525239e53363312836004de7"
-          }
-        }
-      }
-    }
   }
   is_oneshot: true
 }
@@ -12680,29 +13236,72 @@ triggers {
   }
   conditions {
     ops {
-      functionName: "Comparison (int)"
-      args {
-        int_value: 19
-      }
+      functionName: "OR"
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Comparison (bool)"
           args {
-            string_value: "Comparison Ops"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "bool"
+              }
+              args {
+                int_value: 0
+              }
+            }
           }
           args {
-            int_value: 1
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "IsOrIsNot"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Story Variable (bool)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Called_Andy"
+              }
+            }
           }
         }
       }
       args {
         call_value {
-          functionName: "Get Story Variable (int)"
+          functionName: "Comparison (int)"
           args {
-            string_value: "51f15c62336331d02c00440e"
+            int_value: 21
           }
           args {
-            string_value: "StoryStep"
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 1
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Story Variable (int)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "StoryStep"
+              }
+            }
           }
         }
       }
@@ -12775,7 +13374,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (SenseTagList)"
           args {
-            string_value: "car"
+            string_value: "step20"
           }
         }
       }
@@ -12877,7 +13476,7 @@ triggers {
       }
     }
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "beat Soka"
@@ -12888,17 +13487,69 @@ triggers {
   }
   conditions {
     ops {
-      functionName: "Comparison (Actor)"
+      functionName: "Evaluate Team Survival Percentage"
       args {
         call_value {
-          functionName: "Triggering Target Actor"
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        int_value: 100
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 2
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Add Item to Team"
+      args {
+        call_value {
+          functionName: "Get Map Item (Item)"
+          args {
+            string_value: "Soka_Recording"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 0
+          }
         }
       }
       args {
         call_value {
           functionName: "Get Preset Value (int)"
           args {
-            string_value: "IsOrIsNot"
+            string_value: "WithOrWithout"
           }
           args {
             int_value: 1
@@ -12907,19 +13558,97 @@ triggers {
       }
       args {
         call_value {
-          functionName: "Get Map Item (Actor)"
+          functionName: "Get Map Item (SceneDimension)"
           args {
-            string_value: "58dbf696303736104a89d1b1"
+            string_value: "Default"
           }
         }
       }
     }
-  }
-  actions {
     ops {
-      functionName: "End Story With Epilogue"
+      functionName: "Set Variable (string)"
       args {
-        string_value: "vSoka"
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "PlotInformation"
+          }
+        }
+      }
+      args {
+        string_value: "Give Piper his recording."
+      }
+    }
+    ops {
+      functionName: "Set Screen Label"
+      args {
+        string_value: "Plot Information"
+      }
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "PlotInformation"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Start Conversation"
+      args {
+        call_value {
+          functionName: "Get Map Item (Conversation)"
+          args {
+            string_value: "5d0eec30396639001f0010a2"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Actor)"
+          args {
+            string_value: "58dbf37d303736104a89d1b0"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Enable/Disable Trigger"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "EnableOrDisable"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "58de4c2e303736f53bb68215"
+          }
+        }
       }
     }
   }
@@ -12929,7 +13658,7 @@ triggers {
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Lost 2 Soka"
@@ -13009,13 +13738,13 @@ triggers {
       }
     }
   }
-  isActive: false
+  isActive: true
   idRef {
     id: "58de4c2f303736f53bb68216"
   }
   elseActions {
   }
-  is_oneshot: true
+  is_oneshot: false
 }
 triggers {
   name: "Spotted Soka"
@@ -13047,7 +13776,7 @@ triggers {
         call_value {
           functionName: "Get Map Item (Actor)"
           args {
-            string_value: "58dbf696303736104a89d1b1"
+            string_value: "5a46b4bc653737342c002e41"
           }
         }
       }
@@ -13129,7 +13858,7 @@ triggers {
   is_oneshot: true
 }
 triggers {
-  name: "clean nvs"
+  name: "clean nvs N"
   events {
     ops {
       functionName: "On Actor Death"
@@ -13137,47 +13866,13 @@ triggers {
   }
   conditions {
     ops {
-      functionName: "Evaluate Tag for Actor"
-      args {
-        call_value {
-          functionName: "Specific Actor"
-          args {
-            call_value {
-              functionName: "Triggering Actor"
-            }
-          }
-          args {
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Preset Value (int)"
-          args {
-            string_value: "HasOrHasNot"
-          }
-          args {
-            int_value: 1
-          }
-        }
-      }
-      args {
-        call_value {
-          functionName: "Get Map Item (SenseTagList)"
-          args {
-            string_value: "Arena"
-          }
-        }
-      }
-    }
-    ops {
       functionName: "Evaluate Tag Pattern for Actor"
       args {
         call_value {
           functionName: "Specific Actor"
           args {
             call_value {
-              functionName: "Triggering Actor"
+              functionName: "Triggering Target Actor"
             }
           }
           args {
@@ -13196,11 +13891,66 @@ triggers {
         }
       }
       args {
-        string_value: "nord"
+        string_value: "sud?"
+      }
+    }
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "Battle"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
+          }
+        }
       }
     }
   }
   actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "Battle"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
     ops {
       functionName: "Kill Actor"
       args {
@@ -13210,7 +13960,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (SenseTagList)"
               args {
-                string_value: "Arena"
+                string_value: "NvS"
               }
             }
           }
@@ -13304,7 +14054,7 @@ triggers {
         float_value: 3
       }
       args {
-        float_value: 0
+        float_value: 1
       }
     }
     ops {
@@ -13335,39 +14085,106 @@ triggers {
       }
     }
     ops {
-      functionName: "Set Actor In Passive Mode"
+      functionName: "Change Actor Team"
       args {
         call_value {
-          functionName: "All Actors on Team"
+          functionName: "Specific Actor"
           args {
             call_value {
-              functionName: "Get Preset Value (string)"
+              functionName: "Get Map Item (Actor)"
               args {
-                string_value: "FactionList"
-              }
-              args {
-                int_value: 0
+                string_value: "58e3ca3a30373667665408f9"
               }
             }
           }
           args {
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (string)"
+          args {
+            string_value: "FactionList"
+          }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "58e3a6e53037362461140be2"
+  }
+  elseActions {
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "clean nvs S"
+  events {
+    ops {
+      functionName: "On Actor Death"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate Tag Pattern for Actor"
+      args {
+        call_value {
+          functionName: "Specific Actor"
+          args {
             call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
+              functionName: "Triggering Target Actor"
             }
           }
           args {
-            call_value {
-              functionName: "Get Map Item (SceneDimension)"
-              args {
-                string_value: "Default"
-              }
-            }
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "HasOrHasNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "nord?"
+      }
+    }
+    ops {
+      functionName: "Comparison (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "Battle"
           }
         }
       }
@@ -13378,17 +14195,46 @@ triggers {
             string_value: "IsOrIsNot"
           }
           args {
-            int_value: 0
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 1
           }
         }
       }
     }
   }
-  isActive: false
-  idRef {
-    id: "58e3a6e53037362461140be2"
-  }
-  elseActions {
+  actions {
+    ops {
+      functionName: "Set Variable (bool)"
+      args {
+        call_value {
+          functionName: "Get Variable (bool)"
+          args {
+            string_value: "Battle"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "bool"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
     ops {
       functionName: "Kill Actor"
       args {
@@ -13398,7 +14244,7 @@ triggers {
             call_value {
               functionName: "Get Map Item (SenseTagList)"
               args {
-                string_value: "Arena"
+                string_value: "NvS"
               }
             }
           }
@@ -13492,7 +14338,7 @@ triggers {
         float_value: 3
       }
       args {
-        float_value: 0
+        float_value: 1
       }
     }
     ops {
@@ -13523,54 +14369,59 @@ triggers {
       }
     }
     ops {
-      functionName: "Set Actor In Passive Mode"
+      functionName: "Change Actor Team"
       args {
         call_value {
-          functionName: "All Actors on Team"
+          functionName: "Specific Actor"
           args {
             call_value {
-              functionName: "Get Preset Value (string)"
+              functionName: "Get Map Item (Actor)"
               args {
-                string_value: "FactionList"
-              }
-              args {
-                int_value: 0
+                string_value: "58e3ca3a30373667665408f9"
               }
             }
           }
           args {
-            call_value {
-              functionName: "Get Preset Value (int)"
-              args {
-                string_value: "AllOrAny"
-              }
-              args {
-                int_value: 0
-              }
-            }
-          }
-          args {
-            call_value {
-              functionName: "Get Map Item (SceneDimension)"
-              args {
-                string_value: "Default"
-              }
-            }
           }
         }
       }
       args {
         call_value {
-          functionName: "Get Preset Value (int)"
+          functionName: "Get Preset Value (string)"
           args {
-            string_value: "IsOrIsNot"
+            string_value: "FactionList"
           }
+          args {
+            int_value: 3
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (SceneDimension)"
+          args {
+            string_value: "Default"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Teleport Camera To Actor"
+      args {
+        call_value {
+          functionName: "Get Map Item (Player)"
           args {
             int_value: 0
           }
         }
       }
     }
+  }
+  isActive: true
+  idRef {
+    id: "5b5f8e7a343032843200205e"
+  }
+  elseActions {
   }
   is_oneshot: false
 }
@@ -13735,6 +14586,582 @@ triggers {
     }
   }
   is_oneshot: false
+}
+triggers {
+  name: "daylight show"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (float)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (float)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Daylight"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "Comparison Ops"
+          }
+          args {
+            int_value: 4
+          }
+        }
+      }
+      args {
+        float_value: 12
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Ambient Light Color"
+      args {
+        float_value: 0.5
+      }
+      args {
+        float_value: 0.35
+      }
+      args {
+        float_value: 0.2
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (CameraRegion)"
+          args {
+            string_value: "53e136ad38646168110051e2"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Directional Light Color"
+      args {
+        float_value: 0.4
+      }
+      args {
+        float_value: 0.35
+      }
+      args {
+        float_value: 0.35
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0.2
+      }
+      args {
+        float_value: -0.8
+      }
+      args {
+        float_value: -0.4
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (CameraRegion)"
+          args {
+            string_value: "53e136ad38646168110051e2"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "59f9030f6537373c3e000a6a"
+  }
+  elseActions {
+    ops {
+      functionName: "Set Ambient Light Color"
+      args {
+        float_value: 0.11
+      }
+      args {
+        float_value: 0.22
+      }
+      args {
+        float_value: 0.2
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (CameraRegion)"
+          args {
+            string_value: "53e136ad38646168110051e2"
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Set Directional Light Color"
+      args {
+        float_value: 0.75
+      }
+      args {
+        float_value: 0.25
+      }
+      args {
+        float_value: 0.6
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: -0.3
+      }
+      args {
+        float_value: -0.75
+      }
+      args {
+        float_value: -0.9
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        call_value {
+          functionName: "Get Map Item (CameraRegion)"
+          args {
+            string_value: "53e136ad38646168110051e2"
+          }
+        }
+      }
+    }
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "daylight clip"
+  events {
+    ops {
+      functionName: "Get Map Item (Event)"
+      args {
+        string_value: "SunRising"
+      }
+    }
+    ops {
+      functionName: "On Map Start"
+    }
+  }
+  conditions {
+    ops {
+      functionName: "OR"
+      args {
+        call_value {
+          functionName: "Comparison (float)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (float)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Daylight"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 4
+              }
+            }
+          }
+          args {
+            float_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Comparison (float)"
+          args {
+            call_value {
+              functionName: "Get Story Variable (float)"
+              args {
+                string_value: "51f15c62336331d02c00440e"
+              }
+              args {
+                string_value: "Daylight"
+              }
+            }
+          }
+          args {
+            call_value {
+              functionName: "Get Preset Value (int)"
+              args {
+                string_value: "Comparison Ops"
+              }
+              args {
+                int_value: 2
+              }
+            }
+          }
+          args {
+            float_value: 23
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (float)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (float)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Daylight"
+          }
+        }
+      }
+      args {
+        float_value: 0
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "59f9030f6537373c3e000a6a"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "SunRising"
+          }
+        }
+      }
+      args {
+        float_value: 150
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "59f901ca6537373c3e000a69"
+  }
+  elseActions {
+    ops {
+      functionName: "Add To Variable (float)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (float)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Daylight"
+          }
+        }
+      }
+      args {
+        float_value: 1
+      }
+    }
+    ops {
+      functionName: "Trigger: Run Alternate Trigger"
+      args {
+        call_value {
+          functionName: "Get Map Item (Trigger)"
+          args {
+            string_value: "59f9030f6537373c3e000a6a"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WaitOrNot"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "WithOrWithout"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+    }
+    ops {
+      functionName: "Send Event After Delay"
+      args {
+        call_value {
+          functionName: "Get Map Item (Event)"
+          args {
+            string_value: "SunRising"
+          }
+        }
+      }
+      args {
+        float_value: 150
+      }
+    }
+  }
+  is_oneshot: false
+}
+triggers {
+  name: "tarnsition - sewers"
+  events {
+    ops {
+      functionName: "On Item Interaction"
+      args {
+        call_value {
+          functionName: "Get Map Item (InteractableObject)"
+          args {
+            string_value: "5b469f23343032dc2a00121e"
+          }
+        }
+      }
+    }
+  }
+  conditions {
+    ops {
+      functionName: "Evaluate Turn Mode"
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TurnBasedOrFreeMove"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Set Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Travel"
+          }
+        }
+      }
+      args {
+        int_value: 993
+      }
+    }
+    ops {
+      functionName: "Open Scene"
+      args {
+        call_value {
+          functionName: "Get Map Item (Scene)"
+          args {
+            string_value: "Run Location-Sewers"
+          }
+        }
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5b468cbc343032dc2a001219"
+  }
+  elseActions {
+    ops {
+      functionName: "Display Text over Actor"
+      args {
+        call_value {
+          functionName: "Triggering Actor"
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "TextPopupStyle"
+          }
+          args {
+            int_value: 0
+          }
+        }
+      }
+      args {
+        string_value: "I have no reason to go in there."
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 0
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 3
+      }
+      args {
+        float_value: 0
+      }
+    }
+  }
+  is_oneshot: true
+}
+triggers {
+  name: "Runs_Vigor"
+  events {
+  }
+  conditions {
+    ops {
+      functionName: "Comparison (string)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (string)"
+          args {
+          }
+          args {
+            string_value: "Current_Fixer"
+          }
+        }
+      }
+      args {
+        call_value {
+          functionName: "Get Preset Value (int)"
+          args {
+            string_value: "IsOrIsNot"
+          }
+          args {
+            int_value: 1
+          }
+        }
+      }
+      args {
+        string_value: "Vigor"
+      }
+    }
+  }
+  actions {
+    ops {
+      functionName: "Add To Variable (int)"
+      args {
+        call_value {
+          functionName: "Get Story Variable (int)"
+          args {
+            string_value: "51f15c62336331d02c00440e"
+          }
+          args {
+            string_value: "Runs_Vigor"
+          }
+        }
+      }
+      args {
+        int_value: 1
+      }
+    }
+  }
+  isActive: true
+  idRef {
+    id: "5cf9cb7b39663998390060e7"
+  }
+  elseActions {
+  }
+  is_oneshot: true
 }
 regions {
   name: "Main Camera Bind"
@@ -14676,6 +16103,7 @@ characters {
       }
       specializations {
       }
+      archetypeName: "Player"
       vulnerabilities {
       }
     }
@@ -14763,73 +16191,13 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Security/HumanMaleSecurity"
-    character_sheet_id: "CG Human Street Samurai"
+    character_sheet_id: "Runner Verum Julos"
+    equipment_sheet_id: "runner Verum Julos"
     character_mod {
-      stats {
-        body: 0
-        quickness: 0
-        strength: 0
-        charisma: 0
-        intelligence: 0
-        willpower: 0
-        essence: 0
-        magic: 0
-        hp: 0
-        ap: 0
-        armor: 3
-        force: 0
-        morale: 0
-        discipline: 0
-        awareness: 0
-        perception: 0
-        authority: 0
-        protect_tether_range: 0
-        move_speed: 0
-      }
-      skills {
-        ranged_combat: 3
-        close_combat: 3
-        throwing_weapons: 1
-        spellcasting: 0
-        decking: 0
-        conjuring: 0
-        spirit_summoning: 0
-        drone_control: 0
-        biotech: 0
-        dodge: 1
-        etiquette_corporate: 0
-        etiquette_security: 0
-        etiquette_gang: 0
-        etiquette_socialite: 0
-        chi_casting: 0
-        etiquette_shadowrunner: 0
-        etiquette_street: 0
-        etiquette_academic: 0
-      }
-      specializations {
-        pistol: 2
-        rifle: 4
-        shotgun: 2
-        smg: 2
-        edged: 1
-        unarmed: 1
-        spirit_control: 0
-        esp_control: 0
-        drone_combat: 0
-      }
       archetypeName: "Player"
       attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "Sword 2 Katana"
-    }
-    equipment {
-      prefab_name: "SamuraiTrenchcoat"
-    }
-    equipment {
-      prefab_name: "ar SSC czechvz88v"
     }
     team_id: "Shadowrunners"
     char_name: "Verum Julos"
@@ -14843,7 +16211,7 @@ characters {
     portrait {
       filename: "backerpc_humanmale_rc_greymitigator"
     }
-    karma: 74
+    karma: 78
     hiring_cost_override: 1000
   }
 }
@@ -14947,82 +16315,13 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Core/DwarfMale"
-    character_sheet_id: "BaseCivilian"
+    character_sheet_id: "runner Ricky"
+    equipment_sheet_id: "runner Ricky"
     character_mod {
-      stats {
-        body: 2
-        quickness: 2
-        strength: 0
-        charisma: 0
-        intelligence: 0
-        willpower: 2
-        essence: 0
-        magic: 0
-        hp: 0
-        ap: 0
-        armor: 3
-        force: 0
-        morale: 0
-        discipline: 0
-        awareness: 0
-        perception: 0
-        authority: 0
-        protect_tether_range: 0
-        move_speed: 0
-      }
-      skills {
-        ranged_combat: 2
-        close_combat: 0
-        throwing_weapons: 0
-        spellcasting: 3
-        decking: 0
-        conjuring: 3
-        spirit_summoning: 3
-        drone_control: 0
-        biotech: 0
-        dodge: 0
-        etiquette_corporate: 0
-        etiquette_security: 0
-        etiquette_gang: 0
-        etiquette_socialite: 0
-        chi_casting: 0
-        etiquette_shadowrunner: 0
-        etiquette_street: 0
-        etiquette_academic: 0
-      }
-      specializations {
-        pistol: 0
-        rifle: 0
-        shotgun: 0
-        smg: 0
-        edged: 0
-        unarmed: 0
-        spirit_control: 1
-        esp_control: 0
-        drone_combat: 0
-      }
-      archetypeName: "Player"
+      archetypeName: "Guard - Protect"
       attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "MageCasual"
-    }
-    equipment {
-      prefab_name: "Spell Manabolt 1"
-    }
-    equipment {
-      prefab_name: "Spell Powerbolt 1"
-    }
-    equipment {
-      prefab_name: "TotemRaccoon"
-    }
-    equipment {
-      prefab_name: "SSC Spell Heal Wound"
-    }
-    equipment {
-      prefab_name: "SSC Spell Aim 1"
     }
     team_id: "Shadowrunners"
     char_name: "Ricky"
@@ -15035,7 +16334,7 @@ characters {
       filename: "pc_dwarfmale_06_blackbeard"
     }
     portrait_code_override: "s1h3b4"
-    karma: 43
+    karma: 51
     hiring_cost_override: 1075
     hiring_tag: "Shaman"
     is_prop_character: false
@@ -15056,48 +16355,13 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Story/ThaddeusRyker"
-    character_sheet_id: "BaseCivilian"
+    character_sheet_id: "runner Clockwork"
+    equipment_sheet_id: "runner Clockwork"
     character_mod {
-      stats {
-        body: 2
-        quickness: 3
-        strength: 1
-        charisma: 2
-        intelligence: 3
-        willpower: 2
-        essence: 0
-        hp: 0
-        ap: 0
-        morale: 24
-        discipline: 0
-        awareness: 24
-        perception: 0
-        authority: 0
-        protect_tether_range: 5
-        move_speed: 0
-      }
-      skills {
-        ranged_combat: 3
-        decking: 4
-        drone_control: 4
-        biotech: 2
-        dodge: 1
-      }
-      specializations {
-        pistol: 2
-        smg: 2
-        esp_control: 4
-        drone_combat: 4
-      }
       archetypeName: "Player"
+      attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "smg SSC ak97carbine"
-    }
-    equipment {
-      prefab_name: "DroneRepairKit"
     }
     team_id: "Shadowrunners"
     char_name: "Clockwork"
@@ -15111,7 +16375,7 @@ characters {
     portrait {
       filename: "backer_humanmale_jamestbenton"
     }
-    karma: 97
+    karma: 77
     hiring_cost_override: 1000
   }
 }
@@ -15130,42 +16394,13 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Creature/CreatureGhoulHumanMale"
-    character_sheet_id: "BaseCivilian"
+    character_sheet_id: "runner Argyle"
+    equipment_sheet_id: "runner Argyle"
     character_mod {
-      stats {
-        body: 5
-        quickness: 3
-        strength: 6
-        charisma: 0
-        intelligence: 0
-        willpower: 2
-        essence: 0
-        hp: 0
-        ap: 0
-        armor: 4
-        morale: 24
-        discipline: 0
-        awareness: 24
-        perception: 0
-        authority: 0
-        protect_tether_range: 5
-        move_speed: 2
-      }
-      skills {
-        close_combat: 6
-        biotech: 0
-        dodge: 4
-      }
-      specializations {
-        edged: 2
-        unarmed: 5
-      }
       archetypeName: "Player"
+      attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "GhoulFist"
     }
     team_id: "Shadowrunners"
     char_name: "Argyle"
@@ -15176,7 +16411,7 @@ characters {
     portrait {
       filename: "pc_orkmale_00_faceless"
     }
-    karma: 116
+    karma: 82
     hiring_cost_override: 1000
   }
 }
@@ -15195,79 +16430,13 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Core/HumanMale"
-    character_sheet_id: "CG Human Mage"
+    character_sheet_id: "runner Trent"
+    equipment_sheet_id: "runner Trent"
     character_mod {
-      stats {
-        body: 1
-        quickness: 0
-        strength: 0
-        charisma: 1
-        intelligence: 1
-        willpower: 3
-        essence: 0
-        magic: 0
-        hp: 0
-        ap: 0
-        armor: 0
-        force: 0
-        morale: 0
-        discipline: 0
-        awareness: 0
-        perception: 0
-        authority: 0
-        protect_tether_range: 0
-        move_speed: 0
-      }
-      skills {
-        ranged_combat: 2
-        close_combat: 0
-        throwing_weapons: 0
-        spellcasting: 4
-        decking: 0
-        conjuring: 0
-        spirit_summoning: 0
-        drone_control: 0
-        biotech: 0
-        dodge: 3
-        etiquette_corporate: 0
-        etiquette_security: 0
-        etiquette_gang: 0
-        etiquette_socialite: 0
-        chi_casting: 0
-        etiquette_shadowrunner: 0
-        etiquette_street: 0
-        etiquette_academic: 0
-      }
-      specializations {
-        pistol: 1
-        rifle: 0
-        shotgun: 0
-        smg: 0
-        edged: 0
-        unarmed: 0
-        spirit_control: 0
-        esp_control: 0
-        drone_combat: 0
-      }
       archetypeName: "Player"
       attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "arm6 SSC mageslick"
-    }
-    equipment {
-      prefab_name: "SSC Spell Heal Wound"
-    }
-    equipment {
-      prefab_name: "SSC Spell Powerbolt 2"
-    }
-    equipment {
-      prefab_name: "SSC Spell Flamethrower 2"
-    }
-    equipment {
-      prefab_name: "SSC Spell Fireball 1"
     }
     team_id: "Shadowrunners"
     char_name: "Trent"
@@ -15408,73 +16577,13 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Core/TrollFemale"
-    character_sheet_id: "CG Troll Decker"
+    character_sheet_id: "runner Smash Jacker"
+    equipment_sheet_id: "runner Smash Jacker"
     character_mod {
-      stats {
-        body: 1
-        quickness: 1
-        strength: 1
-        charisma: 0
-        intelligence: 3
-        willpower: 0
-        essence: 0
-        magic: 0
-        hp: 0
-        ap: 0
-        armor: 0
-        force: 0
-        morale: 0
-        discipline: 0
-        awareness: 0
-        perception: 0
-        authority: 0
-        protect_tether_range: 0
-        move_speed: 0
-      }
-      skills {
-        ranged_combat: 0
-        close_combat: 4
-        throwing_weapons: 0
-        spellcasting: 0
-        decking: 5
-        conjuring: 0
-        spirit_summoning: 0
-        drone_control: 0
-        biotech: 0
-        dodge: 0
-        etiquette_corporate: 0
-        etiquette_security: 0
-        etiquette_gang: 0
-        etiquette_socialite: 0
-        chi_casting: 0
-        etiquette_shadowrunner: 0
-        etiquette_street: 0
-        etiquette_academic: 0
-      }
-      specializations {
-        pistol: 0
-        rifle: 0
-        shotgun: 0
-        smg: 0
-        edged: 4
-        unarmed: 0
-        spirit_control: 0
-        esp_control: 0
-        drone_combat: 0
-      }
       archetypeName: "Player"
       attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "arm6 SSC samuraistarter"
-    }
-    equipment {
-      prefab_name: "SSC CyberdeckKraftwerk1"
-    }
-    equipment {
-      prefab_name: "sword SSC monofilamentsword"
     }
     team_id: "Shadowrunners"
     char_name: "Smash Jacker"
@@ -15487,7 +16596,7 @@ characters {
     portrait {
       filename: "pc_trollfemale_04d_devil"
     }
-    karma: 112
+    karma: 119
     hiring_cost_override: 1000
   }
 }
@@ -15554,60 +16663,25 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -85
+    x: -48
     y: 0
-    z: -9
+    z: 96
   }
   orientation: ORIENTATION_S
   GeneralTags: "Clockwork"
   idRef {
-    id: "52c98d473363311417000941"
+    id: "52c97907336331280d007519"
   }
   lod: 0
   character_instance {
     prefab_name: "Seattle:Story/ThaddeusRyker"
-    character_sheet_id: "BaseCivilian"
+    character_sheet_id: "runner Clockwork"
+    equipment_sheet_id: "runner Clockwork"
     character_mod {
-      stats {
-        body: 2
-        quickness: 3
-        strength: 1
-        charisma: 2
-        intelligence: 3
-        willpower: 2
-        essence: 0
-        hp: 0
-        ap: 0
-        morale: 24
-        discipline: 0
-        awareness: 24
-        perception: 0
-        authority: 0
-        protect_tether_range: 5
-        move_speed: 0
-      }
-      skills {
-        ranged_combat: 3
-        decking: 4
-        drone_control: 4
-        biotech: 2
-        dodge: 1
-      }
-      specializations {
-        pistol: 2
-        smg: 2
-        esp_control: 4
-        drone_combat: 4
-      }
       archetypeName: "Player"
+      attitude: AttitudeAggressive
       vulnerabilities {
       }
-    }
-    equipment {
-      prefab_name: "smg SSC ak97carbine"
-    }
-    equipment {
-      prefab_name: "DroneRepairKit"
     }
     team_id: "Shadowrunners"
     char_name: "Clockwork"
@@ -15621,7 +16695,7 @@ characters {
     portrait {
       filename: "backer_humanmale_jamestbenton"
     }
-    karma: 97
+    karma: 77
     hiring_cost_override: 1000
   }
 }
@@ -17214,8 +18288,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -17301,8 +18375,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -17442,8 +18516,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -17529,8 +18603,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Hunt And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -17670,8 +18744,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Hunt And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -18604,10 +19678,10 @@ characters {
   gridPoint {
     x: -62.270004
     y: 0
-    z: -84.380005
+    z: -89.380005
   }
   orientation: ORIENTATION_E
-  GeneralTags: "step21"
+  GeneralTags: "step20"
   idRef {
     id: "58dbf37d303736104a89d1b0"
   }
@@ -18647,7 +19721,7 @@ characters {
     }
     team_id: "Civilians"
     char_name: "Andy"
-    GeneralTags: "step21"
+    GeneralTags: "step20"
     enabled_at_start: false
     pc_spawn_number: -1
     portrait {
@@ -18659,111 +19733,11 @@ characters {
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -61
+    x: -68
     y: 0
-    z: -84
+    z: -82
   }
-  orientation: ORIENTATION_E
-  GeneralTags: "isSoka"
-  GeneralTags: "step20"
-  displayName: "Captain_Soka"
-  idRef {
-    id: "58dbf696303736104a89d1b1"
-  }
-  lod: 0
-  character_instance {
-    prefab_name: "Seattle:Story/RenrakuSamurai"
-    character_sheet_id: "Mysterious Samurai"
-    equipment_sheet_id: "Lonestar_Lv6_Captain_Gear"
-    character_mod {
-      stats {
-        body: 0
-        quickness: 0
-        strength: 0
-        charisma: 0
-        intelligence: 0
-        willpower: 0
-        essence: 0
-        magic: 0
-        hp: 0
-        ap: 0
-        armor: 0
-        force: 0
-        morale: 0
-        discipline: 0
-        awareness: 0
-        perception: 0
-        authority: 0
-        protect_tether_range: 0
-        move_speed: 0
-        vision_peripheral_distance: 0
-        vision_cone_distance: 0
-        vision_cone_angle: 0
-        is_fearless: 1
-        is_strict: 1
-      }
-      skills {
-        ranged_combat: 0
-        close_combat: -7
-        throwing_weapons: 0
-        spellcasting: 0
-        decking: 0
-        conjuring: 0
-        spirit_summoning: 0
-        drone_control: 0
-        biotech: 0
-        dodge: 0
-        etiquette_corporate: 0
-        etiquette_security: 0
-        etiquette_gang: 0
-        etiquette_socialite: 0
-        chi_casting: 0
-        etiquette_shadowrunner: 0
-        etiquette_street: 0
-        etiquette_academic: 0
-      }
-      specializations {
-        pistol: 0
-        rifle: 0
-        shotgun: 0
-        smg: 0
-        edged: 0
-        unarmed: 0
-        spirit_control: 0
-        esp_control: 0
-        drone_combat: 0
-      }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeBoss
-      attackRandom: AttackStyle_BestOnly
-      vulnerabilities {
-      }
-    }
-    equipment {
-      prefab_name: "Sword 3 Katana"
-    }
-    team_id: "LoneStar"
-    char_name: "Mysterious Samurai"
-    GeneralTags: "isSoka"
-    GeneralTags: "step20"
-    enabled_at_start: false
-    pc_spawn_number: -1
-    cyberware_body: "tattoo_body_earth"
-    portrait {
-      filename: "backerpc_humanmale_davidfry_joshuamorgan"
-    }
-    karma: 492
-    scale_character_sheet: false
-  }
-}
-characters {
-  name: "chars_icon_playerIcon"
-  gridPoint {
-    x: -62
-    y: 0
-    z: -87
-  }
-  orientation: ORIENTATION_E
+  orientation: ORIENTATION_S
   GeneralTags: "step20"
   displayName: "red sam"
   idRef {
@@ -18772,8 +19746,7 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Story/RenrakuSamurai"
-    character_sheet_id: "Lonestar_Lv6_Heavy_SMG"
-    equipment_sheet_id: "Lonestar_Lv6_SMG_Gear"
+    character_sheet_id: "Lonestar_Lv2_Captain"
     equipment_sheet_id: "Lonestar_Lv6_Captain_Gear"
     character_mod {
       stats {
@@ -18836,26 +19809,34 @@ characters {
       vulnerabilities {
       }
     }
+    equipment {
+      prefab_name: "Berlin_Ex 2 ArmTech MGL-6"
+    }
+    equipment {
+      prefab_name: "Berlin_AR 2 FN HAR"
+    }
     team_id: "LoneStar"
-    char_name: "New Actor"
+    char_name: "Red Samurai Heavy Weapons"
     GeneralTags: "step20"
     enabled_at_start: false
     pc_spawn_number: -1
-    cyberware_body: "tattoo_body_earth"
+    cyberware_body: "Dermal Plating Mk 2"
+    cyberware_left_arm: "Muscle Augmentation"
     portrait {
       filename: ""
     }
-    karma: 105
+    karma: 52
+    scale_character_sheet: true
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -61
+    x: -68
     y: 0
-    z: -87
+    z: -80
   }
-  orientation: ORIENTATION_E
+  orientation: ORIENTATION_S
   GeneralTags: "step20"
   displayName: "red sam"
   idRef {
@@ -18864,8 +19845,7 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Story/RenrakuSamurai"
-    character_sheet_id: "Lonestar_Lv6_Heavy_SMG"
-    equipment_sheet_id: "Lonestar_Lv6_SMG_Gear"
+    character_sheet_id: "Lonestar_Lv2_Human_Mage"
     equipment_sheet_id: "Lonestar_Lv6_Captain_Gear"
     character_mod {
       stats {
@@ -18896,10 +19876,10 @@ characters {
         ranged_combat: 0
         close_combat: 0
         throwing_weapons: 0
-        spellcasting: 0
+        spellcasting: -2
         decking: 0
-        conjuring: 0
-        spirit_summoning: 0
+        conjuring: 2
+        spirit_summoning: 2
         drone_control: 0
         biotech: 0
         dodge: 0
@@ -18919,7 +19899,7 @@ characters {
         smg: 0
         edged: 0
         unarmed: 0
-        spirit_control: 0
+        spirit_control: 2
         esp_control: 0
         drone_combat: 0
       }
@@ -18928,8 +19908,20 @@ characters {
       vulnerabilities {
       }
     }
+    equipment {
+      prefab_name: "Berlin_IdolDragonslayer"
+    }
+    equipment {
+      prefab_name: "Berlin_Spell Toxic Bolt 2"
+    }
+    equipment {
+      prefab_name: "Spell Slow 2"
+    }
+    equipment {
+      prefab_name: "Berlin_Spell Slow 1"
+    }
     team_id: "LoneStar"
-    char_name: "New Actor"
+    char_name: "Red Samurai Shaman"
     GeneralTags: "step20"
     enabled_at_start: false
     pc_spawn_number: -1
@@ -18937,15 +19929,16 @@ characters {
     portrait {
       filename: ""
     }
-    karma: 105
+    karma: 49
+    scale_character_sheet: true
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -62
+    x: -63
     y: 0
-    z: -88
+    z: -94
   }
   orientation: ORIENTATION_E
   GeneralTags: "step20"
@@ -18956,9 +19949,7 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Story/RenrakuSamurai"
-    character_sheet_id: "Lonestar_Lv6_Heavy_SMG"
-    equipment_sheet_id: "Lonestar_Lv6_SMG_Gear"
-    equipment_sheet_id: "Lonestar_Lv6_Captain_Gear"
+    character_sheet_id: "Lonestar_Lv2_Heavy_SMG"
     character_mod {
       stats {
         body: 0
@@ -19020,118 +20011,30 @@ characters {
       vulnerabilities {
       }
     }
+    equipment {
+      prefab_name: "Berlin_SR 2 Walther MA-2100"
+    }
     team_id: "LoneStar"
-    char_name: "New Actor"
+    char_name: "Red Samurai Sniper"
     GeneralTags: "step20"
     enabled_at_start: false
     pc_spawn_number: -1
-    cyberware_body: "tattoo_body_earth"
+    cyberware_eyes: "Vision Magnification Eyes 2"
     portrait {
       filename: ""
     }
-    karma: 105
+    karma: 47
+    scale_character_sheet: true
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: -61
+    x: -68
     y: 0
-    z: -88
+    z: -84
   }
-  orientation: ORIENTATION_E
-  GeneralTags: "step20"
-  displayName: "red sam"
-  idRef {
-    id: "58de2f2e303736f53bb681f4"
-  }
-  lod: 0
-  character_instance {
-    prefab_name: "Seattle:Story/RenrakuSamurai"
-    character_sheet_id: "Lonestar_Lv6_Heavy_SMG"
-    equipment_sheet_id: "Lonestar_Lv6_SMG_Gear"
-    equipment_sheet_id: "Lonestar_Lv6_Captain_Gear"
-    character_mod {
-      stats {
-        body: 0
-        quickness: 0
-        strength: 0
-        charisma: 0
-        intelligence: 0
-        willpower: 0
-        essence: 0
-        magic: 0
-        hp: 0
-        ap: 0
-        armor: 0
-        force: 0
-        morale: 0
-        discipline: 0
-        awareness: 0
-        perception: 0
-        authority: 0
-        protect_tether_range: 0
-        move_speed: 0
-        vision_peripheral_distance: 0
-        vision_cone_distance: 0
-        vision_cone_angle: 0
-      }
-      skills {
-        ranged_combat: 0
-        close_combat: 0
-        throwing_weapons: 0
-        spellcasting: 0
-        decking: 0
-        conjuring: 0
-        spirit_summoning: 0
-        drone_control: 0
-        biotech: 0
-        dodge: 0
-        etiquette_corporate: 0
-        etiquette_security: 0
-        etiquette_gang: 0
-        etiquette_socialite: 0
-        chi_casting: 0
-        etiquette_shadowrunner: 0
-        etiquette_street: 0
-        etiquette_academic: 0
-      }
-      specializations {
-        pistol: 0
-        rifle: 0
-        shotgun: 0
-        smg: 0
-        edged: 0
-        unarmed: 0
-        spirit_control: 0
-        esp_control: 0
-        drone_combat: 0
-      }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
-      vulnerabilities {
-      }
-    }
-    team_id: "LoneStar"
-    char_name: "New Actor"
-    GeneralTags: "step20"
-    enabled_at_start: false
-    pc_spawn_number: -1
-    cyberware_body: "tattoo_body_earth"
-    portrait {
-      filename: ""
-    }
-    karma: 105
-  }
-}
-characters {
-  name: "chars_icon_playerIcon"
-  gridPoint {
-    x: -61
-    y: 0
-    z: -86
-  }
-  orientation: ORIENTATION_E
+  orientation: ORIENTATION_S
   GeneralTags: "step20"
   displayName: "red mage"
   idRef {
@@ -19140,8 +20043,7 @@ characters {
   lod: 0
   character_instance {
     prefab_name: "Seattle:Story/RenrakuSamurai"
-    character_sheet_id: "Lonestar_Lv5_Human_Mage"
-    equipment_sheet_id: "Lonestar_Lv6_SMG_Gear"
+    character_sheet_id: "Lonestar_Lv2_Human_Mage"
     equipment_sheet_id: "Lonestar_Lv6_Captain_Gear"
     equipment_sheet_id: "Lonestar_Lv6_Mage_Gear"
     character_mod {
@@ -19206,7 +20108,7 @@ characters {
       }
     }
     team_id: "LoneStar"
-    char_name: "New Actor"
+    char_name: "Red Samurai Mage"
     GeneralTags: "step20"
     enabled_at_start: false
     pc_spawn_number: -1
@@ -19214,18 +20116,19 @@ characters {
     portrait {
       filename: ""
     }
-    karma: 89
+    karma: 43
+    scale_character_sheet: true
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 66
+    x: 68
     y: 0
     z: -82
   }
   orientation: ORIENTATION_S
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "nord3"
   displayName: "LSN Dwarf"
   idRef {
@@ -19290,8 +20193,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -19300,22 +20203,23 @@ characters {
     }
     team_id: "LoneStar"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "nord3"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "dwarf_adept"
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 67
+    x: 69
     y: 0
     z: -83
   }
   orientation: ORIENTATION_S
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "nord5"
   displayName: "LSN Troll"
   idRef {
@@ -19380,8 +20284,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -19390,22 +20294,23 @@ characters {
     }
     team_id: "LoneStar"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "nord5"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "troll_samurai"
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 66
+    x: 68
     y: 0
     z: -83
   }
   orientation: ORIENTATION_S
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "nord2"
   displayName: "LSN Elf"
   idRef {
@@ -19470,8 +20375,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -19480,22 +20385,23 @@ characters {
     }
     team_id: "LoneStar"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "nord2"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "elf_adept"
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 67
+    x: 69
     y: 0
     z: -84
   }
   orientation: ORIENTATION_S
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "nord4"
   displayName: "LSN Ork"
   idRef {
@@ -19560,8 +20466,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -19570,22 +20476,23 @@ characters {
     }
     team_id: "LoneStar"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "nord4"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "ork_adept"
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 66
+    x: 68
     y: 0
     z: -84
   }
   orientation: ORIENTATION_S
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "nord1"
   displayName: "LSN Human"
   idRef {
@@ -19650,8 +20557,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -19660,22 +20567,23 @@ characters {
     }
     team_id: "LoneStar"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "nord1"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "human_adept"
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 77
+    x: 74
     y: 0
     z: -82
   }
   orientation: ORIENTATION_N
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "sud3"
   displayName: "GBS Dwarf"
   idRef {
@@ -19740,8 +20648,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -19750,22 +20658,23 @@ characters {
     }
     team_id: "Gangers"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "sud3"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "human_adept"
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 78
+    x: 75
     y: 0
     z: -83
   }
   orientation: ORIENTATION_N
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "sud5"
   displayName: "GBS Troll"
   idRef {
@@ -19830,8 +20739,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -19840,22 +20749,23 @@ characters {
     }
     team_id: "Gangers"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "sud5"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "troll_samurai"
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 77
+    x: 74
     y: 0
     z: -83
   }
   orientation: ORIENTATION_N
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "sud2"
   displayName: "GBS Elf"
   idRef {
@@ -19920,8 +20830,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -19930,22 +20840,23 @@ characters {
     }
     team_id: "Gangers"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "sud2"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "elf_adept"
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 78
+    x: 75
     y: 0
     z: -84
   }
   orientation: ORIENTATION_N
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "sud4"
   displayName: "GBS Ork"
   idRef {
@@ -20010,8 +20921,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -20020,22 +20931,23 @@ characters {
     }
     team_id: "Gangers"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "sud4"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "ork_adept"
   }
 }
 characters {
   name: "chars_icon_playerIcon"
   gridPoint {
-    x: 77
+    x: 74
     y: 0
     z: -84
   }
   orientation: ORIENTATION_N
-  GeneralTags: "Arena"
+  GeneralTags: "NvS"
   GeneralTags: "sud1"
   displayName: "GBS Human"
   idRef {
@@ -20100,8 +21012,8 @@ characters {
         esp_control: 0
         drone_combat: 0
       }
-      archetypeName: "Guard - Seek And Destroy"
-      attitude: AttitudeAggressive
+      archetypeName: "gumbo_MeleeSoldier"
+      attitude: AttitudeBoss
       vulnerabilities {
       }
     }
@@ -20110,11 +21022,12 @@ characters {
     }
     team_id: "Gangers"
     char_name: "Pit Fighter"
-    GeneralTags: "Arena"
+    GeneralTags: "NvS"
     GeneralTags: "sud1"
     enabled_at_start: false
     pc_spawn_number: -1
     karma: 26
+    hiring_set_randomizer: "human_adept"
   }
 }
 characters {
@@ -20122,9 +21035,9 @@ characters {
   gridPoint {
     x: 71
     y: 0
-    z: -77
+    z: -79
   }
-  orientation: ORIENTATION_S
+  orientation: ORIENTATION_W
   idRef {
     id: "58e3ca3a30373667665408f9"
   }
@@ -20151,8 +21064,8 @@ characters {
       specializations {
       }
     }
-    team_id: "Shadowrunners"
-    char_name: "Mr Footage Capture Man"
+    team_id: "Civilians"
+    char_name: "Mr. Footage Capture Man"
     pc_spawn_number: -1
     hiring_type: HiringType_None
     portrait {
@@ -20161,6 +21074,400 @@ characters {
     karma: 44
     hiring_cost_override: 50
     is_prop_character: true
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -61
+    y: 0
+    z: -89
+  }
+  orientation: ORIENTATION_E
+  GeneralTags: "step20"
+  displayName: "Captain Soka"
+  idRef {
+    id: "5a46b4bc653737342c002e41"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Seattle:Story/RenrakuSamurai"
+    character_sheet_id: "Lonestar_Lv2_Heavy_SMG"
+    equipment_sheet_id: "Lonestar_Lv6_Captain_Gear"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+        vision_peripheral_distance: 0
+        vision_cone_distance: 0
+        vision_cone_angle: 0
+        is_fearless: 0
+        is_strict: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 4
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 4
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Guard - Seek And Destroy"
+      attitude: AttitudeAggressive
+      vulnerabilities {
+      }
+    }
+    equipment {
+      prefab_name: "Sword 3 Katana"
+    }
+    team_id: "LoneStar"
+    char_name: "\'Mysterious\' Samurai"
+    GeneralTags: "step20"
+    enabled_at_start: false
+    pc_spawn_number: -1
+    cyberware_body: "tattoo_body_earth"
+    portrait {
+      filename: "backerpc_humanmale_davidfry_joshuamorgan"
+    }
+    karma: 67
+    scale_character_sheet: true
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -84
+    y: 0
+    z: -20
+  }
+  orientation: ORIENTATION_E
+  displayName: "Mike Score"
+  idRef {
+    id: "5d1e807f396639fc27000a83"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Informant_Corp"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    conversationPoint {
+      conversationID: "5cfb0f85396639e01e002442"
+      turnToFace: true
+    }
+    interaction_info_text: "Mike Score"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Berlin:Business/HumanMaleBusinessMan"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+      vulnerabilities {
+      }
+    }
+    equipment {
+      prefab_name: "Outfit_SINless"
+    }
+    team_id: "Civilians"
+    char_name: "Mike Score"
+    pc_spawn_number: -1
+    spawn_type: SpawnType_Avatar
+    portrait {
+      filename: "pc_humanmale_00b"
+    }
+    karma: 6
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -86
+    y: 0
+    z: -16
+  }
+  orientation: ORIENTATION_S
+  GeneralTags: "Gouhin"
+  displayName: "Informant Security"
+  idRef {
+    id: "5dfd5661396639741000357d"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Seattle:Wealthy/HumanMaleAutumn"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        magic: 0
+        hp: 0
+        ap: 0
+        armor: 0
+        force: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+        vision_peripheral_distance: 0
+        vision_cone_distance: 0
+        vision_cone_angle: 0
+      }
+      skills {
+        ranged_combat: 0
+        close_combat: 0
+        throwing_weapons: 0
+        spellcasting: 0
+        decking: 0
+        conjuring: 0
+        spirit_summoning: 0
+        drone_control: 0
+        biotech: 0
+        dodge: 0
+        etiquette_corporate: 0
+        etiquette_security: 0
+        etiquette_gang: 0
+        etiquette_socialite: 0
+        chi_casting: 0
+        etiquette_shadowrunner: 0
+        etiquette_street: 0
+        etiquette_academic: 0
+      }
+      specializations {
+        pistol: 0
+        rifle: 0
+        shotgun: 0
+        smg: 0
+        edged: 0
+        unarmed: 0
+        spirit_control: 0
+        esp_control: 0
+        drone_combat: 0
+      }
+      archetypeName: "Non-Combatant"
+      attitude: AttitudeCautious
+      vulnerabilities {
+      }
+    }
+    team_id: "Civilians"
+    char_name: "Gouhin"
+    GeneralTags: "Gouhin"
+    pc_spawn_number: -1
+    spawn_type: SpawnType_Avatar
+    hiring_type: HiringType_None
+    portrait {
+      filename: "pc_trollfemale_00b"
+    }
+    karma: 6
+    hiring_cost_override: 3000
+  }
+}
+characters {
+  name: "chars_icon_playerIcon"
+  gridPoint {
+    x: -83
+    y: 0
+    z: -21
+  }
+  orientation: ORIENTATION_E
+  GeneralTags: "Mike_Score"
+  displayName: "Informant Corp"
+  idRef {
+    id: "5dfd6b013966397410003592"
+  }
+  interactionRoot {
+    isEnabled: true
+    interactionRadius: 1
+    prerequisites {
+      ops {
+        functionName: "Comparison (bool)"
+        args {
+          call_value {
+            functionName: "Get Story Variable (bool)"
+            args {
+              string_value: "51f15c62336331d02c00440e"
+            }
+            args {
+              string_value: "Informant_Corp"
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "IsOrIsNot"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+        args {
+          call_value {
+            functionName: "Get Preset Value (int)"
+            args {
+              string_value: "bool"
+            }
+            args {
+              int_value: 1
+            }
+          }
+        }
+      }
+    }
+    conversationPoint {
+      conversationID: "5cfb0f85396639e01e002442"
+      turnToFace: true
+    }
+    interaction_info_text: "Mike Score"
+  }
+  lod: 0
+  character_instance {
+    prefab_name: "Berlin:Business/HumanMaleBusinessMan"
+    character_sheet_id: "BaseCivilian"
+    character_mod {
+      stats {
+        body: 0
+        quickness: 0
+        strength: 0
+        charisma: 0
+        intelligence: 0
+        willpower: 0
+        essence: 0
+        hp: 0
+        ap: 0
+        morale: 0
+        discipline: 0
+        awareness: 0
+        perception: 0
+        authority: 0
+        protect_tether_range: 0
+        move_speed: 0
+      }
+      skills {
+      }
+      specializations {
+      }
+      vulnerabilities {
+      }
+    }
+    equipment {
+      prefab_name: "Outfit_SINless"
+    }
+    team_id: "Civilians"
+    char_name: "Mike Score"
+    GeneralTags: "Mike_Score"
+    pc_spawn_number: -1
+    spawn_type: SpawnType_Matrix
+    portrait {
+      filename: "pc_humanmale_00b"
+    }
+    karma: 6
   }
 }
 variables {
@@ -20259,6 +21566,14 @@ variables {
     typeName: "string"
   }
 }
+variables {
+  bool_value: false
+  variableref_value {
+    scope: TsVariableScope_Scene
+    name: "inside"
+    typeName: "bool"
+  }
+}
 mapEvents: "SunRising"
 mapEvents: "NightFall"
 mapEvents: "RickyHire"
@@ -20309,9 +21624,9 @@ mapName: "The Rat\'s Nest"
 parentStory: ""
 scene_title: "The Rat\'s Nest"
 scene_subtitle: ""
-scene_synopsis: "The North Seattle Garbage Center, is an unofficial home to a community of thousands squatters, known as trash rats or gomi-nezumi to the local Yakuza. The name of this neighborhood comes from the group of Rat shamans who are prominent among the local squatters.\n\nThere are rumors of an underground fighting league somewhere in the area."
-scene_image: "loadingimage_c08-s1"
-scene_continue_button_skip: true
+scene_synopsis: "The North Seattle Garbage Center, is an unofficial home to a community of thousands of squatters, known as trash rats or Gomi-nezumi to the local Yakuza. The name of this neighborhood comes from the group of Rat shamans who are prominent among the local squatters.\n\nThere are rumors of an underground fighting league somewhere in the area."
+scene_image: "rats_nest"
+scene_continue_button_skip: false
 scene_restore_runner_health: false
 directional_light_dir {
   x: -0.5
@@ -20401,7 +21716,7 @@ scene_hiring_prerequisites {
 }
 hiring_slot_count: 0
 hiring_minimum_karma: 0
-hiring_maximum_karma: 25
+hiring_maximum_karma: 0
 roster_overrides {
 }
 use_hiring_cost_warning: true
